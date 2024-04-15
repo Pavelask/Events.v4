@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('event_schedules', function (Blueprint $table) {
+            $table->id();
+            $table->foreignUuid('events_id')
+                ->references('id')->on('events')
+                ->onDelete('cascade');
+            $table->string('week')->nullable();
+            $table->date('date')->nullable();
+            $table->string('alt_data')->nullable();
+            $table->text('description')->nullable();
+            $table->string('sort');
+            $table->boolean('is_visible')->default(false);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('event_schedules');
+    }
+};
