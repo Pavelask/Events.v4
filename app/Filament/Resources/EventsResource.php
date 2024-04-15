@@ -92,11 +92,11 @@ class EventsResource extends Resource
                                 'blockquote',
                                 'bold',
                                 'bulletList',
-                                'codeBlock',
+//                                'codeBlock',
 //                                'h2',
 //                                'h3',
-                                'italic',
-                                'link',
+//                                'italic',
+//                                'link',
                                 'orderedList',
 //                                'redo',
 //                                'strike',
@@ -193,7 +193,7 @@ class EventsResource extends Resource
                 ActionGroup::make([
                     ViewAction::make(),
                     EditAction::make(),
-                    DeleteAction::make(),
+//                    DeleteAction::make(),
                 ])
                     ->button(),
             ])
