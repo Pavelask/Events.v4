@@ -223,9 +223,9 @@ class EventGuestsResource extends Resource
     {
         return [
             'index' => Pages\ListEventGuests::route('/'),
-//            'create' => Pages\CreateEventGuests::route('/create'),
-//            'view' => Pages\ViewEventGuests::route('/{record}'),
-//            'edit' => Pages\EditEventGuests::route('/{record}/edit'),
+            'create' => Pages\CreateEventGuests::route('/create'),
+            'view' => Pages\ViewEventGuests::route('/{record}'),
+            'edit' => Pages\EditEventGuests::route('/{record}/edit'),
         ];
     }
 }
