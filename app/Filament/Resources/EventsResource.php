@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Clusters\EventOrganizers\Resources\EventModeratorsResource\RelationManagers\ModeratorsRelationManager;
+use App\Filament\Clusters\EventOrganizers\Resources\OrganizersResource\RelationManagers\OrganizersRelationManager;
 use App\Filament\Clusters\Program\Resources\EventSchedulesResource\RelationManagers\GetSchedulesRelationManager;
 use App\Filament\Resources\BannersResource\RelationManagers\BannersRelationManager;
 use App\Filament\Resources\EventAdressResource\RelationManagers\GetAdressRelationManager;
@@ -9,9 +11,9 @@ use App\Filament\Resources\EventDocumentsResource\RelationManagers\EventsDocumen
 use App\Filament\Resources\EventGreetingsResource\RelationManagers\GreetingsRelationManager;
 use App\Filament\Resources\EventGuestsResource\RelationManagers\GuestsRelationManager;
 use App\Filament\Resources\EventImagesResource\RelationManagers\EventsImageRelationManager;
-use App\Filament\Resources\EventModeratorsResource\RelationManagers\ModeratorsRelationManager;
+
 use App\Filament\Resources\EventsResource\Pages;
-use App\Filament\Resources\EventsResource\RelationManagers;
+
 use App\Models\event_status;
 use App\Models\event_types;
 use App\Models\Events;
@@ -235,7 +237,8 @@ class EventsResource extends Resource
             BannersRelationManager::class,
             GreetingsRelationManager::class,
             ModeratorsRelationManager::class,
-            GuestsRelationManager::class,
+//            GuestsRelationManager::class,
+            OrganizersRelationManager::class,
             EventsDocumenRelationManager::class,
             EventsImageRelationManager::class,
             GetSchedulesRelationManager::class

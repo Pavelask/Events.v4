@@ -67,6 +67,16 @@ class Events extends Model
         return $this->hasMany(Guests::class, 'events_id', 'id');
     }
 
+    public function organizers(): hasMany
+    {
+        return $this->hasMany(Organizers::class, 'events_id', 'id');
+    }
+
+    public function partners(): hasMany
+    {
+        return $this->hasMany(Organizers::class, 'events_id', 'id');
+    }
+
     public function banners(): hasMany
     {
         return $this->hasMany(Banners::class, 'events_id', 'id');

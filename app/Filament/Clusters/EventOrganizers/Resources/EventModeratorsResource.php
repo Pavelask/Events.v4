@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Clusters\EventOrganizers\Resources;
 
-use App\Filament\Resources\EventModeratorsResource\Pages;
-use App\Filament\Resources\EventModeratorsResource\RelationManagers;
-use App\Models\EventModerators;
+use App\Filament\Clusters\EventOrganizers;
+use App\Filament\Clusters\EventOrganizers\Resources\EventModeratorsResource\Pages;
 use App\Models\Moderators;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -21,18 +20,19 @@ use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+
+//use App\Models\EventModerators;
 
 class EventModeratorsResource extends Resource
 {
     protected static ?string $model = Moderators::class;
-    protected static ?int $navigationSort = 50;
+    protected static ?int $navigationSort = 100;
     protected static ?string $modelLabel = 'Модератора';
     protected static ?string $pluralModelLabel = 'Модераторы';
-    protected static ?string $navigationGroup = 'Настройки мероприятия';
+
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
+    protected static ?string $cluster = EventOrganizers::class;
     public static function form(Form $form): Form
     {
         return $form
@@ -102,8 +102,12 @@ class EventModeratorsResource extends Resource
                     ->width(100)
                     ->sortable(),
                 Tables\Columns\ToggleColumn::make('is_visible')
-                    ->width(100)
-                    ->label('Вкл/Выкл'),
+                    ->label('OFF|ON')
+                    ->onColor('success')
+                    ->offColor('danger')
+                    ->onIcon('heroicon-s-eye')
+                    ->offIcon('heroicon-s-eye-slash')
+                    ->alignCenter(),
             ])
             ->filters([
                 SelectFilter::make('events_id')

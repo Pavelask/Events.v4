@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\EventGuestsTagsResource\Pages;
+namespace App\Filament\Clusters\EventOrganizers\Resources\OrganizersResource\Pages;
 
-use App\Filament\Resources\EventGuestsTagsResource;
+use App\Filament\Clusters\EventOrganizers\Resources\OrganizersResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditEventGuestsTags extends EditRecord
+class EditOrganizers extends EditRecord
 {
-    protected static string $resource = EventGuestsTagsResource::class;
+    protected static string $resource = OrganizersResource::class;
 
     protected function getHeaderActions(): array
     {

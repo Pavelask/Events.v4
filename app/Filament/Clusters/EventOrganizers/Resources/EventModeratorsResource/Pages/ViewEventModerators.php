@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\EventModeratorsResource\Pages;
+namespace App\Filament\Clusters\EventOrganizers\Resources\EventModeratorsResource\Pages;
 
-use App\Filament\Resources\EventModeratorsResource;
+use App\Filament\Clusters\EventOrganizers\Resources\EventModeratorsResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ViewRecord;
 
