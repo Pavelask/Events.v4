@@ -237,7 +237,7 @@ class EventsResource extends Resource
             BannersRelationManager::class,
             GreetingsRelationManager::class,
             ModeratorsRelationManager::class,
-//            GuestsRelationManager::class,
+            GuestsRelationManager::class,
             OrganizersRelationManager::class,
             EventsDocumenRelationManager::class,
             EventsImageRelationManager::class,

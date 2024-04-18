@@ -85,31 +85,31 @@ class EventGuestsResource extends Resource
                     ->maxLength(255)
                     ->default(500),
 
-                Forms\Components\Select::make('tags')
-//                    ->relationship('GuestsTags', 'name')
-//                    ->searchable()
-                    ->label('TAG')
-                    ->options(EventGuestsTags::all()->pluck('name', 'slug'))
-                    ->createOptionForm([
-                        Forms\Components\TextInput::make('name')
-//                            ->live(debounce: 500)
-//                            ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
-                            ->label('Название тега')
-                            ->required()
-                            ->maxLength(255),
-                        Forms\Components\TextInput::make('slug')
-                            ->label('Тег')
-                            ->required()
-                            ->maxLength(255),
-                        Forms\Components\TextInput::make('tags_sort')
-                            ->label('Сортировка')
-                            ->required()
-                            ->maxLength(255)
-                            ->default(500),
-                        Forms\Components\Toggle::make('is_visible')
-                            ->label('ВКЛ/ВЫКЛ')
-                            ->required(),
-                    ]),
+    //                Forms\Components\Select::make('tags')
+    ////                    ->relationship('GuestsTags', 'name')
+    ////                    ->searchable()
+    //                    ->label('TAG')
+    //                    ->options(EventGuestsTags::all()->pluck('name', 'slug'))
+    //                    ->createOptionForm([
+    //                        Forms\Components\TextInput::make('name')
+    ////                            ->live(debounce: 500)
+    ////                            ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
+    //                            ->label('Название тега')
+    //                            ->required()
+    //                            ->maxLength(255),
+    //                        Forms\Components\TextInput::make('slug')
+    //                            ->label('Тег')
+    //                            ->required()
+    //                            ->maxLength(255),
+    //                        Forms\Components\TextInput::make('tags_sort')
+    //                            ->label('Сортировка')
+    //                            ->required()
+    //                            ->maxLength(255)
+    //                            ->default(500),
+    //                        Forms\Components\Toggle::make('is_visible')
+    //                            ->label('ВКЛ/ВЫКЛ')
+    //                            ->required(),
+    //                    ]),
             ]);
     }
 
