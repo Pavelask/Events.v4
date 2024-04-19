@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Clusters\EventOrganizers\Resources\EventGuestsResource\RelationManagers\GuestsRelationManager;
 use App\Filament\Clusters\EventOrganizers\Resources\EventModeratorsResource\RelationManagers\ModeratorsRelationManager;
 use App\Filament\Clusters\EventOrganizers\Resources\OrganizersResource\RelationManagers\OrganizersRelationManager;
 use App\Filament\Clusters\Program\Resources\EventSchedulesResource\RelationManagers\GetSchedulesRelationManager;
@@ -9,11 +10,8 @@ use App\Filament\Resources\BannersResource\RelationManagers\BannersRelationManag
 use App\Filament\Resources\EventAdressResource\RelationManagers\GetAdressRelationManager;
 use App\Filament\Resources\EventDocumentsResource\RelationManagers\EventsDocumenRelationManager;
 use App\Filament\Resources\EventGreetingsResource\RelationManagers\GreetingsRelationManager;
-use App\Filament\Resources\EventGuestsResource\RelationManagers\GuestsRelationManager;
 use App\Filament\Resources\EventImagesResource\RelationManagers\EventsImageRelationManager;
-
 use App\Filament\Resources\EventsResource\Pages;
-
 use App\Models\event_status;
 use App\Models\event_types;
 use App\Models\Events;
@@ -26,12 +24,9 @@ use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Actions\ActionGroup;
-use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class EventsResource extends Resource
 {

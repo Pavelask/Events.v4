@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\EventGuestsResource\Pages;
+namespace App\Filament\Clusters\EventOrganizers\Resources\EventGuestsResource\Pages;
 
-use App\Filament\Resources\EventGuestsResource;
+use App\Filament\Clusters\EventOrganizers\Resources\EventGuestsResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 

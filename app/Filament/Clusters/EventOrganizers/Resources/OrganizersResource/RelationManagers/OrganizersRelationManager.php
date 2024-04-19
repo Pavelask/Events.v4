@@ -69,7 +69,8 @@ class OrganizersRelationManager extends RelationManager
                     ->sortable(),
                 Tables\Columns\TextColumn::make('last_name')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ImageColumn::make('image')
+                    ->defaultImageUrl(url('storage/img/no-photography-icon.png')),
                 Tables\Columns\TextInputColumn::make('sort')
                     ->label('SORT')
                     ->width(100)

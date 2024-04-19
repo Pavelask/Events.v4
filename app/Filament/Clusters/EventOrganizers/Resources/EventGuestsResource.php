@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Clusters\EventOrganizers\Resources;
 
+use App\Filament\Clusters\EventOrganizers;
 use App\Filament\Resources\EventGuestsResource\Pages;
 use App\Filament\Resources\EventGuestsResource\RelationManagers;
-use App\Models\EventGuestsTags;
 use App\Models\Guests;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Forms\Set;
 use Filament\Infolists\Components\Grid;
 use Filament\Infolists\Components\IconEntry;
 use Filament\Infolists\Components\ImageEntry;
@@ -22,9 +21,6 @@ use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Illuminate\Support\Str;
 
 class EventGuestsResource extends Resource
 {
@@ -33,8 +29,10 @@ class EventGuestsResource extends Resource
     protected static ?string $modelLabel = 'Гостя';
     protected static bool $hasTitleCaseModelLabel = false;
     protected static ?string $pluralModelLabel = 'Гости мероприятия';
-    protected static ?string $navigationGroup = 'Настройки мероприятия';
+//    protected static ?string $navigationGroup = 'Настройки мероприятия';
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
+
+    protected static ?string $cluster = EventOrganizers::class;
 
     public static function form(Form $form): Form
     {
@@ -119,24 +117,28 @@ class EventGuestsResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('id')
                     ->label('ID'),
+                Tables\Columns\ImageColumn::make('image')
+                    ->label('Автарка'),
                 Tables\Columns\TextColumn::make('first_name')
                     ->label('Имя')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('last_name')
                     ->label('Фамилия')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('job_title')
-                    ->label('Должность')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('image')
-                    ->label('Автарка'),
+//                Tables\Columns\TextColumn::make('job_title')
+//                    ->label('Должность')
+//                    ->searchable(),
                 Tables\Columns\TextInputColumn::make('guests_sort')
                     ->label('Сортировка')
                     ->width(100)
                     ->sortable(),
                 Tables\Columns\ToggleColumn::make('is_visible')
-                    ->width(100)
-                    ->label('Вкл/Выкл'),
+                    ->label('OFF|ON')
+                    ->onColor('success')
+                    ->offColor('danger')
+                    ->onIcon('heroicon-s-eye')
+                    ->offIcon('heroicon-s-eye-slash')
+                    ->alignCenter(),
             ])
             ->filters([
                 SelectFilter::make('events_id')
@@ -222,10 +224,10 @@ class EventGuestsResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListEventGuests::route('/'),
-            'create' => Pages\CreateEventGuests::route('/create'),
-            'view' => Pages\ViewEventGuests::route('/{record}'),
-            'edit' => Pages\EditEventGuests::route('/{record}/edit'),
+            'index' => \App\Filament\Clusters\EventOrganizers\Resources\EventGuestsResource\Pages\ListEventGuests::route('/'),
+            'create' => \App\Filament\Clusters\EventOrganizers\Resources\EventGuestsResource\Pages\CreateEventGuests::route('/create'),
+            'view' => \App\Filament\Clusters\EventOrganizers\Resources\EventGuestsResource\Pages\ViewEventGuests::route('/{record}'),
+            'edit' => \App\Filament\Clusters\EventOrganizers\Resources\EventGuestsResource\Pages\EditEventGuests::route('/{record}/edit'),
         ];
     }
 }

@@ -78,8 +78,12 @@ class GetSchedulesRelationManager extends RelationManager
                     ->width(100)
                     ->label('SORT'),
                 Tables\Columns\ToggleColumn::make('is_visible')
-                    ->width(100)
-                    ->label('Вкл/Выкл'),
+                    ->label('OFF|ON')
+                    ->onColor('success')
+                    ->offColor('danger')
+                    ->onIcon('heroicon-s-eye')
+                    ->offIcon('heroicon-s-eye-slash')
+                    ->alignCenter(),
             ])
             ->filters([
                 //

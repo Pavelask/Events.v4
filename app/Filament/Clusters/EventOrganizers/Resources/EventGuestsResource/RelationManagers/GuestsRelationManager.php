@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\EventGuestsResource\RelationManagers;
+namespace App\Filament\Clusters\EventOrganizers\Resources\EventGuestsResource\RelationManagers;
 
 use App\Models\EventGuestsTags;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Forms\Set;
 use Filament\Infolists\Components\Grid;
 use Filament\Infolists\Components\IconEntry;
 use Filament\Infolists\Components\ImageEntry;
@@ -17,9 +16,6 @@ use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Illuminate\Support\Str;
 
 class GuestsRelationManager extends RelationManager
 {
@@ -88,10 +84,17 @@ class GuestsRelationManager extends RelationManager
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Автарка'),
-                Tables\Columns\TextColumn::make('guests_sort')
-                    ->label('Сортировка'),
+                Tables\Columns\TextInputColumn::make('guests_sort')
+                        ->alignCenter()
+                        ->width(100)
+                        ->label('SORT'),
                 Tables\Columns\ToggleColumn::make('is_visible')
-                    ->label('Вкл/Выкл'),
+                    ->label('OFF|ON')
+                    ->onColor('success')
+                    ->offColor('danger')
+                    ->onIcon('heroicon-s-eye')
+                    ->offIcon('heroicon-s-eye-slash')
+                    ->alignCenter(),
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make(),

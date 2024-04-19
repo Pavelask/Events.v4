@@ -71,12 +71,12 @@ class OrganizersResource extends Resource
                     ])->columns(3),
 
                 Forms\Components\Toggle::make('is_visible')
-                    ->label('Отображать на сайте')
+                    ->label('OFF|ON')
                     ->inline(false)
                     ->required(),
 
                 Forms\Components\TextInput::make('sort')
-                    ->label('OFF|ON')
+                    ->label('SORT')
                     ->required()
                     ->maxLength(255)
                     ->default(500),

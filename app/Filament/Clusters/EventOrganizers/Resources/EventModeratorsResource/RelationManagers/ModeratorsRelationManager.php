@@ -79,10 +79,17 @@ class ModeratorsRelationManager extends RelationManager
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Автарка'),
-                Tables\Columns\TextColumn::make('moderator_sort')
-                    ->label('Сортировка'),
+                Tables\Columns\TextInputColumn::make('moderator_sort')
+                    ->alignCenter()
+                    ->width(100)
+                    ->label('SORT'),
                 Tables\Columns\ToggleColumn::make('is_visible')
-                    ->label('Вкл/Выкл'),
+                    ->label('OFF|ON')
+                    ->onColor('success')
+                    ->offColor('danger')
+                    ->onIcon('heroicon-s-eye')
+                    ->offIcon('heroicon-s-eye-slash')
+                    ->alignCenter(),
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make(),

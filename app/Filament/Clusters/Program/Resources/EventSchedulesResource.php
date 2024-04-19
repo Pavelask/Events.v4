@@ -103,8 +103,12 @@ class EventSchedulesResource extends Resource
                     ->width(50)
                     ->label('Сортировка'),
                 Tables\Columns\ToggleColumn::make('is_visible')
-                    ->label('ON/OFF')
-                    ->width(100),
+                    ->label('OFF|ON')
+                    ->onColor('success')
+                    ->offColor('danger')
+                    ->onIcon('heroicon-s-eye')
+                    ->offIcon('heroicon-s-eye-slash')
+                    ->alignCenter(),
 //                Tables\Columns\TextColumn::make('created_at')
 //                    ->dateTime()
 //                    ->sortable()
