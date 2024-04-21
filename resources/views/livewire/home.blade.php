@@ -23,12 +23,12 @@
                         </button>
                     </div>
                     <div class="hidden lg:flex lg:gap-x-12">
-                        <a href="#" class="leading-6 uppercase text-white">Главная</a>
-                        <a href="#" class="leading-6 uppercase text-white">Организаторы</a>
-                        <a href="#" class="leading-6 uppercase text-white">Гости мероприятия</a>
+                        <a href="/" class="leading-6 uppercase text-white">Главная</a>
+                        <a href="#jury" class="leading-6 uppercase text-white">Жури мероприятия</a>
+                        <a href="#guest" class="leading-6 uppercase text-white">Гости мероприятия</a>
                         <a href="#" class="leading-6 uppercase text-white">Партнеры</a>
-                        <a href="#" class="leading-6 uppercase text-white">Расписание</a>
-                        <a href="#" class="leading-6 uppercase text-white">Контакты</a>
+                        <a href="#timeline" class="leading-6 uppercase text-white">Расписание</a>
+                        <a href="#contact" class="leading-6 uppercase text-white">Контакты</a>
                     </div>
                     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
 
@@ -112,7 +112,7 @@
 
             {{--  Жури  --}}
 
-            <div class="bg-white py-24 md:py-32">
+            <div id="jury" class="bg-white py-24 md:py-32">
                 <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
                     <div class="max-w-2xl xl:col-span-2">
                         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -162,7 +162,7 @@
 
             {{--  Гости мепроприяия   --}}
 
-            <div class="bg-white py-24 sm:py-32">
+            <div id="guest" class="bg-white py-24 sm:py-32">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <div class="mx-auto max-w-2xl sm:text-center">
                         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -307,7 +307,7 @@
             {{--  TimeLine  --}}
 
 
-            <div class="bg-white px-4 py-24 lg:px-6">
+            <div id="timeline"  class="bg-white px-4 py-24 lg:px-6">
                 <div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">
                     <h2 class="text-2xl font-bold tracking-tight text-gray-900 text-left">
                         Расписание мероприятия
@@ -376,7 +376,7 @@
 
 
             <!-- Contact -->
-            <div class="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-24 mx-auto bg-white">
+            <div id="contact"  class="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-24 mx-auto bg-white">
                 <div class="mb-6 sm:mb-10 max-w-2xl text-center mx-auto">
                     <h2 class="font-medium text-black text-2xl sm:text-4xl dark:text-white">
                         Контакты
