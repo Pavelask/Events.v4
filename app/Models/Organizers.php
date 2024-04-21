@@ -21,8 +21,7 @@ class Organizers extends Model
         'job_title',
         'image',
         'description',
-        'guests_sort',
-        'tags',
+        'sort',
         'is_visible'
     ];
 

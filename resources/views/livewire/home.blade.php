@@ -5,7 +5,7 @@
                 <header class="absolute inset-x-0 top-0 z-50">
                     <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                         <div class="flex lg:flex-1">
-                            <a href="#" class="-m-1.5 p-1.5">
+                            <a href="/" class="-m-1.5 p-1.5">
                                 <span class="sr-only">ВЭП</span>
                                 <img class="h-12 w-auto" src="{{ asset('/front/img/logo_01.png') }}" alt="">
                             </a>
@@ -26,6 +26,7 @@
                             <a href="/" class="leading-6 uppercase text-white">Главная</a>
                             <a href="#jury" class="leading-6 uppercase text-white">Жюри мероприятия</a>
                             <a href="#guest" class="leading-6 uppercase text-white">Гости мероприятия</a>
+                            <a href="#command" class="leading-6 uppercase text-white">Команды</a>
                             <a href="#" class="leading-6 uppercase text-white">Партнеры</a>
                             <a href="#timeline" class="leading-6 uppercase text-white">Расписание</a>
                             <a href="#contact" class="leading-6 uppercase text-white">Контакты</a>
@@ -68,6 +69,8 @@
                                             <a href="#guest" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Гости мероприятия</a>
                                             <a href="#" wire:click="closeMenu"
+                                               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Команды</a>
+                                            <a href="#" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Партнеры</a>
                                             <a href="#timeline" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Расписание</a>
@@ -94,7 +97,7 @@
                     <div class="mx-auto max-w-4xl py-32 sm:py-48 lg:py-56">
                         <div class="text-center">
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('front/img/logo_00.png') }}" alt="" class="w-96 object-cover ">
+                                <img src="{{ asset('front/img/logoo_0002.png') }}" alt="" class="w-96 object-cover ">
                             </div>
                             <h1 class="text-xl leading-8 text-white sm:text-2xl uppercase">
                                 {{ $Event->name }}
@@ -255,11 +258,11 @@
 
                 <div class="relative bg-white">
                     <div class="absolute inset-0 flex items-center" aria-hidden="true">
-                        <div class="w-full border-t border-gray-100"></div>
+                        <div class="w-full border-t border-gray-300"></div>
                     </div>
                     <div class="relative flex justify-center">
-    <span class="bg-white px-2 text-gray-100">
-      <svg class="h-5 w-5 text-gray-100" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+    <span class="bg-white px-2 text-gray-500">
+      <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
         <path
             d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"/>
       </svg>
@@ -268,32 +271,35 @@
                 </div>
 
 
-                {{--            <div class="mx-auto max-w-7xl px-6 lg:px-8">--}}
-                {{--                <div class="mx-auto max-w-2xl lg:max-w-none pb-32">--}}
-                {{--                    <h2 class="text-lg font-semibold leading-8 text-gray-500">Trusted by the world’s most innovative--}}
-                {{--                        teams</h2>--}}
-                {{--                    <div--}}
-                {{--                        class="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-5">--}}
-                {{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
-                {{--                             src="https://tailwindui.com/img/logos/transistor-logo-gray-900.svg" alt="Transistor"--}}
-                {{--                             width="158" height="48">--}}
-                {{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
-                {{--                             src="https://tailwindui.com/img/logos/reform-logo-gray-900.svg" alt="Reform" width="158"--}}
-                {{--                             height="48">--}}
-                {{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
-                {{--                             src="https://tailwindui.com/img/logos/tuple-logo-gray-900.svg" alt="Tuple" width="158"--}}
-                {{--                             height="48">--}}
-                {{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
-                {{--                             src="https://tailwindui.com/img/logos/savvycal-logo-gray-900.svg" alt="SavvyCal"--}}
-                {{--                             width="158"--}}
-                {{--                             height="48">--}}
-                {{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
-                {{--                             src="https://tailwindui.com/img/logos/statamic-logo-gray-900.svg" alt="Statamic"--}}
-                {{--                             width="158"--}}
-                {{--                             height="48">--}}
-                {{--                    </div>--}}
-                {{--                </div>--}}
-                {{--            </div>--}}
+
+                            <div id="command" class="mx-auto max-w-7xl px-6 lg:px-8 pt-20">
+                                <div class="mx-auto max-w-2xl lg:max-w-none pb-32">
+                                    <h1 class="text-lg font-semibold leading-8 text-gray-900 text-center uppercase pb-3">
+                                        Команды I Всероссийского турнира по охране труда и промышленной безопасности
+                                    </h1>
+                                    <div
+                                        class="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-5">
+
+
+                                        @if($Organizers)
+                                            @foreach($Organizers as $Organizer)
+
+                                                <!-- Card -->
+                                                <div class="group block rounded-xl">
+                                                    <div class="aspect-w-16 aspect-h-9">
+                                                        <img class="object-cover rounded-xl" src="{{ asset('storage/'.$Organizer->image) }}">
+                                                    </div>
+                                                    <h4 class="mt-2 text-lg font-medium text-gray-800 group-hover:text-teal-600 dark:text-neutral-300 dark:group-hover:text-white text-center">
+                                                        {{$Organizer->last_name}}
+                                                    </h4>
+                                                </div>
+                                                <!-- End Card -->
+                                            @endforeach
+                                        @endif
+
+                                    </div>
+                                </div>
+                            </div>
 
 
                 <div class="relative bg-white">
@@ -466,31 +472,38 @@
 
         </div>
 
-        <button class="border-green-700" onclick="topFunction()" id="myBtn" title="Go to top">
-           UP
+        <button id="to-top-button" onclick="goToTop()" title="Go To Top"
+                class="hidden fixed z-50 bottom-10 right-10 p-4 border-0 w-14 h-14 rounded-full shadow-md bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold transition-colors duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z" />
+            </svg>
+            <span class="sr-only">Go to top</span>
         </button>
 
         <script>
-            // Get the button
-            let mybutton = document.getElementById("myBtn");
+            // Get the 'to top' button element by ID
+            var toTopButton = document.getElementById("to-top-button");
 
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function() {scrollFunction()};
+            // Check if the button exists
+            if (toTopButton) {
 
-            function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    mybutton.style.display = "block";
-                } else {
-                    mybutton.style.display = "none";
-                }
-            }
+                // On scroll event, toggle button visibility based on scroll position
+                window.onscroll = function() {
+                    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                        toTopButton.classList.remove("hidden");
+                    } else {
+                        toTopButton.classList.add("hidden");
+                    }
+                };
 
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
+                // Function to scroll to the top of the page smoothly
+                window.goToTop = function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                };
             }
         </script>
-
 
 </main>

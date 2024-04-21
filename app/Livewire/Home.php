@@ -28,11 +28,12 @@ class Home extends Component
         $Adress = $Event->getAdress->first();
         $Moderators = $Event->moderators->all();
         $Guests = $Event->guests->all();
+        $Organizers = $Event->organizers->all();
 
         $Schedules = $Event->getSchedules;
         $Timeline = $Event->timetablesEvent->all();
 
-//        dd($Timeline);
+//        dd($Organizers);
         return view('livewire.home', [
             'Event' => $Event,
             'Greeting' => $Greeting,
@@ -40,7 +41,8 @@ class Home extends Component
             'Schedules' => $Schedules,
             'Timeline' => $Timeline,
             'Moderators' => $Moderators,
-            "Guests" => $Guests,
+            'Guests' => $Guests,
+            'Organizers' => $Organizers,
         ]);
     }
 }
