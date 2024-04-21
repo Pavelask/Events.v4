@@ -26,9 +26,9 @@ class Home extends Component
         $Event = Events::orderBy('id', 'DESC')->first();
         $Greeting = $Event->greetings->first();
         $Adress = $Event->getAdress->first();
-        $Moderators = $Event->moderators->all();
-        $Guests = $Event->guests->all();
-        $Organizers = $Event->organizers->all();
+        $Moderators = $Event->moderators->where('is_visible', 1)->all();
+        $Guests = $Event->guests->where('is_visible', 1)->all();
+        $Organizers = $Event->organizers->where('is_visible', 1)->all();
         $Partners = $Event->partners->where('is_visible', 1)->all();
 
         $Schedules = $Event->getSchedules;
