@@ -118,45 +118,36 @@
                             style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
                     </div>
                 </div>
-
-
-                {{--  Жюри  --}}
-
-                <div id="jury" class="bg-white py-24 md:py-32">
-                    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
-                        <div class="max-w-2xl xl:col-span-2">
-                            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                                Жюри меропрприятия
+                {{--  Речь начало --}}
+                <div class="bg-white px-6 py-12 lg:px-8">
+                    <div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">
+                        <div class="mt-4 max-w-3xl">
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 text-center">
+                                {{ $Greeting->greetings_title }}
                             </h2>
-                            <p class="mt-6 text-base leading-8 text-gray-600 text-justify pr-8">
-                                Турнир является официальным соревнованием в области охраны труда и промышленной
-                                безопасности,
-                                имеющий всероссийский статус, приурочен к «Всемирному дню охраны труда» и проходит в
-                                рамках
-                                объявленного Всероссийским Электропрофсоюзом Года охраны труда.
-                            </p>
+                            <div class="mt-6 text-justify pt-4">
+                                {!! $Greeting->greetings_text !!}
+                            </div>
                         </div>
-                        <ul role="list" class="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">
-                            @if($Moderators)
-                                @foreach($Moderators as $Moderator)
-                                    <li class="flex flex-col gap-10 pt-12 sm:flex-row">
-                                        <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"
-                                             src="{{ asset('storage/'.$Moderator->image) }}"
-                                             alt="">
-                                        <div class="max-w-xl flex-auto">
-                                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">{{$Moderator->last_name }} {{$Moderator->first_name  }} {{$Moderator->middle_name  }}</h3>
-                                            <p class="text-base leading-7 text-gray-600">{{$Moderator->job_title  }}</p>
-                                            <p class="mt-6 text-base leading-7 text-gray-600">
-                                                {!! $Moderator->description !!}
-                                            </p>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            @endif
-                            <!-- More people... -->
-                        </ul>
+                        <figure class="pt-10">
+                            <img class="aspect-video rounded-xl bg-gray-50 object-cover"
+                                 src="{{ asset('front/img/0000.png') }}"
+                                 alt="">
+                            <figcaption class="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
+                                <svg class="mt-0.5 h-5 w-5 flex-none text-gray-300" viewBox="0 0 20 20"
+                                     fill="currentColor"
+                                     aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
+                                          clip-rule="evenodd"/>
+                                </svg>
+                                Статс-секретарь - заместитель Министра энергетики Российской Федерации
+                                А.Б. Бондаренко
+                            </figcaption>
+                        </figure>
                     </div>
                 </div>
+                {{--  Речь конец --}}
 
                 {{--Start banner--}}
                 <div class="p-6 py-12 bg-teal-600 text-gray-50 mx-12">
@@ -167,13 +158,10 @@
                         </div>
                     </div>
                 </div>
-
                 {{--End Banner--}}
 
-
-                {{--  Гости мепроприяия   --}}
-
-                <div id="guest" class="bg-white py-24 sm:py-32">
+                {{--  Гости мепроприяия начало  --}}
+                <div id="guest" class="bg-white py-20 sm:py-20">
                     <div class="mx-auto max-w-7xl px-6 lg:px-8">
                         <div class="mx-auto max-w-2xl sm:text-center">
                             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -209,47 +197,12 @@
                         </ul>
                     </div>
                 </div>
-
-
-                @include('livewire.layout.line')
-
-
-                {{--  Речь  --}}
-
-                <div class="bg-white px-6 py-12 lg:px-8">
-                    <div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">
-                        <div class="mt-4 max-w-3xl">
-                            <h2 class="text-2xl font-bold tracking-tight text-gray-900 text-center">
-                                {{ $Greeting->greetings_title }}
-                            </h2>
-                            <div class="mt-6 text-justify pt-4">
-                                {!! $Greeting->greetings_text !!}
-                            </div>
-                        </div>
-                        <figure class="pt-10">
-                            <img class="aspect-video rounded-xl bg-gray-50 object-cover"
-                                 src="{{ asset('front/img/0000.png') }}"
-                                 alt="">
-                            <figcaption class="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
-                                <svg class="mt-0.5 h-5 w-5 flex-none text-gray-300" viewBox="0 0 20 20"
-                                     fill="currentColor"
-                                     aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
-                                          clip-rule="evenodd"/>
-                                </svg>
-                                Статс-секретарь - заместитель Министра энергетики Российской Федерации
-                                А.Б. Бондаренко
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-
+                {{--  Гости мепроприяия конец  --}}
 
                 @include('livewire.layout.line')
 
-
-                <div id="command" class="bg-white py-24 md:py-32">
+                {{--  Команды начало --}}
+                <div id="command" class="bg-white py-20 md:py-20">
                     <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
                         <div class="max-w-xl xl:col-span-2">
                             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -263,87 +216,170 @@
                             @if($Organizers)
                                 @foreach($Organizers as $Organizer)
 
-                            <li class="flex flex-col gap-10 pt-12 sm:flex-row">
-                                <img class="w-48 object-cover"
-                                     src="{{ asset('storage/'.$Organizer->image) }}"
-                                     alt="">
-                                <div class="flex-auto">
-                                    <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">
-                                        {{$Organizer->last_name}}
-                                        </h3>
-                                </div>
-                            </li>
+                                    <li class="flex flex-col gap-10 pt-12 sm:flex-row">
+                                        <img class="w-48 object-cover"
+                                             src="{{ asset('storage/'.$Organizer->image) }}"
+                                             alt="">
+                                        <div class="flex-auto">
+                                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">
+                                                {{$Organizer->last_name}}
+                                            </h3>
+                                        </div>
+                                    </li>
                                 @endforeach
                             @endif
                             <!-- More people... -->
                         </ul>
                     </div>
                 </div>
-
-
+                {{--  Команды конец --}}
 
                 @include('livewire.layout.line')
 
-
-                {{--  TimeLine  --}}
-
-
-                <div id="timeline" class="bg-white px-4 py-24 lg:px-6">
-                    <div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">
-                        <h2 class="text-2xl font-bold tracking-tight text-gray-900 text-left">
-                            Расписание мероприятия
-                        </h2>
-                        <div class="container max-w-5xl px-4 py-12 mx-auto">
-                            <div class="grid gap-4 mx-4 sm:grid-cols-12">
-
-                                @if($Schedules->isNotEmpty())
-                                    @foreach($Schedules as $Schedule)
-                                        <div class="col-span-12 sm:col-span-3">
-                                            <div
-                                                class="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-teal-600">
-                                            <span
-                                                class="text-base font-bold tracking-wider uppercase text-gray-600">
-                                                {{ $Schedule->alt_data }}
-                                            </span>
-                                                <span
-                                                    class="text-sm tracking-wider uppercase text-gray-400">
-                                                {{ $Schedule->week }}
-                                            </span>
-                                            </div>
-                                        </div>
-                                        <div class="relative col-span-12 px-4 space-y-6 sm:col-span-9">
-                                            @foreach($Timeline as $Time)
-                                                @if($Schedule->id == $Time->event_schedules_id)
-                                                    <div
-                                                        class="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-300">
-                                                        <div
-                                                            class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-teal-600">
-                                                            <h3 class="text-xl font-semibold tracking-wide">
-                                                                {{ $Time->title }}
-                                                            </h3>
-                                                            <time class="text-xs tracking-wide uppercase text-gray-600">
-                                                                {{ $Time->time }}
-                                                            </time>
-                                                            <p class="mt-3">
-                                                                {{ $Time->place }}
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                @endif
-                                            @endforeach
-                                        </div>
-                                    @endforeach
-                                @endif
-                            </div>
+                {{--  Жюри начало --}}
+                <div id="jury" class="bg-white py-20 md:py-20">
+                    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
+                        <div class="max-w-2xl xl:col-span-2">
+                            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                                Жюри меропрприятия
+                            </h2>
+                            <p class="mt-6 text-base leading-8 text-gray-600 text-justify pr-8">
+                                Турнир является официальным соревнованием в области охраны труда и промышленной
+                                безопасности,
+                                имеющий всероссийский статус, приурочен к «Всемирному дню охраны труда» и проходит в
+                                рамках
+                                объявленного Всероссийским Электропрофсоюзом Года охраны труда.
+                            </p>
                         </div>
+                        <ul role="list" class="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">
+                            @if($Moderators)
+                                @foreach($Moderators as $Moderator)
+                                    <li class="flex flex-col gap-10 pt-12 sm:flex-row">
+                                        <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"
+                                             src="{{ asset('storage/'.$Moderator->image) }}"
+                                             alt="">
+                                        <div class="max-w-xl flex-auto">
+                                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">{{$Moderator->last_name }} {{$Moderator->first_name  }} {{$Moderator->middle_name  }}</h3>
+                                            <p class="text-base leading-7 text-gray-600">{{$Moderator->job_title  }}</p>
+                                            <p class="mt-6 text-base leading-7 text-gray-600">
+                                                {!! $Moderator->description !!}
+                                            </p>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            @endif
+                            <!-- More people... -->
+                        </ul>
+                    </div>
+                </div>
+                {{--  Жюри конец --}}
 
+                @include('livewire.layout.line')
 
+                {{--  TimeLine начало --}}
+                <div id="timeline" class="bg-white px-6 py-24 sm:py-20 lg:px-8">
+                    <div class="mx-auto max-w-2xl text-center">
+                        <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Расписание мероприятия</h2>
                     </div>
                 </div>
 
-                @include('livewire.layout.line')
 
-                <div id="partners" class="bg-white py-24 sm:py-32">
+            @if($Schedules->isNotEmpty())
+                    @foreach($Schedules as $Schedule)
+                <section class="bg-gray-100 text-gray-800">
+                    <div class="container max-w-5xl px-4 py-12 mx-auto">
+                        <div class="grid gap-4 mx-4 sm:grid-cols-12">
+                            <div class="col-span-12 sm:col-span-3">
+                                <div class="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-teal-600">
+                                    <h3 class="text-xl uppercase font-semibold">{{ $Schedule->alt_data }}</h3>
+                                    <span class="text-sm font-bold tracking-wider uppercase text-gray-600">
+                                         {{ $Schedule->week }}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="relative col-span-12 px-4 space-y-6 sm:col-span-9">
+
+                                <div class="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-300">
+                                    @foreach($Timeline as $Time)
+                                        @if($Schedule->id == $Time->event_schedules_id)
+                                    <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-teal-600">
+                                        <h3 class="text-lg tracking-wide"> {{ $Time->title }} </h3>
+                                        <time class="text-xs tracking-wide uppercase text-gray-600">{{ $Time->time }}</time>
+                                        <p class="mt-3">{{ $Time->place }}</p>
+                                    </div>
+                                    @endif
+                                    @endforeach
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                    @endforeach
+                @endif
+                {{--  TimeLine конец --}}
+
+
+                {{--  TimeLine начало --}}
+{{--                <div id="timeline" class="bg-white px-4 py-20 lg:px-6">--}}
+{{--                    <div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">--}}
+{{--                        <h2 class="text-2xl font-bold tracking-tight text-gray-900 text-left">--}}
+{{--                            Расписание мероприятия--}}
+{{--                        </h2>--}}
+{{--                        <div class="container max-w-5xl px-4 py-12 mx-auto">--}}
+{{--                            <div class="grid gap-4 mx-4 sm:grid-cols-12">--}}
+
+{{--                                @if($Schedules->isNotEmpty())--}}
+{{--                                    @foreach($Schedules as $Schedule)--}}
+{{--                                        <div class="col-span-12 sm:col-span-3">--}}
+{{--                                            <div--}}
+{{--                                                class="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-teal-600">--}}
+{{--                                            <span--}}
+{{--                                                class="text-base font-bold tracking-wider uppercase text-gray-600">--}}
+{{--                                                {{ $Schedule->alt_data }}--}}
+{{--                                            </span>--}}
+{{--                                                <span--}}
+{{--                                                    class="text-sm tracking-wider uppercase text-gray-400">--}}
+{{--                                                {{ $Schedule->week }}--}}
+{{--                                            </span>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="relative col-span-12 px-4 space-y-6 sm:col-span-9">--}}
+{{--                                            @foreach($Timeline as $Time)--}}
+{{--                                                @if($Schedule->id == $Time->event_schedules_id)--}}
+{{--                                                    <div--}}
+{{--                                                        class="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-300">--}}
+{{--                                                        <div--}}
+{{--                                                            class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-teal-600">--}}
+{{--                                                            <h3 class="text-xl tracking-wide">--}}
+{{--                                                                {{ $Time->title }}--}}
+{{--                                                            </h3>--}}
+{{--                                                            <time class="text-xs tracking-wide uppercase text-gray-600">--}}
+{{--                                                                {{ $Time->time }}--}}
+{{--                                                            </time>--}}
+{{--                                                            <p class="mt-0">--}}
+{{--                                                                {{ $Time->place }}--}}
+{{--                                                            </p>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                @endif--}}
+{{--                                            @endforeach--}}
+{{--                                        </div>--}}
+{{--                                    @endforeach--}}
+{{--                                @endif--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+
+{{--                    </div>--}}
+{{--                </div>--}}
+                {{--  TimeLine конец --}}
+
+{{--                @include('livewire.layout.line')--}}
+
+                {{--  Партнеры начало --}}
+                <div id="partners" class="bg-white py-20 sm:py-20">
                     <div class="mx-auto max-w-7xl px-6 lg:px-8">
                         <h1 class="text-lg font-semibold leading-8 text-center uppercase pb-10 text-teal-900">
                             Партнеры I Всероссийского турнира по охране труда и промышленной безопасности
@@ -361,13 +397,12 @@
                         </div>
                     </div>
                 </div>
-
+                {{--  Партнеры конец --}}
 
                 @include('livewire.layout.line')
 
-
                 <!-- Contact -->
-                <div id="contact" class="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-24 mx-auto bg-white">
+                <div id="contact" class="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-20 mx-auto bg-white">
                     <div class="mb-6 sm:mb-10 max-w-2xl text-center mx-auto">
                         <h2 class="font-medium text-black text-2xl sm:text-4xl dark:text-white">
                             Контакты
@@ -450,6 +485,7 @@
 
         </div>
 
+        {{--  Кнопка вверх начало --}}
         <button id="to-top-button" onclick="goToTop()" title="Go To Top"
                 class="hidden fixed z-50 bottom-10 right-10 p-4 border-0 w-14 h-14 rounded-full shadow-md bg-teal-600 hover:bg-teal-700 text-white text-lg font-semibold transition-colors duration-300">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -457,6 +493,8 @@
             </svg>
             <span class="sr-only">Go to top</span>
         </button>
+        {{--  Кнопка вверх конец --}}
+
 
         <script>
             // Get the 'to top' button element by ID
