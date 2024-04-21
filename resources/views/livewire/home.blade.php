@@ -321,63 +321,6 @@
                 {{--  TimeLine конец --}}
 
 
-                {{--  TimeLine начало --}}
-{{--                <div id="timeline" class="bg-white px-4 py-20 lg:px-6">--}}
-{{--                    <div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">--}}
-{{--                        <h2 class="text-2xl font-bold tracking-tight text-gray-900 text-left">--}}
-{{--                            Расписание мероприятия--}}
-{{--                        </h2>--}}
-{{--                        <div class="container max-w-5xl px-4 py-12 mx-auto">--}}
-{{--                            <div class="grid gap-4 mx-4 sm:grid-cols-12">--}}
-
-{{--                                @if($Schedules->isNotEmpty())--}}
-{{--                                    @foreach($Schedules as $Schedule)--}}
-{{--                                        <div class="col-span-12 sm:col-span-3">--}}
-{{--                                            <div--}}
-{{--                                                class="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-teal-600">--}}
-{{--                                            <span--}}
-{{--                                                class="text-base font-bold tracking-wider uppercase text-gray-600">--}}
-{{--                                                {{ $Schedule->alt_data }}--}}
-{{--                                            </span>--}}
-{{--                                                <span--}}
-{{--                                                    class="text-sm tracking-wider uppercase text-gray-400">--}}
-{{--                                                {{ $Schedule->week }}--}}
-{{--                                            </span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="relative col-span-12 px-4 space-y-6 sm:col-span-9">--}}
-{{--                                            @foreach($Timeline as $Time)--}}
-{{--                                                @if($Schedule->id == $Time->event_schedules_id)--}}
-{{--                                                    <div--}}
-{{--                                                        class="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-300">--}}
-{{--                                                        <div--}}
-{{--                                                            class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-teal-600">--}}
-{{--                                                            <h3 class="text-xl tracking-wide">--}}
-{{--                                                                {{ $Time->title }}--}}
-{{--                                                            </h3>--}}
-{{--                                                            <time class="text-xs tracking-wide uppercase text-gray-600">--}}
-{{--                                                                {{ $Time->time }}--}}
-{{--                                                            </time>--}}
-{{--                                                            <p class="mt-0">--}}
-{{--                                                                {{ $Time->place }}--}}
-{{--                                                            </p>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                @endif--}}
-{{--                                            @endforeach--}}
-{{--                                        </div>--}}
-{{--                                    @endforeach--}}
-{{--                                @endif--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-
-{{--                    </div>--}}
-{{--                </div>--}}
-                {{--  TimeLine конец --}}
-
-{{--                @include('livewire.layout.line')--}}
-
                 {{--  Партнеры начало --}}
                 <div id="partners" class="bg-white py-20 sm:py-20">
                     <div class="mx-auto max-w-7xl px-6 lg:px-8">
