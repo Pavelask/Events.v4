@@ -65,10 +65,12 @@
                                             <a href="/"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Главная</a>
                                             <a href="#jury" wire:click="closeMenu"
-                                               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Жюри мероприятия</a>
+                                               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Жюри
+                                                мероприятия</a>
                                             <a href="#guest" wire:click="closeMenu"
-                                               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Гости мероприятия</a>
-                                            <a href="#" wire:click="closeMenu"
+                                               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Гости
+                                                мероприятия</a>
+                                            <a href="#command" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Команды</a>
                                             <a href="#" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Партнеры</a>
@@ -209,19 +211,7 @@
                 </div>
 
 
-                <div class="relative bg-white">
-                    <div class="absolute inset-0 flex items-center" aria-hidden="true">
-                        <div class="w-full border-t border-gray-300"></div>
-                    </div>
-                    <div class="relative flex justify-center">
-    <span class="bg-white px-2 text-gray-500">
-      <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path
-            d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"/>
-      </svg>
-    </span>
-                    </div>
-                </div>
+                @include('livewire.layout.line')
 
 
                 {{--  Речь  --}}
@@ -256,65 +246,43 @@
                 </div>
 
 
-                <div class="relative bg-white">
-                    <div class="absolute inset-0 flex items-center" aria-hidden="true">
-                        <div class="w-full border-t border-gray-300"></div>
-                    </div>
-                    <div class="relative flex justify-center">
-    <span class="bg-white px-2 text-gray-500">
-      <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path
-            d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"/>
-      </svg>
-    </span>
-                    </div>
-                </div>
+                @include('livewire.layout.line')
 
 
+                <div class="bg-white py-24 md:py-32">
+                    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
+                        <div class="max-w-xl xl:col-span-2">
+                            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                                Команды турнира
+                            </h2>
+                            <p class="mt-6 text-base leading-8 text-gray-600 text-justify pr-8">
+                                Развитие профсоюзного движения среди работников, включая молодежь, на предприятиях и в организациях электроэнергетики как основного фактора представительства работников в системе социально-трудовых отношений
+                            </p>
+                        </div>
+                        <ul role="list" class="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">
+                            @if($Organizers)
+                                @foreach($Organizers as $Organizer)
 
-                            <div id="command" class="mx-auto max-w-7xl px-6 lg:px-8 pt-20">
-                                <div class="mx-auto max-w-2xl lg:max-w-none pb-32">
-                                    <h1 class="text-lg font-semibold leading-8 text-gray-900 text-center uppercase pb-3">
-                                        Команды I Всероссийского турнира по охране труда и промышленной безопасности
-                                    </h1>
-                                    <div
-                                        class="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-5">
-
-
-                                        @if($Organizers)
-                                            @foreach($Organizers as $Organizer)
-
-                                                <!-- Card -->
-                                                <div class="group block rounded-xl">
-                                                    <div class="aspect-w-16 aspect-h-9">
-                                                        <img class="object-cover rounded-xl" src="{{ asset('storage/'.$Organizer->image) }}">
-                                                    </div>
-                                                    <h4 class="mt-2 text-lg font-medium text-gray-800 group-hover:text-teal-600 dark:text-neutral-300 dark:group-hover:text-white text-center">
-                                                        {{$Organizer->last_name}}
-                                                    </h4>
-                                                </div>
-                                                <!-- End Card -->
-                                            @endforeach
-                                        @endif
-
-                                    </div>
+                            <li class="flex flex-col gap-10 pt-12 sm:flex-row">
+                                <img class="w-48 object-cover"
+                                     src="{{ asset('storage/'.$Organizer->image) }}"
+                                     alt="">
+                                <div class="flex-auto">
+                                    <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">
+                                        {{$Organizer->last_name}}
+                                        </h3>
                                 </div>
-                            </div>
-
-
-                <div class="relative bg-white">
-                    <div class="absolute inset-0 flex items-center" aria-hidden="true">
-                        <div class="w-full border-t border-gray-300"></div>
-                    </div>
-                    <div class="relative flex justify-center">
-    <span class="bg-white px-2 text-gray-500">
-      <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path
-            d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"/>
-      </svg>
-    </span>
+                            </li>
+                                @endforeach
+                            @endif
+                            <!-- More people... -->
+                        </ul>
                     </div>
                 </div>
+
+
+
+                @include('livewire.layout.line')
 
 
                 {{--  TimeLine  --}}
@@ -373,19 +341,29 @@
                     </div>
                 </div>
 
-                <div class="relative bg-white">
-                    <div class="absolute inset-0 flex items-center" aria-hidden="true">
-                        <div class="w-full border-t border-gray-300"></div>
-                    </div>
-                    <div class="relative flex justify-center">
-    <span class="bg-white px-2 text-gray-500">
-      <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path
-            d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"/>
-      </svg>
-    </span>
+                @include('livewire.layout.line')
+
+                <div class="bg-white py-24 sm:py-32">
+                    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                        <h1 class="text-lg font-semibold leading-8 text-center uppercase pb-10 text-teal-900">
+                            Партнеры I Всероссийского турнира по охране труда и промышленной безопасности
+                        </h1>
+                        <div class="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-4">
+                            @if($Partners)
+                                @foreach($Partners as $Partner)
+                            <div class="bg-gray-400/5 p-2 sm:p-2">
+                                <img class="max-h-32 w-full object-contain"
+                                     src="{{ asset('storage/'.$Partner->logo) }}"
+                                alt="Transistor">
+                            </div>
+                                @endforeach
+                            @endif
+                        </div>
                     </div>
                 </div>
+
+
+                @include('livewire.layout.line')
 
 
                 <!-- Contact -->
@@ -473,9 +451,9 @@
         </div>
 
         <button id="to-top-button" onclick="goToTop()" title="Go To Top"
-                class="hidden fixed z-50 bottom-10 right-10 p-4 border-0 w-14 h-14 rounded-full shadow-md bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold transition-colors duration-300">
+                class="hidden fixed z-50 bottom-10 right-10 p-4 border-0 w-14 h-14 rounded-full shadow-md bg-teal-600 hover:bg-teal-700 text-white text-lg font-semibold transition-colors duration-300">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z" />
+                <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/>
             </svg>
             <span class="sr-only">Go to top</span>
         </button>
@@ -488,7 +466,7 @@
             if (toTopButton) {
 
                 // On scroll event, toggle button visibility based on scroll position
-                window.onscroll = function() {
+                window.onscroll = function () {
                     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
                         toTopButton.classList.remove("hidden");
                     } else {
@@ -497,7 +475,7 @@
                 };
 
                 // Function to scroll to the top of the page smoothly
-                window.goToTop = function() {
+                window.goToTop = function () {
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth'
