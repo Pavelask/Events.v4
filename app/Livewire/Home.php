@@ -29,7 +29,7 @@ class Home extends Component
         $Moderators = $Event->moderators->all();
         $Guests = $Event->guests->all();
         $Organizers = $Event->organizers->all();
-        $Partners = $Event->partners->all();
+        $Partners = $Event->partners->where('is_visible', 1)->all();
 
         $Schedules = $Event->getSchedules;
         $Timeline = $Event->timetablesEvent->all();

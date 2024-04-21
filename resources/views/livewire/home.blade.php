@@ -330,7 +330,7 @@
                         <div class="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-4">
                             @if($Partners)
                                 @foreach($Partners as $Partner)
-                            <div class="bg-gray-400/5 p-2 sm:p-2">
+                            <div class="bg-white p-2 sm:p-2">
                                 <img class="max-h-32 w-full object-contain"
                                      src="{{ asset('storage/'.$Partner->logo) }}"
                                 alt="Transistor">
