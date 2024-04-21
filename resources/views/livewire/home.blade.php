@@ -24,7 +24,7 @@
                         </div>
                         <div class="hidden lg:flex lg:gap-x-12">
                             <a href="/" class="leading-6 uppercase text-white">Главная</a>
-                            <a href="#jury" class="leading-6 uppercase text-white">Жури мероприятия</a>
+                            <a href="#jury" class="leading-6 uppercase text-white">Жюри мероприятия</a>
                             <a href="#guest" class="leading-6 uppercase text-white">Гости мероприятия</a>
                             <a href="#" class="leading-6 uppercase text-white">Партнеры</a>
                             <a href="#timeline" class="leading-6 uppercase text-white">Расписание</a>
@@ -64,7 +64,7 @@
                                             <a href="/"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Главная</a>
                                             <a href="#jury" wire:click="closeMenu"
-                                               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Жури мероприятия</a>
+                                               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Жюри мероприятия</a>
                                             <a href="#guest" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Гости мероприятия</a>
                                             <a href="#" wire:click="closeMenu"
@@ -115,13 +115,13 @@
                 </div>
 
 
-                {{--  Жури  --}}
+                {{--  Жюри  --}}
 
                 <div id="jury" class="bg-white py-24 md:py-32">
                     <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
                         <div class="max-w-2xl xl:col-span-2">
                             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                                Жури меропрприятия
+                                Жюри меропрприятия
                             </h2>
                             <p class="mt-6 text-base leading-8 text-gray-600">
                                 Турнир является официальным соревнованием в области охраны труда и промышленной
