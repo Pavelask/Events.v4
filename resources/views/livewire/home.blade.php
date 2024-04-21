@@ -63,15 +63,15 @@
                                         <div class="space-y-2 py-6">
                                             <a href="/"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Главная</a>
-                                            <a href="#jury"
+                                            <a href="#jury" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Жури мероприятия</a>
-                                            <a href="#guest"
+                                            <a href="#guest" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Гости мероприятия</a>
-                                            <a href="#"
+                                            <a href="#" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Партнеры</a>
-                                            <a href="#timeline"
+                                            <a href="#timeline" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Расписание</a>
-                                            <a href="#contact"
+                                            <a href="#contact" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Контакты</a>
                                         </div>
 
