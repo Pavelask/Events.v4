@@ -1,4 +1,4 @@
-<main>
+<div>
     <body class="bg-white">
     <div class="bg-white">
         <div class="bg-white">
@@ -108,185 +108,185 @@
                         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
                 </div>
             </div>
-        </div>
 
 
-        {{--  Жури  --}}
+            {{--  Жури  --}}
 
-        <div class="bg-white py-24 md:py-32">
-            <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
-                <div class="max-w-2xl xl:col-span-2">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                        Жури меропрприятия
-                    </h2>
-                    <p class="mt-6 text-base leading-8 text-gray-600">
-                        Турнир является официальным соревнованием в области охраны труда и промышленной безопасности,
-                        имеющий всероссийский статус, приурочен к «Всемирному дню охраны труда» и проходит в рамках
-                        объявленного Всероссийским Электропрофсоюзом Года охраны труда.
-                    </p>
-                </div>
-                <ul role="list" class="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">
-                    @if($Moderators)
-                        @foreach($Moderators as $Moderator)
-                    <li class="flex flex-col gap-10 pt-12 sm:flex-row">
-                        <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"
-                             src="{{ asset('storage/'.$Moderator->image) }}"
-                             alt="">
-                        <div class="max-w-xl flex-auto">
-                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">{{$Moderator->last_name }} {{$Moderator->first_name  }} {{$Moderator->middle_name  }}</h3>
-                            <p class="text-base leading-7 text-gray-600">{{$Moderator->job_title  }}</p>
-                            <p class="mt-6 text-base leading-7 text-gray-600">
-                                {!! $Moderator->description !!}
-                            </p>
-                        </div>
-                    </li>
-                        @endforeach
-                    @endif
-                    <!-- More people... -->
-                </ul>
-            </div>
-        </div>
-
-        {{--Start banner--}}
-        <div class="p-6 py-12 bg-teal-600 text-gray-50 mx-12">
-            <div class="container mx-auto">
-                <div class="flex flex-col lg:flex-row items-center justify-center   ">
-                    <h2 class="text-center text-6xl tracking-tighter font-bold">ВТБ БАННЕР
-                    </h2>
+            <div class="bg-white py-24 md:py-32">
+                <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
+                    <div class="max-w-2xl xl:col-span-2">
+                        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                            Жури меропрприятия
+                        </h2>
+                        <p class="mt-6 text-base leading-8 text-gray-600">
+                            Турнир является официальным соревнованием в области охраны труда и промышленной
+                            безопасности,
+                            имеющий всероссийский статус, приурочен к «Всемирному дню охраны труда» и проходит в рамках
+                            объявленного Всероссийским Электропрофсоюзом Года охраны труда.
+                        </p>
+                    </div>
+                    <ul role="list" class="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">
+                        @if($Moderators)
+                            @foreach($Moderators as $Moderator)
+                                <li class="flex flex-col gap-10 pt-12 sm:flex-row">
+                                    <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"
+                                         src="{{ asset('storage/'.$Moderator->image) }}"
+                                         alt="">
+                                    <div class="max-w-xl flex-auto">
+                                        <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">{{$Moderator->last_name }} {{$Moderator->first_name  }} {{$Moderator->middle_name  }}</h3>
+                                        <p class="text-base leading-7 text-gray-600">{{$Moderator->job_title  }}</p>
+                                        <p class="mt-6 text-base leading-7 text-gray-600">
+                                            {!! $Moderator->description !!}
+                                        </p>
+                                    </div>
+                                </li>
+                            @endforeach
+                        @endif
+                        <!-- More people... -->
+                    </ul>
                 </div>
             </div>
-        </div>
 
-        {{--End Banner--}}
-
-
-        {{--  Гости мепроприяия   --}}
-
-        <div class="bg-white py-24 sm:py-32">
-            <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mx-auto max-w-2xl sm:text-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                        Гости мероприятия
-                    </h2>
-                    <p class="mt-6 text-lg leading-8 text-gray-600">
-                        Задачами Турнира являются - привлечение внимания работодателей, работников и их представителей к
-                        решению вопросов улучшения системы охраны труда на предприятиях электроэнергетической отрасли.
-                    </p>
+            {{--Start banner--}}
+            <div class="p-6 py-12 bg-teal-600 text-gray-50 mx-12">
+                <div class="container mx-auto">
+                    <div class="flex flex-col lg:flex-row items-center justify-center   ">
+                        <h2 class="text-center text-6xl tracking-tighter font-bold">ВТБ БАННЕР
+                        </h2>
+                    </div>
                 </div>
-                <ul role="list"
-                    class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none">
-                    @if($Guests)
-                        @foreach($Guests as $Guest)
-                    <li class="flex flex-col gap-6 xl:flex-row">
-                        <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"
-                             src="{{ asset('storage/'.$Guest->image) }}"
-                             alt="">
-                        <div class="flex-auto">
-                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">
-                                {{$Guest->last_name }} {{$Guest->first_name }} {{$Guest->middle_name }}
-                            </h3>
-                            <p class="text-base leading-7 text-gray-600">{{$Guest->job_title}}</p>
-
-                        </div>
-                    </li>
-                        @endforeach
-                    @endif
-
-                    <!-- More people... -->
-                </ul>
             </div>
-        </div>
+
+            {{--End Banner--}}
 
 
-        <div class="relative bg-white">
-            <div class="absolute inset-0 flex items-center" aria-hidden="true">
-                <div class="w-full border-t border-gray-300"></div>
+            {{--  Гости мепроприяия   --}}
+
+            <div class="bg-white py-24 sm:py-32">
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div class="mx-auto max-w-2xl sm:text-center">
+                        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                            Гости мероприятия
+                        </h2>
+                        <p class="mt-6 text-lg leading-8 text-gray-600">
+                            Задачами Турнира являются - привлечение внимания работодателей, работников и их
+                            представителей к
+                            решению вопросов улучшения системы охраны труда на предприятиях электроэнергетической
+                            отрасли.
+                        </p>
+                    </div>
+                    <ul role="list"
+                        class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none">
+                        @if($Guests)
+                            @foreach($Guests as $Guest)
+                                <li class="flex flex-col gap-6 xl:flex-row">
+                                    <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"
+                                         src="{{ asset('storage/'.$Guest->image) }}"
+                                         alt="">
+                                    <div class="flex-auto">
+                                        <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">
+                                            {{$Guest->last_name }} {{$Guest->first_name }} {{$Guest->middle_name }}
+                                        </h3>
+                                        <p class="text-base leading-7 text-gray-600">{{$Guest->job_title}}</p>
+
+                                    </div>
+                                </li>
+                            @endforeach
+                        @endif
+
+                        <!-- More people... -->
+                    </ul>
+                </div>
             </div>
-            <div class="relative flex justify-center">
+
+
+            <div class="relative bg-white">
+                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <div class="relative flex justify-center">
     <span class="bg-white px-2 text-gray-500">
       <svg class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
         <path
             d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"/>
       </svg>
     </span>
-            </div>
-        </div>
-
-
-        {{--  Речь  --}}
-
-        <div class="bg-white px-6 py-12 lg:px-8">
-            <div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">
-                <div class="mt-4 max-w-3xl">
-                    <h2 class="text-2xl font-bold tracking-tight text-gray-900 text-center">
-                        {{ $Greeting->greetings_title }}
-                    </h2>
-                    <div class="mt-6 text-justify pt-4">
-                        {!! $Greeting->greetings_text !!}
-                    </div>
                 </div>
-                <figure class="pt-10">
-                    <img class="aspect-video rounded-xl bg-gray-50 object-cover" src="{{ asset('front/img/0000.png') }}"
-                         alt="">
-                    <figcaption class="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
-                        <svg class="mt-0.5 h-5 w-5 flex-none text-gray-300" viewBox="0 0 20 20" fill="currentColor"
-                             aria-hidden="true">
-                            <path fill-rule="evenodd"
-                                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
-                                  clip-rule="evenodd"/>
-                        </svg>
-                        Статс-секретарь - заместитель Министра энергетики Российской Федерации
-                        А.Б. Бондаренко
-                    </figcaption>
-                </figure>
             </div>
-        </div>
 
 
-        <div class="relative bg-white">
-            <div class="absolute inset-0 flex items-center" aria-hidden="true">
-                <div class="w-full border-t border-gray-100"></div>
+            {{--  Речь  --}}
+
+            <div class="bg-white px-6 py-12 lg:px-8">
+                <div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">
+                    <div class="mt-4 max-w-3xl">
+                        <h2 class="text-2xl font-bold tracking-tight text-gray-900 text-center">
+                            {{ $Greeting->greetings_title }}
+                        </h2>
+                        <div class="mt-6 text-justify pt-4">
+                            {!! $Greeting->greetings_text !!}
+                        </div>
+                    </div>
+                    <figure class="pt-10">
+                        <img class="aspect-video rounded-xl bg-gray-50 object-cover"
+                             src="{{ asset('front/img/0000.png') }}"
+                             alt="">
+                        <figcaption class="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
+                            <svg class="mt-0.5 h-5 w-5 flex-none text-gray-300" viewBox="0 0 20 20" fill="currentColor"
+                                 aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
+                                      clip-rule="evenodd"/>
+                            </svg>
+                            Статс-секретарь - заместитель Министра энергетики Российской Федерации
+                            А.Б. Бондаренко
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
-            <div class="relative flex justify-center">
+
+
+            <div class="relative bg-white">
+                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                    <div class="w-full border-t border-gray-100"></div>
+                </div>
+                <div class="relative flex justify-center">
     <span class="bg-white px-2 text-gray-100">
       <svg class="h-5 w-5 text-gray-100" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
         <path
             d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"/>
       </svg>
     </span>
+                </div>
             </div>
-        </div>
-
-        <div class="bg-white py-24 sm:py-2424">
 
 
-
-{{--            <div class="mx-auto max-w-7xl px-6 lg:px-8">--}}
-{{--                <div class="mx-auto max-w-2xl lg:max-w-none pb-32">--}}
-{{--                    <h2 class="text-lg font-semibold leading-8 text-gray-500">Trusted by the world’s most innovative--}}
-{{--                        teams</h2>--}}
-{{--                    <div--}}
-{{--                        class="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-5">--}}
-{{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
-{{--                             src="https://tailwindui.com/img/logos/transistor-logo-gray-900.svg" alt="Transistor"--}}
-{{--                             width="158" height="48">--}}
-{{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
-{{--                             src="https://tailwindui.com/img/logos/reform-logo-gray-900.svg" alt="Reform" width="158"--}}
-{{--                             height="48">--}}
-{{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
-{{--                             src="https://tailwindui.com/img/logos/tuple-logo-gray-900.svg" alt="Tuple" width="158"--}}
-{{--                             height="48">--}}
-{{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
-{{--                             src="https://tailwindui.com/img/logos/savvycal-logo-gray-900.svg" alt="SavvyCal"--}}
-{{--                             width="158"--}}
-{{--                             height="48">--}}
-{{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
-{{--                             src="https://tailwindui.com/img/logos/statamic-logo-gray-900.svg" alt="Statamic"--}}
-{{--                             width="158"--}}
-{{--                             height="48">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            {{--            <div class="mx-auto max-w-7xl px-6 lg:px-8">--}}
+            {{--                <div class="mx-auto max-w-2xl lg:max-w-none pb-32">--}}
+            {{--                    <h2 class="text-lg font-semibold leading-8 text-gray-500">Trusted by the world’s most innovative--}}
+            {{--                        teams</h2>--}}
+            {{--                    <div--}}
+            {{--                        class="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-5">--}}
+            {{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
+            {{--                             src="https://tailwindui.com/img/logos/transistor-logo-gray-900.svg" alt="Transistor"--}}
+            {{--                             width="158" height="48">--}}
+            {{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
+            {{--                             src="https://tailwindui.com/img/logos/reform-logo-gray-900.svg" alt="Reform" width="158"--}}
+            {{--                             height="48">--}}
+            {{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
+            {{--                             src="https://tailwindui.com/img/logos/tuple-logo-gray-900.svg" alt="Tuple" width="158"--}}
+            {{--                             height="48">--}}
+            {{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
+            {{--                             src="https://tailwindui.com/img/logos/savvycal-logo-gray-900.svg" alt="SavvyCal"--}}
+            {{--                             width="158"--}}
+            {{--                             height="48">--}}
+            {{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
+            {{--                             src="https://tailwindui.com/img/logos/statamic-logo-gray-900.svg" alt="Statamic"--}}
+            {{--                             width="158"--}}
+            {{--                             height="48">--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
 
 
             <div class="relative bg-white">
@@ -305,7 +305,6 @@
 
 
             {{--  TimeLine  --}}
-
 
 
             <div class="bg-white px-4 py-24 lg:px-6">
@@ -334,21 +333,21 @@
                                     <div class="relative col-span-12 px-4 space-y-6 sm:col-span-9">
                                         @foreach($Timeline as $Time)
                                             @if($Schedule->id == $Time->event_schedules_id)
-                                            <div
-                                                class="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-300">
                                                 <div
-                                                    class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-teal-600">
-                                                    <h3 class="text-xl font-semibold tracking-wide">
-                                                        {{ $Time->title }}
-                                                    </h3>
-                                                    <time class="text-xs tracking-wide uppercase text-gray-600">
-                                                        {{ $Time->time }}
-                                                    </time>
-                                                    <p class="mt-3">
-                                                        {{ $Time->place }}
-                                                    </p>
+                                                    class="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-300">
+                                                    <div
+                                                        class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-teal-600">
+                                                        <h3 class="text-xl font-semibold tracking-wide">
+                                                            {{ $Time->title }}
+                                                        </h3>
+                                                        <time class="text-xs tracking-wide uppercase text-gray-600">
+                                                            {{ $Time->time }}
+                                                        </time>
+                                                        <p class="mt-3">
+                                                            {{ $Time->place }}
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
                                             @endif
                                         @endforeach
                                     </div>
@@ -454,48 +453,6 @@
             <!-- End Contact -->
 
 
-            {{-- Footer--}}
+        </div>
 
-{{--            <footer class="bg-white">--}}
-{{--                <div class="mx-auto max-w-7xl overflow-hidden pt-10 px-6 lg:px-8">--}}
-{{--                    <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">--}}
-{{--                        <div class="pb-6">--}}
-{{--                            <a href="#"--}}
-{{--                               class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">About</a>--}}
-{{--                        </div>--}}
-{{--                        <div class="pb-6">--}}
-{{--                            <a href="#" class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Blog</a>--}}
-{{--                        </div>--}}
-{{--                        <div class="pb-6">--}}
-{{--                            <a href="#" class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Jobs</a>--}}
-{{--                        </div>--}}
-{{--                        <div class="pb-6">--}}
-{{--                            <a href="#"--}}
-{{--                               class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Press</a>--}}
-{{--                        </div>--}}
-{{--                        <div class="pb-6">--}}
-{{--                            <a href="#"--}}
-{{--                               class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Accessibility</a>--}}
-{{--                        </div>--}}
-{{--                        <div class="pb-6">--}}
-{{--                            <a href="#"--}}
-{{--                               class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Partners</a>--}}
-{{--                        </div>--}}
-{{--                    </nav>--}}
-{{--                    <div class="mt-10 flex justify-center space-x-10">--}}
-{{--                        <a href="#" class="text-gray-400 hover:text-gray-500">--}}
-{{--                            <span class="sr-only">YouTube</span>--}}
-{{--                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">--}}
-{{--                                <path fill-rule="evenodd"--}}
-{{--                                      d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"--}}
-{{--                                      clip-rule="evenodd"/>--}}
-{{--                            </svg>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                    <p class="mt-10 text-center text-xs leading-5 text-gray-500">&copy; 2020 Your Company, Inc. All--}}
-{{--                        rights--}}
-{{--                        reserved.</p>--}}
-{{--                </div>--}}
-{{--            </footer>--}}
-</main>
-
+    </div>
