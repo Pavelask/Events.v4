@@ -27,7 +27,7 @@
                             <a href="#jury" class="leading-6 uppercase text-white">Жюри мероприятия</a>
                             <a href="#guest" class="leading-6 uppercase text-white">Гости мероприятия</a>
                             <a href="#command" class="leading-6 uppercase text-white">Команды</a>
-                            <a href="#" class="leading-6 uppercase text-white">Партнеры</a>
+                            <a href="#partners" class="leading-6 uppercase text-white">Партнеры</a>
                             <a href="#timeline" class="leading-6 uppercase text-white">Расписание</a>
                             <a href="#contact" class="leading-6 uppercase text-white">Контакты</a>
                         </div>
@@ -72,7 +72,7 @@
                                                 мероприятия</a>
                                             <a href="#command" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Команды</a>
-                                            <a href="#" wire:click="closeMenu"
+                                            <a href="#partners" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Партнеры</a>
                                             <a href="#timeline" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Расписание</a>
@@ -128,7 +128,7 @@
                             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                                 Жюри меропрприятия
                             </h2>
-                            <p class="mt-6 text-base leading-8 text-gray-600">
+                            <p class="mt-6 text-base leading-8 text-gray-600 text-justify pr-8">
                                 Турнир является официальным соревнованием в области охраны труда и промышленной
                                 безопасности,
                                 имеющий всероссийский статус, приурочен к «Всемирному дню охраны труда» и проходит в
@@ -179,7 +179,7 @@
                             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                                 Гости мероприятия
                             </h2>
-                            <p class="mt-6 text-lg leading-8 text-gray-600">
+                            <p class="mt-6 text-base leading-8 text-gray-600 text-justify">
                                 Задачами Турнира являются - привлечение внимания работодателей, работников и их
                                 представителей к
                                 решению вопросов улучшения системы охраны труда на предприятиях электроэнергетической
@@ -249,7 +249,7 @@
                 @include('livewire.layout.line')
 
 
-                <div class="bg-white py-24 md:py-32">
+                <div id="command" class="bg-white py-24 md:py-32">
                     <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
                         <div class="max-w-xl xl:col-span-2">
                             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -343,7 +343,7 @@
 
                 @include('livewire.layout.line')
 
-                <div class="bg-white py-24 sm:py-32">
+                <div id="partners" class="bg-white py-24 sm:py-32">
                     <div class="mx-auto max-w-7xl px-6 lg:px-8">
                         <h1 class="text-lg font-semibold leading-8 text-center uppercase pb-10 text-teal-900">
                             Партнеры I Всероссийского турнира по охране труда и промышленной безопасности
