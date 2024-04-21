@@ -258,32 +258,35 @@
         </div>
 
         <div class="bg-white py-24 sm:py-2424">
-            <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mx-auto max-w-2xl lg:max-w-none pb-32">
-                    <h2 class="text-lg font-semibold leading-8 text-gray-500">Trusted by the world’s most innovative
-                        teams</h2>
-                    <div
-                        class="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-5">
-                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
-                             src="https://tailwindui.com/img/logos/transistor-logo-gray-900.svg" alt="Transistor"
-                             width="158" height="48">
-                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
-                             src="https://tailwindui.com/img/logos/reform-logo-gray-900.svg" alt="Reform" width="158"
-                             height="48">
-                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
-                             src="https://tailwindui.com/img/logos/tuple-logo-gray-900.svg" alt="Tuple" width="158"
-                             height="48">
-                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
-                             src="https://tailwindui.com/img/logos/savvycal-logo-gray-900.svg" alt="SavvyCal"
-                             width="158"
-                             height="48">
-                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"
-                             src="https://tailwindui.com/img/logos/statamic-logo-gray-900.svg" alt="Statamic"
-                             width="158"
-                             height="48">
-                    </div>
-                </div>
-            </div>
+
+
+
+{{--            <div class="mx-auto max-w-7xl px-6 lg:px-8">--}}
+{{--                <div class="mx-auto max-w-2xl lg:max-w-none pb-32">--}}
+{{--                    <h2 class="text-lg font-semibold leading-8 text-gray-500">Trusted by the world’s most innovative--}}
+{{--                        teams</h2>--}}
+{{--                    <div--}}
+{{--                        class="mx-auto mt-10 grid grid-cols-4 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-5">--}}
+{{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
+{{--                             src="https://tailwindui.com/img/logos/transistor-logo-gray-900.svg" alt="Transistor"--}}
+{{--                             width="158" height="48">--}}
+{{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
+{{--                             src="https://tailwindui.com/img/logos/reform-logo-gray-900.svg" alt="Reform" width="158"--}}
+{{--                             height="48">--}}
+{{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
+{{--                             src="https://tailwindui.com/img/logos/tuple-logo-gray-900.svg" alt="Tuple" width="158"--}}
+{{--                             height="48">--}}
+{{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
+{{--                             src="https://tailwindui.com/img/logos/savvycal-logo-gray-900.svg" alt="SavvyCal"--}}
+{{--                             width="158"--}}
+{{--                             height="48">--}}
+{{--                        <img class="col-span-2 max-h-12 w-full object-contain object-left lg:col-span-1"--}}
+{{--                             src="https://tailwindui.com/img/logos/statamic-logo-gray-900.svg" alt="Statamic"--}}
+{{--                             width="158"--}}
+{{--                             height="48">--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
 
             <div class="relative bg-white">
@@ -453,46 +456,46 @@
 
             {{-- Footer--}}
 
-            <footer class="bg-white">
-                <div class="mx-auto max-w-7xl overflow-hidden pt-10 px-6 lg:px-8">
-                    <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
-                        <div class="pb-6">
-                            <a href="#"
-                               class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">About</a>
-                        </div>
-                        <div class="pb-6">
-                            <a href="#" class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Blog</a>
-                        </div>
-                        <div class="pb-6">
-                            <a href="#" class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Jobs</a>
-                        </div>
-                        <div class="pb-6">
-                            <a href="#"
-                               class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Press</a>
-                        </div>
-                        <div class="pb-6">
-                            <a href="#"
-                               class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Accessibility</a>
-                        </div>
-                        <div class="pb-6">
-                            <a href="#"
-                               class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Partners</a>
-                        </div>
-                    </nav>
-                    <div class="mt-10 flex justify-center space-x-10">
-                        <a href="#" class="text-gray-400 hover:text-gray-500">
-                            <span class="sr-only">YouTube</span>
-                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                      d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
-                                      clip-rule="evenodd"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <p class="mt-10 text-center text-xs leading-5 text-gray-500">&copy; 2020 Your Company, Inc. All
-                        rights
-                        reserved.</p>
-                </div>
-            </footer>
+{{--            <footer class="bg-white">--}}
+{{--                <div class="mx-auto max-w-7xl overflow-hidden pt-10 px-6 lg:px-8">--}}
+{{--                    <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">--}}
+{{--                        <div class="pb-6">--}}
+{{--                            <a href="#"--}}
+{{--                               class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">About</a>--}}
+{{--                        </div>--}}
+{{--                        <div class="pb-6">--}}
+{{--                            <a href="#" class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Blog</a>--}}
+{{--                        </div>--}}
+{{--                        <div class="pb-6">--}}
+{{--                            <a href="#" class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Jobs</a>--}}
+{{--                        </div>--}}
+{{--                        <div class="pb-6">--}}
+{{--                            <a href="#"--}}
+{{--                               class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Press</a>--}}
+{{--                        </div>--}}
+{{--                        <div class="pb-6">--}}
+{{--                            <a href="#"--}}
+{{--                               class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Accessibility</a>--}}
+{{--                        </div>--}}
+{{--                        <div class="pb-6">--}}
+{{--                            <a href="#"--}}
+{{--                               class="text-base uppercase leading-6 text-gray-600 hover:text-gray-900">Partners</a>--}}
+{{--                        </div>--}}
+{{--                    </nav>--}}
+{{--                    <div class="mt-10 flex justify-center space-x-10">--}}
+{{--                        <a href="#" class="text-gray-400 hover:text-gray-500">--}}
+{{--                            <span class="sr-only">YouTube</span>--}}
+{{--                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">--}}
+{{--                                <path fill-rule="evenodd"--}}
+{{--                                      d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"--}}
+{{--                                      clip-rule="evenodd"/>--}}
+{{--                            </svg>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <p class="mt-10 text-center text-xs leading-5 text-gray-500">&copy; 2020 Your Company, Inc. All--}}
+{{--                        rights--}}
+{{--                        reserved.</p>--}}
+{{--                </div>--}}
+{{--            </footer>--}}
 </main>
 
