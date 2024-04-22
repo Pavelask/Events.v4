@@ -166,12 +166,6 @@
                             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                                 Гости мероприятия
                             </h2>
-                            <p class="mt-6 text-base leading-8 text-gray-600 text-justify">
-                                Задачами Турнира являются - привлечение внимания работодателей, работников и их
-                                представителей к
-                                решению вопросов улучшения системы охраны труда на предприятиях электроэнергетической
-                                отрасли.
-                            </p>
                         </div>
                         <ul role="list"
                             class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none">
@@ -207,9 +201,6 @@
                             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                                 Команды турнира
                             </h2>
-                            <p class="mt-6 text-base leading-8 text-gray-600 text-justify pr-8">
-                                Развитие профсоюзного движения среди работников, включая молодежь, на предприятиях и в организациях электроэнергетики как основного фактора представительства работников в системе социально-трудовых отношений
-                            </p>
                         </div>
                         <ul role="list" class="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">
                             @if($Organizers)
@@ -242,13 +233,6 @@
                             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                                 Состав жюри
                             </h2>
-                            <p class="mt-6 text-base leading-8 text-gray-600 text-justify pr-8">
-                                Турнир является официальным соревнованием в области охраны труда и промышленной
-                                безопасности,
-                                имеющий всероссийский статус, приурочен к «Всемирному дню охраны труда» и проходит в
-                                рамках
-                                объявленного Всероссийским Электропрофсоюзом Года охраны труда.
-                            </p>
                         </div>
                         <ul role="list" class="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">
                             @if($Moderators)
@@ -321,12 +305,12 @@
 
 
                 {{--  Партнеры начало --}}
-                <div id="timeline" class="bg-white px-6 py-24 sm:py-20 lg:px-8">
+                <div id="partners" class="bg-white px-6 pt-10 pb-3 sm:pt-20 lg:px-8">
                     <div class="mx-auto max-w-2xl text-center">
                         <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Партнеры мероприятия</h2>
                     </div>
                 </div>
-                <div id="partners" class="bg-white py-20 sm:py-20">
+                <div class="bg-white py-20 sm:pt-20">
                     <div class="mx-auto max-w-7xl px-6 lg:px-8">
                         <div class="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-4">
                             @if($Partners)
@@ -348,8 +332,8 @@
                 <!-- Contact -->
                 <div id="contact" class="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-20 mx-auto bg-white">
                     <div class="mb-6 sm:mb-10 max-w-2xl text-center mx-auto">
-                        <h2 class="font-medium text-black text-2xl sm:text-4xl dark:text-white">
-                            Контакты
+                        <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                           Контаткты
                         </h2>
                     </div>
 

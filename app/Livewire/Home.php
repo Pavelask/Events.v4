@@ -27,9 +27,12 @@ class Home extends Component
         $Greeting = $Event->greetings->first();
         $Adress = $Event->getAdress->first();
         $Moderators = $Event->moderators->where('is_visible', 1)->all();
-        $Guests = $Event->guests->where('is_visible', 1)->all();
+
         $Organizers = $Event->organizers->where('is_visible', 1)->all();
         $Partners = $Event->partners->where('is_visible', 1)->all();
+
+
+        $Guests = $Event->guests->where('is_visible', 1)->all();
 
         $Schedules = $Event->getSchedules;
         $Timeline = $Event->timetablesEvent->all();
