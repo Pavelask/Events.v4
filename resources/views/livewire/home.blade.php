@@ -148,16 +148,7 @@
                 {{--  Речь конец --}}
 
                 @include('livewire.layout.line')
-                {{--Start banner--}}
-{{--                <div class="p-6 py-12 bg-teal-600 text-gray-50 mx-12">--}}
-{{--                    <div class="container mx-auto">--}}
-{{--                        <div class="flex flex-col lg:flex-row items-center justify-center   ">--}}
-{{--                            <h2 class="text-center text-6xl tracking-tighter font-bold">ВТБ БАННЕР--}}
-{{--                            </h2>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-                {{--End Banner--}}
+
 
                 {{--  Гости мепроприяия начало  --}}
                 <div id="guest" class="bg-white py-20 sm:py-20">
@@ -303,6 +294,13 @@
                 @endif
                 {{--  TimeLine конец --}}
 
+                {{--Start banner--}}
+                <div class="py-12 bg-white">
+                    <div class="mx-auto">
+                        <img src="{{ asset('front/img/BANNER SITE .png') }}" alt="" class="">
+                    </div>
+                </div>
+                {{--End Banner--}}
 
                 {{--  Партнеры начало --}}
                 <div id="partners" class="bg-white px-6 pt-10 pb-3 sm:pt-20 lg:px-8">
