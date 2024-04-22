@@ -101,7 +101,7 @@
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('front/img/logoo_0002.png') }}" alt="" class="w-96 object-cover ">
                             </div>
-                            <h1 class="text-xl leading-8 text-white sm:text-2xl uppercase">
+                            <h1 class="text-xl leading-8 text-white sm:text-2xl font-Roboto">
                                 {{ $Event->name }}
                             </h1>
                             <h5 class="mt-6 text-xl font-bold leading-8 text-gray-100 uppercase">
@@ -241,7 +241,7 @@
                     <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
                         <div class="max-w-2xl xl:col-span-2">
                             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                                Жюри меропрприятия
+                                Состав жюри
                             </h2>
                             <p class="mt-6 text-base leading-8 text-gray-600 text-justify pr-8">
                                 Турнир является официальным соревнованием в области охраны труда и промышленной
@@ -322,11 +322,13 @@
 
 
                 {{--  Партнеры начало --}}
+                <div id="timeline" class="bg-white px-6 py-24 sm:py-20 lg:px-8">
+                    <div class="mx-auto max-w-2xl text-center">
+                        <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Партнеры мероприятия</h2>
+                    </div>
+                </div>
                 <div id="partners" class="bg-white py-20 sm:py-20">
                     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                        <h1 class="text-lg font-semibold leading-8 text-center uppercase pb-10 text-teal-900">
-                            Партнеры I Всероссийского турнира по охране труда и промышленной безопасности
-                        </h1>
                         <div class="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-4">
                             @if($Partners)
                                 @foreach($Partners as $Partner)

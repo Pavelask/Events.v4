@@ -4,14 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ $title ?? 'ОБЩЕСТВЕННАЯ ОРГАНИЗАЦИЯ "ВСЕРОССИЙСКИЙ ЭЛЕКТРОПРОФСОЮЗ' }}</title>
+        <title>{{ $title ?? 'Всероссийский Турнир по охране труда и промышленной безопасности в формате интеллектуальной игры «БРЕЙН-РИНГ»' }}</title>
         <script src="https://cdn.tailwindcss.com"></script>
-
-
 
         @livewireStyles
     </head>
     <body>
+
         {{ $slot }}
         @livewireScripts
     </body>
