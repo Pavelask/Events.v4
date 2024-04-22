@@ -26,7 +26,7 @@
                             <a href="/" class="leading-6 uppercase text-white">Главная</a>
                             <a href="#guest" class="leading-6 uppercase text-white">Гости мероприятия</a>
                             <a href="#command" class="leading-6 uppercase text-white">Команды</a>
-                            <a href="#jury" class="leading-6 uppercase text-white">Жюри мероприятия</a>
+                            <a href="#jury" class="leading-6 uppercase text-white">Состав жюри</a>
                             <a href="#timeline" class="leading-6 uppercase text-white">Расписание</a>
                             <a href="#partners" class="leading-6 uppercase text-white">Партнеры</a>
                             <a href="#contact" class="leading-6 uppercase text-white">Контакты</a>
@@ -70,8 +70,7 @@
                                             <a href="#command" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Команды</a>
                                             <a href="#jury" wire:click="closeMenu"
-                                               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Жюри
-                                                мероприятия</a>
+                                               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Состав жюри</a>
                                             <a href="#timeline" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Расписание</a>
                                             <a href="#partners" wire:click="closeMenu"

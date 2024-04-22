@@ -12,10 +12,10 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                // sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-                Lora: ["Lora", ...defaultTheme.fontFamily.sans],
-                Bitter: ["Bitter", ...defaultTheme.fontFamily.mono],
-                Roboto: ["Roboto", ...defaultTheme.fontFamily.serif],
+                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                // Lora: ["Lora", ...defaultTheme.fontFamily.sans],
+                // Bitter: ["Bitter", ...defaultTheme.fontFamily.mono],
+                // Roboto: ["Roboto", ...defaultTheme.fontFamily.serif],
             },
         },
     },
