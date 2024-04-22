@@ -105,8 +105,7 @@
                                 {{ $Event->name }}
                             </h1>
                             <h5 class="mt-6 text-xl font-bold leading-8 text-gray-100 uppercase">
-                                {{ date('d-m-Y', strtotime($Event->date_start)) }}
-                                &nbsp; {{ date('d-m-Y', strtotime($Event->date_end)) }}
+                                25-26 апреля 2024 года
                             </h5>
                         </div>
                     </div>
@@ -149,15 +148,16 @@
                 </div>
                 {{--  Речь конец --}}
 
+                @include('livewire.layout.line')
                 {{--Start banner--}}
-                <div class="p-6 py-12 bg-teal-600 text-gray-50 mx-12">
-                    <div class="container mx-auto">
-                        <div class="flex flex-col lg:flex-row items-center justify-center   ">
-                            <h2 class="text-center text-6xl tracking-tighter font-bold">ВТБ БАННЕР
-                            </h2>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="p-6 py-12 bg-teal-600 text-gray-50 mx-12">--}}
+{{--                    <div class="container mx-auto">--}}
+{{--                        <div class="flex flex-col lg:flex-row items-center justify-center   ">--}}
+{{--                            <h2 class="text-center text-6xl tracking-tighter font-bold">ВТБ БАННЕР--}}
+{{--                            </h2>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 {{--End Banner--}}
 
                 {{--  Гости мепроприяия начало  --}}
