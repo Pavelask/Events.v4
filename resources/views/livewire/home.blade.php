@@ -7,7 +7,7 @@
                         <div class="flex lg:flex-1">
                             <a href="/" class="-m-1.5 p-1.5">
                                 <span class="sr-only">ВЭП</span>
-                                <img class="h-12 w-auto" src="{{ asset('/front/img/logo_01.png') }}" alt="">
+                                <img class="h-12 w-auto" src="{{ asset('/front/img/sova.png') }}" alt="">
                             </a>
                         </div>
                         <div class="flex lg:hidden">
@@ -47,7 +47,7 @@
                                     <a href="#" class="-m-1.5 p-1.5">
                                         <span class="sr-only">ВЭП</span>
                                         <img class="h-12 w-auto"
-                                             src="{{ asset('/front/img/logo_01.png') }}" alt="">
+                                             src="{{ asset('/front/img/sova.png') }}" alt="">
                                     </a>
                                     <button wire:click="closeMenu" type="button"
                                             class="-m-2.5 rounded-md p-2.5 text-gray-400">
@@ -98,7 +98,7 @@
                     <div class="mx-auto max-w-4xl py-32 sm:py-48 lg:py-56">
                         <div class="text-center">
                             <div class="flex justify-center items-center">
-                                <img src="{{ asset('front/img/logoo_0002.png') }}" alt="" class="w-96 object-cover ">
+                                <img src="{{ asset('front/img/sova.png') }}" alt="" class="w-96 object-cover mb-12">
                             </div>
                             <h1 class="text-xl leading-8 text-white sm:text-2xl font-Roboto">
                                 {{ $Event->name }}
