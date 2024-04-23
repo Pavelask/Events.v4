@@ -303,7 +303,7 @@
 
 
                 {{--Start banner--}}
-                <a target="_blank" href="#">
+                <a target="_blank" href="http://turnirohranatruda.tilda.ws/1">
                     <div class="lg:my-10 lg:w-full lg:h-full bg-cover bg-center"
                          style="height:24rem; background-image: url({{ asset('front/img/00000-1.png') }});">
                     </div>
