@@ -70,7 +70,8 @@
                                             <a href="#command" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Команды</a>
                                             <a href="#jury" wire:click="closeMenu"
-                                               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Состав жюри</a>
+                                               class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Состав
+                                                жюри</a>
                                             <a href="#timeline" wire:click="closeMenu"
                                                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800">Расписание</a>
                                             <a href="#partners" wire:click="closeMenu"
@@ -253,71 +254,92 @@
                 {{--  TimeLine начало --}}
                 <div id="timeline" class="bg-white px-6 py-24 sm:py-20 lg:px-8">
                     <div class="mx-auto max-w-2xl text-center">
-                        <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Расписание мероприятия</h2>
+                        <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Расписание
+                            мероприятия</h2>
                     </div>
                 </div>
 
 
-            @if($Schedules->isNotEmpty())
+                @if($Schedules->isNotEmpty())
                     @foreach($Schedules as $Schedule)
-                <section class="bg-gray-100 text-gray-800">
-                    <div class="container max-w-5xl px-4 py-12 mx-auto">
-                        <div class="grid gap-4 mx-4 sm:grid-cols-12">
-                            <div class="col-span-12 sm:col-span-3">
-                                <div class="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-teal-600">
-                                    <h3 class="text-xl uppercase font-semibold">{{ $Schedule->alt_data }}</h3>
-                                    <span class="text-sm font-bold tracking-wider uppercase text-gray-600">
+                        <section class="bg-gray-100 text-gray-800">
+                            <div class="container max-w-5xl px-4 py-12 mx-auto">
+                                <div class="grid gap-4 mx-4 sm:grid-cols-12">
+                                    <div class="col-span-12 sm:col-span-3">
+                                        <div
+                                            class="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-teal-600">
+                                            <h3 class="text-xl uppercase font-semibold">{{ $Schedule->alt_data }}</h3>
+                                            <span class="text-sm font-bold tracking-wider uppercase text-gray-600">
                                          {{ $Schedule->week }}
                                     </span>
-                                </div>
-                            </div>
-
-                            <div class="relative col-span-12 px-4 space-y-6 sm:col-span-9">
-
-                                <div class="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-300">
-                                    @foreach($Timeline as $Time)
-                                        @if($Schedule->id == $Time->event_schedules_id)
-                                    <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-teal-600">
-                                        <h3 class="text-lg tracking-wide"> {{ $Time->title }} </h3>
-                                        <time class="text-xs tracking-wide uppercase text-gray-600">{{ $Time->time }}</time>
-                                        <p class="mt-3">{{ $Time->place }}</p>
+                                        </div>
                                     </div>
-                                    @endif
-                                    @endforeach
-                                </div>
 
+                                    <div class="relative col-span-12 px-4 space-y-6 sm:col-span-9">
+
+                                        <div
+                                            class="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-300">
+                                            @foreach($Timeline as $Time)
+                                                @if($Schedule->id == $Time->event_schedules_id)
+                                                    <div
+                                                        class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-teal-600">
+                                                        <h3 class="text-lg tracking-wide"> {{ $Time->title }} </h3>
+                                                        <time
+                                                            class="text-xs tracking-wide uppercase text-gray-600">{{ $Time->time }}</time>
+                                                        <p class="mt-3">{{ $Time->place }}</p>
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
+                        </section>
                     @endforeach
                 @endif
                 {{--  TimeLine конец --}}
 
+
+
                 {{--Start banner--}}
-                <div class="py-12 bg-white">
-                    <div class="mx-auto">
-                        <img src="{{ asset('front/img/BANNER SITE .png') }}" alt="" class="">
+                <a target="_blank" href="#">
+                    <div class="lg:my-10 lg:w-full lg:h-full bg-cover bg-center"
+                         style="height:24rem; background-image: url({{ asset('front/img/00000-1.png') }});">
                     </div>
-                </div>
+                </a>
+
+                {{--                <a target="_blank" href="#">--}}
+                {{--                    <div class="lg:col-span-5 lg:-mr-8 xl:inset-0 xl:mr-0">--}}
+
+                {{--                        <img--}}
+                {{--                            class="w-full object-cover  lg:inset-0 lg:aspect-auto lg:h-full"--}}
+                {{--                            src="{{ asset('front/img/00000-1.png') }}" alt="">--}}
+
+                {{--                    </div>--}}
+                {{--                </a>--}}
                 {{--End Banner--}}
+
+                @include('livewire.layout.line')
 
                 {{--  Партнеры начало --}}
                 <div id="partners" class="bg-white px-6 pt-10 pb-3 sm:pt-20 lg:px-8">
                     <div class="mx-auto max-w-2xl text-center">
-                        <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Партнеры мероприятия</h2>
+                        <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Партнеры
+                            мероприятия</h2>
                     </div>
                 </div>
                 <div class="bg-white py-20 sm:pt-20">
                     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                        <div class="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-4">
+                        <div
+                            class="-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl md:grid-cols-4">
                             @if($Partners)
                                 @foreach($Partners as $Partner)
-                            <div class="bg-white p-2 sm:p-2">
-                                <img class="max-h-32 w-full object-contain"
-                                     src="{{ asset('storage/'.$Partner->logo) }}"
-                                alt="Transistor">
-                            </div>
+                                    <div class="bg-white p-2 sm:p-2">
+                                        <img class="max-h-32 w-full object-contain"
+                                             src="{{ asset('storage/'.$Partner->logo) }}"
+                                             alt="Transistor">
+                                    </div>
                                 @endforeach
                             @endif
                         </div>
@@ -331,7 +353,7 @@
                 <div id="contact" class="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-20 mx-auto bg-white">
                     <div class="mb-6 sm:mb-10 max-w-2xl text-center mx-auto">
                         <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                           Контаткты
+                            Контаткты
                         </h2>
                     </div>
 
