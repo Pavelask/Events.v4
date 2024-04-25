@@ -310,8 +310,9 @@
                         sm:bg-[url('{{ asset('front/img/b_003.png') }}')]
                         md:bg-[url('{{ asset('front/img/b_002.png') }}')]
                         lg:bg-[url('{{ asset('front/img/b_001.png') }}')]
-                        h-56
+                        h-52
                         my-4
+                        sm:h-56
                         md:h-56
                         lg:h-96
                         lg:my-4
