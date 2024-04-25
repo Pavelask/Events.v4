@@ -1,6 +1,10 @@
 <div>
+    <div class="flex items-center justify-center">
+        <div class="absolute pt-96">
+            <img src="{{ asset('front/img/sova.png') }}" alt="" class="w-96">
+        </div>
+    </div>
     <div class="grid grid-cols-2 justify-items-center content-center">
-
         <div class="flex h-screen bg-green-900 w-full">
             <div class="m-auto">
                 <h1 class="text-white font-Roboto text-[26em] flex items-center justify-center">
