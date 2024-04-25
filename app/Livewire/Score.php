@@ -6,16 +6,37 @@ use Livewire\Component;
 
 class Score extends Component
 {
-    public $count = 0;
+    public $green = 0;
+    public $red = 0;
 
-    public function increment()
+    public function incrementRed()
     {
-        $this->count++;
+        if ($this->red < 6) {
+            $this->red++;
+        }
     }
 
-    public function decrement()
+    public function decrementRed()
     {
-        $this->count--;
+        if ($this->red > 0) {
+            $this->red--;
+        }
+
+    }
+
+    public function incrementGreen()
+    {
+        if ($this->green < 6) {
+            $this->green++;
+        }
+
+    }
+
+    public function decrementGreen()
+    {
+        if ($this->green > 0) {
+            $this->green--;
+        }
     }
 
     public function render()
