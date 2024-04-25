@@ -304,20 +304,21 @@
 
                 {{--Start banner--}}
                 <a target="_blank" href="http://turnirohranatruda.tilda.ws/1">
-                    <div class="lg:my-10 lg:w-full lg:h-full bg-cover bg-center"
-                         style="height:24rem; background-image: url({{ asset('front/img/00000-1.png') }});">
+                    <div class="
+                        bg-no-repeat bg-cover bg-center
+                        bg-[url('{{ asset('front/img/b_004.png') }}')]
+                        sm:bg-[url('{{ asset('front/img/b_003.png') }}')]
+                        md:bg-[url('{{ asset('front/img/b_002.png') }}')]
+                        lg:bg-[url('{{ asset('front/img/b_001.png') }}')]
+                        h-56
+                        my-4
+                        md:h-56
+                        lg:h-96
+                        lg:my-4
+                        w-full">
                     </div>
                 </a>
 
-                {{--                <a target="_blank" href="#">--}}
-                {{--                    <div class="lg:col-span-5 lg:-mr-8 xl:inset-0 xl:mr-0">--}}
-
-                {{--                        <img--}}
-                {{--                            class="w-full object-cover  lg:inset-0 lg:aspect-auto lg:h-full"--}}
-                {{--                            src="{{ asset('front/img/00000-1.png') }}" alt="">--}}
-
-                {{--                    </div>--}}
-                {{--                </a>--}}
                 {{--End Banner--}}
 
                 @include('livewire.layout.line')

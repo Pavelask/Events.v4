@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('index');
 
-Route::get('/', \App\Livewire\Home::class);
+Route::get('/', \App\Livewire\Home::class)->name('Home');
+Route::get('/score', \App\Livewire\Score::class)->name('Score');
 
 //Route::get('/dashboard', function () {
 //    return view('dashboard');

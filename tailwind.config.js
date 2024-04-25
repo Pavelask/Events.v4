@@ -13,9 +13,12 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-                // Lora: ["Lora", ...defaultTheme.fontFamily.sans],
-                // Bitter: ["Bitter", ...defaultTheme.fontFamily.mono],
-                // Roboto: ["Roboto", ...defaultTheme.fontFamily.serif],
+                Lora: ["Lora", ...defaultTheme.fontFamily.sans],
+                Bitter: ["Bitter", ...defaultTheme.fontFamily.mono],
+                Roboto: ["Roboto", ...defaultTheme.fontFamily.serif],
+            },
+            spacing: {
+                '2/3': '66.666667%'
             },
         },
     },
