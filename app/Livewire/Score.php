@@ -11,7 +11,7 @@ class Score extends Component
 
     public function incrementRed()
     {
-        if ($this->red < 6) {
+        if ($this->red < 8) {
             $this->red++;
         }
     }
@@ -26,7 +26,7 @@ class Score extends Component
 
     public function incrementGreen()
     {
-        if ($this->green < 6) {
+        if ($this->green < 8) {
             $this->green++;
         }
 
