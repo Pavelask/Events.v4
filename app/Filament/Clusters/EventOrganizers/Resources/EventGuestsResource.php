@@ -57,6 +57,9 @@ class EventGuestsResource extends Resource
                         Forms\Components\TextInput::make('last_name')
                             ->label('Фамилия')
                             ->maxLength(255),
+                        Forms\Components\TextInput::make('fullname')
+                            ->label('Имя полностью')
+                            ->maxLength(255)->columnSpanFull(),
                         Forms\Components\TextInput::make('job_title')
                             ->label('Должность')
                             ->maxLength(255)->columnSpanFull(),
@@ -186,6 +189,9 @@ class EventGuestsResource extends Resource
                             ->label('Отчество'),
                         TextEntry::make('last_name')
                             ->label('Фамилия'),
+                        TextEntry::make('fullname')
+                            ->label('Имя польностью')
+                            ->columnSpanFull(),
                         TextEntry::make('job_title')
                             ->label('Должность')
                             ->columnSpanFull(),

@@ -18,6 +18,7 @@ use Filament\Tables;
 use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Actions\ReplicateAction;
 use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\SelectFilter;
@@ -31,10 +32,10 @@ class EventSchedulesResource extends Resource
 
     protected static ?string $cluster = Program::class;
 
-    protected static ?string $modelLabel = 'Расписание';
+    protected static ?string $modelLabel = 'Календарь';
 
-    protected static ?string $pluralModelLabel = 'Расписание';
-    protected static ?string $navigationLabel = 'Расписание';
+    protected static ?string $pluralModelLabel = 'Календарь';
+    protected static ?string $navigationLabel = 'Календарь';
 
     protected static ?string $navigationParentItem = 'Календарь';
 
@@ -128,6 +129,7 @@ class EventSchedulesResource extends Resource
                 ActionGroup::make([
                     ViewAction::make(),
                     EditAction::make(),
+                    ReplicateAction::make()->color('info'),
                     DeleteAction::make(),
                 ])->button(),
             ])

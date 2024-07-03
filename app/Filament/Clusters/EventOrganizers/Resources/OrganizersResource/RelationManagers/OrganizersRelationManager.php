@@ -32,6 +32,10 @@ class OrganizersRelationManager extends RelationManager
                         Forms\Components\TextInput::make('middle_name')
                             ->label('Отчество')
                             ->maxLength(255),
+                        Forms\Components\TextInput::make('fullname')
+                            ->label('ФИО полностью')
+                            ->maxLength(255)
+                            ->columnSpanFull(),
                         Forms\Components\TextInput::make('Должность')
                             ->maxLength(255)->columnSpanFull(),
                     ])->columns(3),

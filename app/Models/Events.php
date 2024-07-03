@@ -42,6 +42,7 @@ class Events extends Model
         'description',
         'date_start',
         'date_end',
+        'fulldate',
         'event_type',
         'event_status',
         'event_agreement',
@@ -97,6 +98,12 @@ class Events extends Model
         return $this->hasMany(EventSchedules::class, 'events_id', 'id');
     }
 
+    public function eventsDocumen(): hasMany
+    {
+        return $this->hasMany(EventDocuments::class, 'events_id', 'id');
+    }
+
+
     public function timetablesEvent(): HasManyThrough
     {
         return $this->hasManyThrough(
@@ -114,8 +121,9 @@ class Events extends Model
         return $this->hasMany(EventImages::class, 'events_id', 'id');
     }
 
-    public function eventsDocumen(): hasMany
+
+    public function eventMembers(): hasMany
     {
-        return $this->hasMany(EventDocuments::class, 'events_id', 'id');
+        return $this->hasMany(Members::class, 'events_id', 'id');
     }
 }

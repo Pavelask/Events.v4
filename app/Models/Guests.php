@@ -18,6 +18,7 @@ class Guests extends Model
         'first_name',
         'middle_name',
         'last_name',
+        'fullname',
         'job_title',
         'image',
         'description',

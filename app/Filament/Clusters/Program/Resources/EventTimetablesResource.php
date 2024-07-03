@@ -10,6 +10,7 @@ use App\Models\Events;
 use App\Models\EventSchedules;
 use App\Models\EventTimetables;
 use Filament\Forms;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
@@ -21,12 +22,18 @@ use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Support\Enums\FontWeight;
+use Filament\Support\Enums\MaxWidth;
 use Filament\Tables;
 use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Actions\ReplicateAction;
 use Filament\Tables\Actions\ViewAction;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\Layout\Split;
+use Filament\Tables\Columns\Layout\Stack;
 use Filament\Tables\Enums\FiltersLayout;
+use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -41,12 +48,12 @@ class EventTimetablesResource extends Resource
 
     protected static ?string $cluster = Program::class;
 
-//    protected static ?string $modelLabel = 'Таймлайн';
+    protected static ?string $modelLabel = 'Расписание';
 //
-//    protected static ?string $pluralModelLabel = 'Таймлайн';
-//    protected static ?string $navigationLabel = 'Таймлайн';
+    protected static ?string $pluralModelLabel = 'Расписание';
+    protected static ?string $navigationLabel = 'Расписание';
 
-//    protected static ?string $navigationParentItem = 'Календарь';
+    protected static ?string $navigationParentItem = 'Календарь';
 
 
     public static function form(Form $form): Form
@@ -58,24 +65,24 @@ class EventTimetablesResource extends Resource
                     ->description('')
                     ->schema([
                         Forms\Components\Select::make('event_id')
+                            ->required()
                             ->label('Список активных мероприятий')
                             ->relationship(name: 'eventTimetable', titleAttribute: 'name')
-                            ->live(),
+                            ->live()
+                            ->columnSpan(3),
 
                         Forms\Components\Select::make('event_schedules_id')
                             ->label('Список дат')
+                            ->required()
                             ->options(fn(Get $get): Collection => EventSchedules::query()
                                 ->where('events_id', $get('event_id'))
                                 ->pluck('alt_data', 'id')),
 
-                    ]),
+                    ])->columnSpanFull()->columns(4),
                 Forms\Components\Section::make('Расписание на день')
                     ->icon('heroicon-o-calendar')
                     ->description('')
                     ->schema([
-//                        Forms\Components\TextInput::make('schedule_id')
-//                            ->required()
-//                            ->numeric(),
                         Forms\Components\TextInput::make('time')
                             ->label('Время')
                             ->columnSpan(1)
@@ -109,52 +116,105 @@ class EventTimetablesResource extends Resource
 
     public static function table(Table $table): Table
     {
-//        dd($table);
         return $table
+            ->heading('Расписание')
+            ->description('Расписание мероприятий по дням проведения')
             ->columns([
-                Tables\Columns\TextColumn::make('scheduleTable.date')
-                    ->dateTime('d M Y')
-                    ->label('Дата'),
-                Tables\Columns\TextColumn::make('time')
-                    ->label('Время'),
-                Tables\Columns\TextColumn::make('place')
-                    ->wrap()
-                    ->label('Место'),
-//                Tables\Columns\TextColumn::make('title')
-//                    ->wrap()
-//                    ->label('Название'),
-                Tables\Columns\TextInputColumn::make('sort')
-                    ->width(100)
-                    ->label('SORT'),
-                Tables\Columns\ToggleColumn::make('is_visible')
-                    ->label('OFF|ON')
-                    ->onColor('success')
-                    ->offColor('danger')
-                    ->onIcon('heroicon-s-eye')
-                    ->offIcon('heroicon-s-eye-slash')
-                    ->alignCenter(),
 
-//                Tables\Columns\TextColumn::make('created_at')
-//                    ->label('Дата создания')
-//                    ->dateTime()
-//                    ->sortable()
-//                    ->toggleable(isToggledHiddenByDefault: true),
-//                Tables\Columns\TextColumn::make('updated_at')
-//                    ->label('Дата обновления')
-//                    ->dateTime()
-//                    ->sortable()
-//                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\Layout\Split::make([
+
+                    ImageColumn::make('image')
+                        ->circular()
+                        ->grow(false)
+                        ->alignCenter()
+                        ->defaultImageUrl(url('storage/img/no-photography-icon.png')),
+                    Tables\Columns\TextColumn::make('scheduleTable.date')
+                        ->grow(false)
+                        ->dateTime('d M Y')
+                        ->weight(FontWeight::Bold)
+                        ->sortable()
+                        ->label('Дата'),
+
+
+                    Tables\Columns\Layout\Stack::make([
+                        Tables\Columns\TextColumn::make('time')
+                            ->grow(false)
+                            ->width(10)
+                            ->icon('heroicon-o-clock')
+                            ->label('Время'),
+                        Tables\Columns\TextColumn::make('place')
+                            ->grow(false)
+                            ->width(10)
+                            ->icon('heroicon-c-map-pin')
+                            ->wrap()
+                            ->label('Место'),
+                    ])->alignLeft(),
+
+                    Tables\Columns\TextColumn::make('title')
+                        ->grow(true)
+                        ->width('100%')
+                        ->weight(FontWeight::Bold)
+//                        ->wrap()
+                        ->label('Название'),
+
+
+//                    Tables\Columns\TextInputColumn::make('sort')
+//                        ->width(40)
+//                        ->label('SORT'),
+
+//                    Tables\Columns\ToggleColumn::make('is_visible')
+//                        ->label('OFF|ON')
+//                        ->onColor('success')
+//                        ->offColor('danger')
+//                        ->onIcon('heroicon-s-eye')
+//                        ->offIcon('heroicon-s-eye-slash')
+//                        ->alignCenter(),
+
+                ])->from('md'),
             ])
+            ->paginated([50, 75, 100, 150, 200, 'all'])
+            ->defaultPaginationPageOption(75)
             ->filters([
-                SelectFilter::make('id')
-                    ->label('Список активных мероприятий')
-                    ->relationship(name: 'eventTimetable', titleAttribute: 'name')
-                    ->columnSpanFull(),
+                Filter::make('events')
+                    ->form([
+                        Forms\Components\Select::make('event_id')
+                            ->required()
+                            ->label('Список активных мероприятий')
+//                            ->relationship(name: 'eventTimetable', titleAttribute: 'name')
+                            ->options(
+                                Events::all()->pluck('name', 'id')
+//                                Events::where('event_status', 'active')->pluck('name', 'id')
+                            )->live()
+                            ->columnSpan(3),
+
+                        Forms\Components\Select::make('event_schedules_id')
+                            ->label('Выбирете день')
+                            ->required()
+                            ->options(fn(Get $get): Collection => EventSchedules::query()
+                                ->where('events_id', $get('event_id'))
+                                ->pluck('alt_data', 'id')),
+                    ])
+                    ->columnSpanFull()
+                    ->columns(4)
+                    ->query(function (Builder $query, array $data): Builder {
+                        return $query
+                            ->when(
+                                $data['event_id'],
+                                fn(Builder $query, $date): Builder => $query->where('event_id', '=', $date),
+                            )
+                            ->when(
+                                $data['event_schedules_id'],
+                                fn(Builder $query, $date): Builder => $query->where('event_schedules_id', '=', $date),
+                            );
+                    })
+
             ], layout: FiltersLayout::AboveContent)
+            ->persistFiltersInSession()
             ->actions([
                 ActionGroup::make([
                     ViewAction::make(),
                     EditAction::make(),
+                    ReplicateAction::make()->color('info'),
                     DeleteAction::make(),
                 ])->button(),
             ])
@@ -181,7 +241,6 @@ class EventTimetablesResource extends Resource
                                     ->weight(FontWeight::Bold)
                                     ->color('primary')
                                     ->label('')
-
                                     ->columnSpanFull(),
                             ]),
                         TextEntry::make('scheduleTable.date')

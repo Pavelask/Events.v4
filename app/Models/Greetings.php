@@ -15,7 +15,9 @@ class Greetings extends Model
     protected $fillable = [
         'events_id',
         'greetings_title',
+        'greetings_subtitle',
         'greetings_image',
+        'greetings_image_description',
         'greetings_text',
         'greetings_sort',
         'is_visible'

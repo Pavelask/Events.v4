@@ -55,7 +55,11 @@ class OrganizersResource extends Resource
                         Forms\Components\TextInput::make('middle_name')
                             ->label('Отчество')
                             ->maxLength(255),
-                        Forms\Components\TextInput::make('Должность')
+                        Forms\Components\TextInput::make('fullname')
+                            ->label('Имя полностью')
+                            ->maxLength(255)->columnSpanFull(),
+                        Forms\Components\TextInput::make('job_title')
+                            ->label('Должность')
                             ->maxLength(255)->columnSpanFull(),
                     ])->columns(3),
 

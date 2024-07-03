@@ -38,7 +38,7 @@ class EventsResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Мероприятия';
 
-//  protected static ?string $navigationGroup = 'Настройки мероприятия';
+    protected static ?string $navigationGroup = 'Мероприятия';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -66,6 +66,8 @@ class EventsResource extends Resource
                             ->label('Дата начала'),
                         Forms\Components\DatePicker::make('date_end')
                             ->label('Дата окончания'),
+                        Forms\Components\TextInput::make('fulldate')
+                            ->label('Дата проведения мероприятия (для начальной страницы)')->columnSpanFull(),
                         Forms\Components\Select::make('event_type')
                             ->label('Тип мероприятия')
                             ->options(event_types::all()->pluck('name', 'id'))
@@ -214,6 +216,9 @@ class EventsResource extends Resource
                         TextEntry::make('name')
                             ->label('Название мероприятия')
                             ->columnSpan(2),
+                        TextEntry::make('fulldate')
+                            ->label(' Дата проведения мероприятия (для начальной страницы)')
+                            ->columnSpanFull(),
                         TextEntry::make('date_start')
                             ->dateTime('d F Y')
                             ->label('Дата начала мероприятия'),
@@ -225,6 +230,7 @@ class EventsResource extends Resource
             ]);
 
     }
+
     public static function getRelations(): array
     {
         return [

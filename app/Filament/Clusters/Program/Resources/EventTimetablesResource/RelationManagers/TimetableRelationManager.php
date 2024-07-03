@@ -9,6 +9,7 @@ use Filament\Tables;
 use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Actions\ReplicateAction;
 use Filament\Tables\Actions\ViewAction;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -80,7 +81,8 @@ class TimetableRelationManager extends RelationManager
                 Tables\Columns\ToggleColumn::make('is_visible')
                     ->width(100)
                     ->label('Вкл/Выкл'),
-            ])
+            ])->paginated([10, 25, 50, 100, 'all'])
+            ->defaultPaginationPageOption(25)
             ->filters([
                 //
             ])
@@ -91,6 +93,7 @@ class TimetableRelationManager extends RelationManager
                 ActionGroup::make([
                     ViewAction::make(),
                     EditAction::make(),
+                    ReplicateAction::make()->color('info'),
                     DeleteAction::make(),
                 ])
                     ->button(),

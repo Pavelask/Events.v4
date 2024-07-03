@@ -36,7 +36,7 @@ class ModeratorsRelationManager extends RelationManager
                 Forms\Components\TextInput::make('last_name')
                     ->required()
                     ->label('Фамилия')
-                    ->columns(1),
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('first_name')
                     ->required()
                     ->label('Имя')
@@ -44,6 +44,10 @@ class ModeratorsRelationManager extends RelationManager
                 Forms\Components\TextInput::make('middle_name')
                     ->label('Отчество')
                     ->columns(1),
+                Forms\Components\TextInput::make('fullname')
+                    ->label('ФИО полностью')
+                    ->maxLength(255)
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('job_title')
                     ->label('Должность')
                     ->maxLength(255)
@@ -139,6 +143,9 @@ class ModeratorsRelationManager extends RelationManager
                             ->label('Отчество'),
                         TextEntry::make('last_name')
                             ->label('Фамилия'),
+                        TextEntry::make('fullname')
+                            ->label('ФИО полностью')
+                            ->columnSpanFull(),
                         TextEntry::make('job_title')
                             ->label('Должность')
                             ->columnSpanFull(),

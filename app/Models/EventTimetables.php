@@ -15,6 +15,7 @@ class EventTimetables extends Model
 
     protected $fillable = [
         'event_schedules_id',
+        'event_id',
         'time',
         'place',
         'title',

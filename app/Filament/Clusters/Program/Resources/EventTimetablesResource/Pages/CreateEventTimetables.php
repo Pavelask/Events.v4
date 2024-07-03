@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateEventTimetables extends CreateRecord
 {
     protected static string $resource = EventTimetablesResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

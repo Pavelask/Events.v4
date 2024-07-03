@@ -101,7 +101,7 @@
                             <div class="flex justify-center items-center">
                                 <img src="{{ asset('front/img/sova.png') }}" alt="" class="w-96 object-cover mb-12">
                             </div>
-                            <h1 class="text-xl leading-8 text-white sm:text-2xl font-Roboto">
+                            <h1  class="text-xl leading-8 text-white sm:text-2xl font-Roboto">
                                 {{ $Event->name }}
                             </h1>
                             <h5 class="mt-6 text-xl font-bold leading-8 text-gray-100 uppercase">
@@ -117,10 +117,11 @@
                             style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
                     </div>
                 </div>
+
                 {{--  Речь начало --}}
                 <div class="bg-white px-6 py-12 lg:px-8">
                     <div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">
-                        <div class="mt-4 max-w-3xl">
+                        <div class="mt-4 max-w-3xl" >
                             <h2 class="text-2xl font-bold tracking-tight text-gray-900 text-center">
                                 {{ $Greeting->greetings_title }}
                             </h2>
@@ -164,6 +165,7 @@
                             @if($Guests)
                                 @foreach($Guests as $Guest)
                                     <li class="flex flex-col gap-6 xl:flex-row">
+
                                         <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"
                                              src="{{ asset('storage/'.$Guest->image) }}"
                                              alt="">
@@ -284,6 +286,7 @@
                                                     <div
                                                         class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-teal-600">
                                                         <h3 class="text-lg tracking-wide"> {{ $Time->title }} </h3>
+                                                        <i class="uil uil-12-plus"></i>
                                                         <time
                                                             class="text-xs tracking-wide uppercase text-gray-600">{{ $Time->time }}</time>
                                                         <p class="mt-3">{{ $Time->place }}</p>

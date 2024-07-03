@@ -36,11 +36,20 @@ class EventGreetingsResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('greetings_title')
                     ->label('Заголовок')
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->columnSpanFull(),
+                Forms\Components\TextInput::make('greetings_subtitle')
+                    ->label('Заголовок второго уровня')
+                    ->maxLength(255)
+                    ->columnSpanFull(),
                 Forms\Components\FileUpload::make('greetings_image')
                     ->label('Фото к приветствию')
                     ->image()
                     ->imageEditor(),
+                Forms\Components\TextInput::make('greetings_image_description')
+                    ->label('Подпись к фотографии')
+                    ->maxLength(255)
+                    ->columnSpanFull(),
                 Forms\Components\RichEditor::make('greetings_text')
                     ->label('Приветствие')
                     ->columnSpanFull(),
