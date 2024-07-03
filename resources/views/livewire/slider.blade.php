@@ -127,7 +127,7 @@
 
         <div class="bg-slider-thumbs">
             <div class="swiper-wrapper thumbs-container">
-                <img src="{{asset("front/image/0_000 copy.JPG")}}" alt="" class="swiper-slide">
+                <img src="{{asset("front/image/star.jpg")}}" alt="" class="swiper-slide">
                 <img src="{{asset("front/image/001.JPG")}}" alt="" class="swiper-slide">
                 <img src="{{asset("front/image/002.JPG")}}" alt="" class="swiper-slide">
                 <img src="{{asset("front/image/003.JPG")}}" alt="" class="swiper-slide">
