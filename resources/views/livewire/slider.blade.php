@@ -386,7 +386,6 @@
         </div>
     </div>
 
-
     @include('livewire.layout.line')
 
     {{--    <section class="about section">--}}
