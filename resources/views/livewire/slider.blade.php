@@ -7,12 +7,12 @@
             <div class="navigation">
                 <div class="nav-items">
                     <i class="uil uil-times nav-close-btn"></i>
-                    <a href="#"><i class="uil uil-home"></i>Главная</a>
-                    <a href="#"><i class="uil uil-chat-bubble-user"></i>Гости</a>
-                    <a href="#"><i class="uil uil-shield-check"></i>Модераторы</a>
-                    <a href="#"><i class="uil uil-clock-three"></i>Расписание</a>
-                    <a href="#"><i class="uil uil-document-info"></i>Документы</a>
-                    <a href="#"><i class="uil uil-at"></i>Контакты</a>
+                    <a href="/"><i class="uil uil-home"></i>Главная</a>
+                    <a href="#guest"><i class="uil uil-chat-bubble-user"></i>Гости</a>
+                    <a href="#moderators"><i class="uil uil-shield-check"></i>Модераторы</a>
+                    <a href="#timeline"><i class="uil uil-clock-three"></i>Расписание</a>
+                    <a href="#documents"><i class="uil uil-document-info"></i>Документы</a>
+                    <a href="#contact"><i class="uil uil-at"></i>Контакты</a>
                 </div>
             </div>
             <i class="uil uil-apps nav-menu-btn"></i>
@@ -228,7 +228,7 @@
 
     <section class="">
         {{--  Жюри начало --}}
-        <div id="jury" class="bg-white py-20 md:py-20">
+        <div id="moderators" class="bg-white py-20 md:py-20">
             <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
                 <div class="max-w-2xl xl:col-span-2 grid justify-items-center">
                     <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -264,7 +264,7 @@
     @include('livewire.layout.line')
 
 
-    <section class="">
+    <section class="" id="timeline">
 
         <div class="bg-white px-6 py-12 lg:px-8">
             <div class="mx-auto max-w-6xl text-base leading-7 text-gray-700">
@@ -353,7 +353,7 @@
 
     @include('livewire.layout.line')
 
-    <div class="bg-white px-6 py-2 lg:px-8">
+    <div id="documents" class="bg-white px-6 py-2 lg:px-8">
         <div class="mx-auto max-w-6xl text-base leading-7 text-gray-700">
             <div class="mt-4 max-w-6xl">
                 <h2 class="text-4xl font-bold tracking-tight text-gray-900 text-center py-12">
