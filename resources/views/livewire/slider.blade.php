@@ -29,7 +29,7 @@
         <div class="swiper bg-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide dark-layer">
-                    <img src="{{asset("front/image/start.jpg")}}"/>
+                    <img src="{{asset("front/image/star.jpg")}}"/>
                     {{--                    <div class="card">--}}
                     {{--                        <img src="{{asset("front/image/1-1.png")}}"/>--}}
                     {{--                    </div>--}}
