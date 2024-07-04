@@ -144,7 +144,7 @@
                     <h2 class="text-4xl font-bold tracking-tight text-gray-900 text-center">
                         {{ $Greeting->greetings_title }}
                     </h2>
-                    <div class="mt-6 text-justify pt-4">
+                    <div class="mt-6 text-justify pt-4 text-xl">
                         {!! $Greeting->greetings_text !!}
                     </div>
                 </div>
@@ -152,7 +152,7 @@
                     <img class="aspect-video rounded-xl bg-gray-50 object-cover"
                          src="{{ asset('storage/'.$Greeting->greetings_image ) }}"
                          alt="">
-                    <figcaption class="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
+                    <figcaption class="mt-4 flex gap-x-2 text-lg leading-6 text-gray-500">
                         <svg class="mt-0.5 h-5 w-5 flex-none text-gray-300" viewBox="0 0 20 20"
                              fill="currentColor"
                              aria-hidden="true">
@@ -191,10 +191,10 @@
                                      src="{{ asset('storage/'.$Guest->image) }}"
                                      alt="">
                                 <div class="flex-auto">
-                                    <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">
+                                    <h3 class="text-2xl font-semibold leading-8 tracking-tight text-gray-900">
                                         {{$Guest->last_name }} {{$Guest->first_name }} {{$Guest->middle_name }}
                                     </h3>
-                                    <p class="text-base leading-7 text-gray-600">{{$Guest->job_title}}</p>
+                                    <p class="text-lg leading-7 text-gray-600">{{$Guest->job_title}}</p>
 
                                 </div>
                             </li>
@@ -245,8 +245,8 @@
                                      src="{{ asset('storage/'.$Moderator->image) }}"
                                      alt="">
                                 <div class="max-w-xl flex-auto">
-                                    <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">{{$Moderator->last_name }} {{$Moderator->first_name  }} {{$Moderator->middle_name  }}</h3>
-                                    <p class="text-base leading-7 text-gray-600">{{$Moderator->job_title  }}</p>
+                                    <h3 class="text-2xl font-semibold leading-8 tracking-tight text-gray-900">{{$Moderator->last_name }} {{$Moderator->first_name  }} {{$Moderator->middle_name  }}</h3>
+                                    <p class="text-lg leading-7 text-gray-600">{{$Moderator->job_title  }}</p>
                                     <p class="mt-6 text-base leading-7 text-gray-600">
                                         {!! $Moderator->description !!}
                                     </p>
@@ -406,7 +406,7 @@
 
             <div class="space-y-8 lg:space-y-16">
                 <div>
-                    <h3 class="mb-5 font-semibold text-black dark:text-white">
+                    <h3 class="mb-5 text-xl  font-semibold text-black dark:text-white">
                         Адрес проведения мероприятия
                     </h3>
 
@@ -423,10 +423,10 @@
                             </svg>
 
                             <div class="grow">
-                                <p class="text-xl text-gray-600 dark:text-neutral-400">
+                                <p class="text-xl text-gray-600 dark:text-neutral-900">
                                     {{ $Adress->city }}
                                 </p>
-                                <address class="mt-1 text-black not-italic dark:text-white">
+                                <address class="mt-1 text-lg text-black not-italic dark:text-white">
                                     {{ $Adress->adress }}
                                 </address>
                             </div>
@@ -436,7 +436,7 @@
                 </div>
 
                 <div>
-                    <h3 class="mb-5 font-semibold text-black dark:text-white">
+                    <h3 class="mb-5 text-xl font-semibold text-black dark:text-white">
                         Контакты организатора
                     </h3>
 
@@ -454,7 +454,7 @@
                             </svg>
 
                             <div class="grow">
-                                <p>
+                                <p class="text-lg">
                                     {{ $Adress->contact_info }}
                                 </p>
                             </div>
