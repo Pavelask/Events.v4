@@ -3,8 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TOrgResource\Pages;
-use App\Filament\Resources\TOrgResource\RelationManagers;
-use App\Models\TOrg;
+use App\Models\tOrg;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
