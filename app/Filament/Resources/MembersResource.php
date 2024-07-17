@@ -6,6 +6,7 @@ use App\Filament\Resources\MembersResource\Pages;
 use App\Filament\Resources\MembersResource\RelationManagers;
 use App\Models\Members;
 use App\Models\tOrg;
+use App\Models\Events;
 use Filament\Forms;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Form;
@@ -48,15 +49,18 @@ class MembersResource extends Resource
                         Forms\Components\TextInput::make('surName')
 //                            ->required()
                             ->label('Фамилия')
-                            ->maxLength(255),
+                            ->maxLength(255)
+                            ->columnSpan(2),
                         Forms\Components\TextInput::make('firstName')
 //                            ->required()
                             ->label('Имя')
-                            ->maxLength(255),
+                            ->maxLength(255)
+                            ->columnSpan(2),
                         Forms\Components\TextInput::make('middleName')
 //                            ->required()
                             ->label('Отчество')
-                            ->maxLength(255),
+                            ->maxLength(255)
+                            ->columnSpan(2),
                         Forms\Components\DatePicker::make('birthDate')
                             ->label('Дата рождения'),
                         Forms\Components\TextInput::make('snils')
@@ -64,7 +68,15 @@ class MembersResource extends Resource
                             ->numeric()
                             ->minValue(1)
                             ->maxValue(11)
-                            ->label('СНИЛС'),
+                            ->label('СНИЛС')
+                            ->columnSpan(2),
+                        Forms\Components\Select::make('sex')
+                            ->label("ПОЛ")
+                            ->required()
+                            ->options([
+                                'M' => 'Мужской',
+                                'W' => 'Женский',
+                            ]),
                         Forms\Components\Select::make('size')
                             ->label("Размер футболки")
                             ->required()
@@ -75,22 +87,25 @@ class MembersResource extends Resource
                                 'L' => 'L',
                                 'XL' => 'XL',
                                 'XXL' => 'XXL',
-                            ]),
+                            ])->columns(4),
                         Forms\Components\TextInput::make('education')
                             ->label('Образование')
                             ->columnSpanFull(),
                         Forms\Components\TextInput::make('contactPhone')
 //                            ->required()
                             ->label('Контактный номер телефона')
-                            ->maxLength(255),
+                            ->maxLength(255)
+                            ->columnSpan(2),
                         Forms\Components\TextInput::make('email')
                             ->required()
                             ->label('Электроная почта')
-                            ->maxLength(255),
+                            ->maxLength(255)
+                            ->columnSpan(2),
                         Forms\Components\TextInput::make('workPhone')
 //                            ->required()
                             ->label('Рабочий номер телефона')
-                            ->maxLength(255),
+                            ->maxLength(255)
+                            ->columnSpan(2),
                         Forms\Components\TextInput::make('name_ppo')
                             ->label('Наименование ППО')
                             ->columnSpanFull(),
@@ -99,9 +114,9 @@ class MembersResource extends Resource
                             ->label('Наименование ТО')
                             ->options(tOrg::all()->pluck('name', 'id'))
                             ->searchable()
-                            ->optionsLimit(4)
+//                            ->optionsLimit(4)
                             ->columnSpanFull(),
-                    ])->columns(3),
+                    ])->columns(6),
                 Forms\Components\Section::make('Дополнительная информация')
                     ->schema([
                         Forms\Components\RichEditor::make('note')
@@ -123,13 +138,20 @@ class MembersResource extends Resource
 //                                'undo',
                             ]),
                     ]),
+//                Fieldset::make('Metadata')
+//                    ->relationship('memberEvent')
+//                    ->schema([
+//
+//                        Forms\Components\Textarea::make('memberEvent.event_agreement'),
+//
+//                    ]),
                 Forms\Components\Section::make('Обработка персональных данных')
                     ->schema([
 //                        Forms\Components\Toggle::make('confirmation')
 //                            ->label('Подтвержение')
 //                            ->inline(false)
 //                            ->required(),
-                        Forms\Components\Textarea::make('note')
+                        Forms\Components\Textarea::make('event_agreement')
                             ->label('Согалсие')
                             ->readOnly()
                             ->columnSpanFull(),
@@ -142,6 +164,15 @@ class MembersResource extends Resource
 //                            ->inline(false)
 //                            ->required(),
                     ])->columns(3),
+                Fieldset::make('Metadata')
+                    ->relationship('memberEvent')
+                    ->schema([
+                        Forms\Components\TextInput::make('memberEvent.name')
+                            ->readOnly(),
+                        Forms\Components\Textarea::make('memberEvent.event_agreement')
+                            ->default('memberEvent.event_agreement')
+                            ->readOnly(),
+                    ]),
             ]);
     }
 

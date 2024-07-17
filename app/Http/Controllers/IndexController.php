@@ -18,7 +18,7 @@ class IndexController extends Controller
         $this->isOpen = false;
     }
 
-    public function index()
+    public function index($isOpen)
     {
         return view('index', [
             'isOpen' => $this->$isOpen,

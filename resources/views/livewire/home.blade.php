@@ -358,7 +358,7 @@
                 <div id="contact" class="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-20 mx-auto bg-white">
                     <div class="mb-6 sm:mb-10 max-w-2xl text-center mx-auto">
                         <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                            Контаткты
+                            Контакты
                         </h2>
                     </div>
 

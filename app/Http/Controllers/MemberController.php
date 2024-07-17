@@ -2,26 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\tOrg;
+use App\Models\Events;
+use App\Models\Members;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
-class terrOrg extends Controller
+class MemberController extends Controller
 {
-
-    /**
-     * Удалить таблицу или удалить все данные методом DROP.
-     */
-    public function dropData()
-    {
-        DB::table('t_orgs')->truncate();
-    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $user = User::find(Auth::user()->id);
+//        dd($user->hasRole('super_admin'));
+
+        if ($user->hasRole('super_admin')) {
+            return redirect()->route('filament.admin.home');
+        }
+
+        $Event = Events::where('event_status', 'active')->first();
+
+
+        if ($Event) {
+            $Member = Members::where('user_id', Auth::user()->id)->where('events_id', $Event->id)->first();
+        }
+
+        return view('CreateMember');
     }
 
     /**
@@ -43,7 +51,7 @@ class terrOrg extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(tOrg $tOrg)
+    public function show(string $id)
     {
         //
     }
@@ -51,7 +59,7 @@ class terrOrg extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(tOrg $tOrg)
+    public function edit(string $id)
     {
         //
     }
@@ -59,7 +67,7 @@ class terrOrg extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, tOrg $tOrg)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -67,7 +75,7 @@ class terrOrg extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(tOrg $tOrg)
+    public function destroy(string $id)
     {
         //
     }

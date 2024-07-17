@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,12 +20,14 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/', \App\Livewire\Home::class)->name('Home');
 
-Route::get('/', \App\Livewire\Slider::class);
+Route::get('/', \App\Livewire\Slider::class)->name('IndexSite');
 Route::get('/score', \App\Livewire\Score::class)->name('Score');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard/member-create', [MemberController::class, 'index'])
+    ->middleware(['auth', 'verified'])->name('MemberCreate');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -31,4 +35,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-//require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';

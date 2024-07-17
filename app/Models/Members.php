@@ -43,7 +43,7 @@ class Members extends Model
 
     public function memberEvent(): belongsTo
     {
-        return $this->belongsTo(Events::class);
+        return $this->belongsTo(Events::class,'events_id', 'id');
     }
 
 }

@@ -29,7 +29,7 @@
         <div class="swiper bg-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide dark-layer">
-                    <img src="{{asset("front/image/star.jpg")}}"/>
+                    <img src="{{asset("front/image/films_puzzl.jpg")}}"/>
                     {{--                    <div class="card">--}}
                     {{--                        <img src="{{asset("front/image/1-1.png")}}"/>--}}
                     {{--                    </div>--}}
@@ -126,7 +126,7 @@
 
         <div class="bg-slider-thumbs">
             <div class="swiper-wrapper thumbs-container">
-                <img src="{{asset("front/image/star.jpg")}}" alt="" class="swiper-slide">
+                <img src="{{asset("front/image/films_puzzl.jpg")}}" alt="" class="swiper-slide">
                 <img src="{{asset("front/image/001.JPG")}}" alt="" class="swiper-slide">
                 <img src="{{asset("front/image/002.JPG")}}" alt="" class="swiper-slide">
                 <img src="{{asset("front/image/003.JPG")}}" alt="" class="swiper-slide">
