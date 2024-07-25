@@ -33,9 +33,10 @@ class DashboardController extends Controller
             $Member = Members::where('user_id', Auth::user()->id)->where('events_id', $Event->id)->first();
         }
 
+
 //        $faq = faq_tables::all();
 //
-//        dd($faq);
+//        dd($Member);
 
         return view('dashboard');
     }

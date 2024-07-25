@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="utf-8" />
 
-    <title>VIII Всероссийский слёт молодёжи Общественной организации «Всероссийский Электропрофсоюз}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link rel="stylesheet" href="{{asset("css/style.css")}}">
-    <link rel="stylesheet" href="{{asset("css/swiper-bundle.min.css")}}">
+        <meta name="application-name" content="{{ config('app.name') }}" />
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    @livewireStyles
-</head>
-<body>
+        <title>VIII Всероссийский слёт молодёжи Общественной организации «Всероссийский Электропрофсоюз}</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+        <link rel="stylesheet" href="{{asset("css/style.css")}}">
+        <link rel="stylesheet" href="{{asset("css/swiper-bundle.min.css")}}">
 
-{{ $slot }}
+        <style>
+            [x-cloak] {
+                display: none !important;
+            }
+        </style>
 
+        @filamentStyles
+        @vite('resources/css/app.css')
+    </head>
 
-@livewireScripts
-<script src="{{asset("js/swiper-bundle.min.js")}}"></script>
-<script src="{{asset("js/main.js")}}"></script>
-</body>
+    <body class="antialiased">
+    {{-- Main template Index Site   --}}
+        {{ $slot }}
+
+        <script src="{{asset("js/swiper-bundle.min.js")}}"></script>
+        <script src="{{asset("js/main.js")}}"></script>
+        @filamentScripts
+        @vite('resources/js/app.js')
+    </body>
 </html>

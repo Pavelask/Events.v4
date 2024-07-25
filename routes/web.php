@@ -26,8 +26,16 @@ Route::get('/score', \App\Livewire\Score::class)->name('Score');
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard/member-create', [MemberController::class, 'index'])
+Route::get('/dashboard/member/create', [MemberController::class, 'index'])
     ->middleware(['auth', 'verified'])->name('MemberCreate');
+
+Route::get('/dashboard/member/{record}/edit', \App\Livewire\Members\EditMember::class)
+    ->middleware(['auth', 'verified'])
+    ->name('MemberEdit');
+
+//Route::get('/dashboard/member/{record}/edit', [MemberController::class, 'edit'])
+//    ->middleware(['auth', 'verified'])->name('MemberEdit');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

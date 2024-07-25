@@ -51,17 +51,19 @@ class MemberController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Members $record)
     {
-        //
+        dd($record);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $record)
     {
-        //
+
+//    dd($id);
+        return view('EditMember', ['record' => $record]);
     }
 
     /**

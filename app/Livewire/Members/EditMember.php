@@ -1,49 +1,63 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Livewire\Members;
 
-use App\Filament\Resources\MembersResource\Pages;
-use App\Filament\Resources\MembersResource\RelationManagers;
+use App\Models\Events;
 use App\Models\Members;
 use App\Models\tOrg;
-use App\Models\Events;
+use App\Notifications\NewMemberForAdmin;
+use App\Notifications\UpdateMember;
+
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
-use Filament\Tables;
-use Filament\Tables\Columns\SelectColumn;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Notifications\Notification;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\HtmlString;
+use Livewire\Component;
+use Illuminate\Contracts\View\View;
 
-class MembersResource extends Resource
+class EditMember extends Component implements HasForms
 {
-    protected static ?string $model = Members::class;
+    use InteractsWithForms;
+    use Notifiable;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    public ?array $data = [];
 
-    protected static ?int $navigationSort = 15;
-
-    protected static ?string $modelLabel = 'Участник';
-
-    protected static ?string $pluralModelLabel = 'Участники';
-
-    protected static ?string $navigationGroup = 'Мероприятия';
+    public Members $record;
 
 
-    public static function form(Form $form): Form
+    public function mount(): void
+    {
+        if(Auth::user()->id != $this->record->user_id) {
+
+            Notification::make()
+                ->title('Анкета участника не совпадает с ID польльзователя')
+//                ->body('Не рекомендуется исправлять строку в браузере')
+                ->icon('heroicon-o-exclamation-triangle')
+                ->iconColor('danger')
+                ->color('danger')
+                ->seconds(15)
+                ->send();
+
+            $this->redirectRoute('dashboard');
+        }
+
+        $this->form->fill($this->record->attributesToArray());
+    }
+
+    public function form(Form $form): Form
     {
         return $form
             ->schema([
@@ -126,9 +140,9 @@ class MembersResource extends Resource
                             ->columnSpan(2),
                         TextInput::make('workPhone')
 //                            ->required()
-                            ->mask('+7 (999) 999-99-99')
-                            ->placeholder('+7 (999) 999-99-99')
-                            ->label('Рабочий номер телефона')
+//                            ->mask('+7 (999) 999-99-99')
+//                            ->placeholder('+7 (999) 999-99-99')
+                            ->label('Рабочий номер телефона (в свободной форме)')
                             ->maxLength(255)
                             ->columnSpan(2),
                         TextInput::make('job_title')
@@ -169,46 +183,45 @@ class MembersResource extends Resource
                             ->accepted(),
                     ])->columns(3),
 
-            ]);
+            ])
+            ->statePath('data')
+            ->model($this->record);
     }
 
-    public static function table(Table $table): Table
+    public function save(): void
     {
-        return $table
-            ->columns([
-                TextColumn::make('id'),
-                TextColumn::make('user_id'),
-                TextColumn::make('events_id'),
-                TextColumn::make('birthDate'),
-            ])
-            ->filters([
-                //
-            ])
-            ->actions([
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
-            ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
-            ]);
+        $data = $this->form->getState();
+
+        $this->record->update($data);
+
+        Notification::make()
+            ->title('Анкета участника успешно обновлена')
+            ->body('Анкета будет проверена и в случае необходимости с Вами свяжутся')
+            ->icon('heroicon-o-document-text')
+            ->iconColor('success')
+            ->color('success')
+            ->seconds(10)
+            ->send();
+
+        $user = auth()->user();
+
+//        $user->notify(new UpdateMember);
+//        $user->notify(new NewMemberForAdmin);
+
+//        $mail = 'admin@elprof.ru';
+//        Notification::send($mail, new NewMemberForAdmin());
+
+        $this->redirectRoute('dashboard');
     }
 
-    public static function getRelations(): array
+    public function cancel(): void
     {
-        return [
-            //
-        ];
+        $this->form->fill();
+        $this->redirectRoute('dashboard');
     }
 
-    public static function getPages(): array
+    public function render(): View
     {
-        return [
-            'index' => Pages\ListMembers::route('/'),
-            'create' => Pages\CreateMembers::route('/create'),
-            'view' => Pages\ViewMembers::route('/{record}'),
-            'edit' => Pages\EditMembers::route('/{record}/edit'),
-        ];
+        return view('livewire.members.edit-member')->layout('layouts.app');
     }
 }

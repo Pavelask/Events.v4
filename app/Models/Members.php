@@ -20,6 +20,8 @@ class Members extends Model
         'firstName',
         'middleName',
         'birthDate',
+        'sex',
+        'size',
         'snils',
         'education',
         'contactPhone',
