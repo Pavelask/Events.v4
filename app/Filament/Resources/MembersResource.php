@@ -68,38 +68,39 @@ class MembersResource extends Resource
                 Section::make('Участник мероприятия')
                     ->schema([
                         TextInput::make('surName')
-//                            ->required()
+                            ->required()
                             ->label('Фамилия')
                             ->maxLength(255)
                             ->columnSpan(2),
                         TextInput::make('firstName')
-//                            ->required()
+                            ->required()
                             ->label('Имя')
                             ->maxLength(255)
                             ->columnSpan(2),
                         TextInput::make('middleName')
-//                            ->required()
+                            ->required()
                             ->label('Отчество')
                             ->maxLength(255)
                             ->columnSpan(2),
                         DatePicker::make('birthDate')
+                            ->required()
                             ->label('Дата рождения'),
                         TextInput::make('snils')
-//                            ->required()
+                            ->required()
                             ->mask('999-999-999 99')
                             ->placeholder('999-999-999 99')
                             ->label('СНИЛС')
                             ->columnSpan(2),
                         Select::make('sex')
                             ->label("ПОЛ")
-//                            ->required()
+                            ->required()
                             ->options([
                                 'M' => 'Мужской',
                                 'W' => 'Женский',
                             ]),
                         Select::make('size')
                             ->label("Размер футболки")
-//                            ->required()
+                            ->required()
                             ->options([
                                 'XS' => 'XS',
                                 'S' => 'S',
@@ -114,12 +115,12 @@ class MembersResource extends Resource
                         TextInput::make('contactPhone')
                             ->mask('+7 (999) 999-99-99')
                             ->placeholder('+7 (999) 999-99-99')
-//                            ->required()
+                            ->required()
                             ->label('Контактный номер телефона')
                             ->maxLength(255)
                             ->columnSpan(2),
                         TextInput::make('email')
-//                            ->required()
+                            ->required()
                             ->label('Электроная почта')
                             ->default(Auth::user()->email)
                             ->maxLength(255)
@@ -136,9 +137,10 @@ class MembersResource extends Resource
                             ->columnSpanFull(),
                         TextInput::make('name_ppo')
                             ->label('Наименование ППО')
+                            ->required()
                             ->columnSpanFull(),
                         Select::make('name_to')
-//                            ->required()
+                            ->required()
                             ->label('Наименование ТО')
                             ->options(tOrg::all()->pluck('name', 'id'))
 //                            ->searchable()

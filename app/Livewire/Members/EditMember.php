@@ -63,12 +63,6 @@ class EditMember extends Component implements HasForms
             ->schema([
                 Section::make('Регистрация на меорприятие')
                     ->description('Запоните поля анкеты, поля отмеченные * (звездочкой) заполняются обязательно')->schema([
-//                        Select::make('events_id')
-////                            ->required()
-////                               ->relationship('memberEvent', titleAttribute: 'name')
-//                            ->options(Events::where('event_status', 'active')->pluck('name', 'id'))
-//                            ->label('Список активных мероприятий')
-//                            ->columnSpanFull(),
                         TextInput::make('eventsName')
                             ->label('Мероприятие')
 //                            ->disabled()
@@ -82,38 +76,39 @@ class EditMember extends Component implements HasForms
                 Section::make('Участник мероприятия')
                     ->schema([
                         TextInput::make('surName')
-//                            ->required()
+                            ->required()
                             ->label('Фамилия')
                             ->maxLength(255)
                             ->columnSpan(2),
                         TextInput::make('firstName')
-//                            ->required()
+                            ->required()
                             ->label('Имя')
                             ->maxLength(255)
                             ->columnSpan(2),
                         TextInput::make('middleName')
-//                            ->required()
+                            ->required()
                             ->label('Отчество')
                             ->maxLength(255)
                             ->columnSpan(2),
                         DatePicker::make('birthDate')
-                            ->label('Дата рождения'),
+                            ->label('Дата рождения')
+                            ->required(),
                         TextInput::make('snils')
-//                            ->required()
+                            ->required()
                             ->mask('999-999-999 99')
                             ->placeholder('999-999-999 99')
                             ->label('СНИЛС')
                             ->columnSpan(2),
                         Select::make('sex')
                             ->label("ПОЛ")
-//                            ->required()
+                            ->required()
                             ->options([
                                 'M' => 'Мужской',
                                 'W' => 'Женский',
                             ]),
                         Select::make('size')
                             ->label("Размер футболки")
-//                            ->required()
+                            ->required()
                             ->options([
                                 'XS' => 'XS',
                                 'S' => 'S',
@@ -123,17 +118,17 @@ class EditMember extends Component implements HasForms
                                 'XXL' => 'XXL',
                             ])->columns(4),
                         TextInput::make('education')
-                            ->label('Образование')
+                            ->label('Образование (укажите наименование учебного заведения)')
                             ->columnSpanFull(),
                         TextInput::make('contactPhone')
                             ->mask('+7 (999) 999-99-99')
                             ->placeholder('+7 (999) 999-99-99')
-//                            ->required()
+                            ->required()
                             ->label('Контактный номер телефона')
                             ->maxLength(255)
                             ->columnSpan(2),
                         TextInput::make('email')
-//                            ->required()
+                            ->required()
                             ->label('Электроная почта')
                             ->default(Auth::user()->email)
                             ->maxLength(255)
@@ -149,10 +144,11 @@ class EditMember extends Component implements HasForms
                             ->label('Должность')
                             ->columnSpanFull(),
                         TextInput::make('name_ppo')
+                            ->required()
                             ->label('Наименование ППО')
                             ->columnSpanFull(),
                         Select::make('name_to')
-//                            ->required()
+                            ->required()
                             ->label('Наименование ТО')
                             ->options(tOrg::all()->pluck('name', 'id'))
 //                            ->searchable()
