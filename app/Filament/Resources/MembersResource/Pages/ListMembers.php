@@ -18,7 +18,7 @@ class ListMembers extends ListRecords
     {
         return [
             'today' => Tab::make('За сегодня')
-                ->modifyQueryUsing(fn (Builder $query) => $query->where('created_at', '=', now())),
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('created_at', '=', now()->subDay())),
             'week' => Tab::make('За неделю')
                 ->modifyQueryUsing(fn (Builder $query) => $query->where('created_at', '=', now()->subWeek())),
             'months' => Tab::make('За месяц')
