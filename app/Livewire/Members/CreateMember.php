@@ -195,6 +195,12 @@ class CreateMember extends Component implements HasForms
         $this->redirectRoute('dashboard');
     }
 
+    public function cancel(): void
+    {
+        $this->form->fill();
+        $this->redirectRoute('dashboard');
+    }
+
     public function render(): View
     {
         return view('livewire.members.create-member');

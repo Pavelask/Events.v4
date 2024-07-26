@@ -6,7 +6,11 @@
             <div class="mt-6 flex items-center justify-self-start gap-x-6">
                 <button type="submit"
                         class="rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                    Сохнанить анкету участника
+                    Сохранить
+                </button>
+                <button type="button" wire:click="cancel"
+                        class="mt-12 py-2 px-4 bg-red-600 text-white rounded-md">
+                    Отмена
                 </button>
             </div>
         </form>
