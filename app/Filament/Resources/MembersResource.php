@@ -178,10 +178,18 @@ class MembersResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('id'),
-                TextColumn::make('user_id'),
-                TextColumn::make('events_id'),
-                TextColumn::make('birthDate'),
+                TextColumn::make('id')
+                    ->width(4),
+                TextColumn::make('surName')
+                    ->width('20px')
+                    ->sortable()
+                    ->label('Фамилия'),
+                TextColumn::make('firstName')
+                    ->width(30)
+                    ->label('Имя'),
+                TextColumn::make('middleName')
+                    ->width(30)
+                    ->label('Отчество'),
             ])
             ->filters([
                 //
