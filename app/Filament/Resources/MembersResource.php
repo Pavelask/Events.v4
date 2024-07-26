@@ -126,8 +126,8 @@ class MembersResource extends Resource
                             ->columnSpan(2),
                         TextInput::make('workPhone')
 //                            ->required()
-                            ->mask('+7 (999) 999-99-99')
-                            ->placeholder('+7 (999) 999-99-99')
+//                            ->mask('+7 (999) 999-99-99')
+//                            ->placeholder('+7 (999) 999-99-99')
                             ->label('Рабочий номер телефона')
                             ->maxLength(255)
                             ->columnSpan(2),
