@@ -185,6 +185,7 @@ class MembersResource extends Resource
                 TextColumn::make('surName')
                     ->width('20px')
                     ->sortable()
+                    ->searchable()
                     ->label('Фамилия'),
                 TextColumn::make('firstName')
                     ->width(30)
@@ -207,7 +208,9 @@ class MembersResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->filtersFormColumns(3)
+            ->paginated([25, 50, 100, 'all']);
     }
 
     public static function getRelations(): array
