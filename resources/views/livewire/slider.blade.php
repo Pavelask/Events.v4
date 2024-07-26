@@ -21,9 +21,9 @@
 
     <section class="home">
         <div class="media-icons">
-            <a href="#"><i class="uil uil-vk-alt"></i></a>
-            <a href="#"><i class="uil uil-telegram-alt"></i></a>
-            <a href="#"><i class="uil uil-youtube"></i></a>
+            <a target="_blank" href="https://vk.com/electrictradeunion"><i class="uil uil-vk-alt"></i></a>
+            <a target="_blank" href="https://t.me/elprofonline"><i class="uil uil-telegram-alt"></i></a>
+            <a target="_blank" href="https://www.youtube.com/channel/UCNZ4S-umLGk-t-NanNBUnaw/videos"><i class="uil uil-youtube"></i></a>
         </div>
 
         <div class="swiper bg-slider">
@@ -39,7 +39,7 @@
                         <h2 class="data">30 сентября – 05 октября 2024 года</h2>
                         <h2 class="subtitle">VIII Всероссийский слёт молодёжи Общественной организации «Всероссийский Электропрофсоюз»</h2>
 
-                        <a class="read-btn">
+                        <a class="read-btn" href="{{ route('register') }}">
                             Регистрация <i class="uil uil-arrow-right"></i>
                         </a>
                     </div>
@@ -55,9 +55,9 @@
                         <p>
                             «Ограничивающие убеждения или что мешает нашему успеху».
                         </p>
-                        <button class="read-btn">
-                            Подробнее <i class="uil uil-arrow-right"></i>
-                        </button>
+                        <a class="read-btn" href="{{ route('register') }}">
+                            Регистрация <i class="uil uil-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="swiper-slide dark-layer">
@@ -72,9 +72,9 @@
                         <p>
                             «Медиация в профсоюзах – как инструмент управления конфликтами».
                         </p>
-                        <button class="read-btn">
-                            Подробнее <i class="uil uil-arrow-right"></i>
-                        </button>
+                        <a class="read-btn" href="{{ route('register') }}">
+                            Регистрация <i class="uil uil-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="swiper-slide dark-layer">
@@ -92,9 +92,9 @@
                             интеллект. Что такое прокрастинация и как с ней бороться. Мастер класс по
                             нейролингвистическому программированию «ПЕРЕПРОШИВКА МОЗГА».
                         </p>
-                        <button class="read-btn">
-                            Подробнее <i class="uil uil-arrow-right"></i>
-                        </button>
+                        <a class="read-btn" href="{{ route('register') }}">
+                            Регистрация <i class="uil uil-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="swiper-slide dark-layer">
@@ -108,9 +108,9 @@
                         <p>
                             «Ораторское искусство: дар или приобретенный навык?»
                         </p>
-                        <button class="read-btn">
-                            Подробнее <i class="uil uil-arrow-right"></i>
-                        </button>
+                        <a class="read-btn" href="{{ route('register') }}">
+                            Регистрация <i class="uil uil-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>

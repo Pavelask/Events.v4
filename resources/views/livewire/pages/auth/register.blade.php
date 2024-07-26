@@ -41,6 +41,7 @@ $register = function () {
 ?>
 
 <div>
+    dsf sdf s
     <form wire:submit="register">
         <!-- Name -->
         <div>
