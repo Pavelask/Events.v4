@@ -22,6 +22,8 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\SelectColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Enums\FiltersLayout;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -192,8 +194,11 @@ class MembersResource extends Resource
                     ->label('Отчество'),
             ])
             ->filters([
-                //
-            ])
+//                SelectFilter::make('events_id')
+//                    ->label('Список активных мероприятий')
+//                    ->relationship(name: 'event', titleAttribute: 'name')
+//                    ->columnSpanFull(),
+            ], layout: FiltersLayout::AboveContent)
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
