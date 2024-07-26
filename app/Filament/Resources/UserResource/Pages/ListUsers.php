@@ -5,9 +5,10 @@ namespace App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource;
 use App\Models\User;
 use Filament\Actions;
-use Filament\Infolists\Components\Tabs\Tab;
+use Filament\Resources\Components\Tab;
+use Illuminate\Database\Eloquent\Builder;
+
 use Filament\Resources\Pages\ListRecords;
-use Illuminate\Database\Query\Builder;
 
 class ListUsers extends ListRecords
 {
