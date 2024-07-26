@@ -17,11 +17,15 @@ class ListMembers extends ListRecords
     public function getTabs(): array
     {
         return [
-            'all' => Tab::make('All customers'),
-            'active' => Tab::make('Active customers')
-                ->modifyQueryUsing(fn (Builder $query) => $query->where('active', true)),
-            'inactive' => Tab::make('Inactive customers')
-                ->modifyQueryUsing(fn (Builder $query) => $query->where('active', false)),
+            'today' => Tab::make('За сегодня')
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('created_at', '=', now())),
+            'week' => Tab::make('За неделю')
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('created_at', '=', now()->subWeek())),
+            'months' => Tab::make('За месяц')
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('created_at', '=', now()->subMonths())),
+            'year' => Tab::make('За год')
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('created_at', '=', now()->subYear())),
+            'all' => Tab::make('Все участники'),
         ];
     }
 
