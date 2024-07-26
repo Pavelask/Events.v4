@@ -194,10 +194,10 @@ class MembersResource extends Resource
                     ->label('Отчество'),
             ])
             ->filters([
-//                SelectFilter::make('events_id')
-//                    ->label('Список активных мероприятий')
-//                    ->relationship(name: 'event', titleAttribute: 'name')
-//                    ->columnSpanFull(),
+                SelectFilter::make('events_id')
+                    ->options(Events::where('event_status', 'active')->pluck('name', 'id'))
+                    ->label('Список активных мероприятий')
+                    ->columnSpanFull(),
             ], layout: FiltersLayout::AboveContent)
             ->actions([
                 Tables\Actions\ViewAction::make(),
