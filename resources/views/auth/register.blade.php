@@ -1,10 +1,4 @@
 <x-guest-layout>
-    <script type="text/javascript">
-        var RecaptchaOptions = {
-            lang : 'ru',
-        };
-    </script>
-
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
