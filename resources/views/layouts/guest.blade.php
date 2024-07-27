@@ -8,11 +8,6 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <script type="text/javascript">
-            var RecaptchaOptions = {
-                lang : 'ru',
-            };
-        </script>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -36,10 +31,6 @@
                 {{ $slot }}
             </div>
         </div>
-
-        <script async src="https://www.google.com/recaptcha/api.js">
-
-
 
         @filamentScripts
         @livewireScripts
