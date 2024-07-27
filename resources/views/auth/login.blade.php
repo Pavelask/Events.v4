@@ -25,6 +25,9 @@
 
         </div>
 
+        <!-- Google Recaptcha -->
+        <div class="g-recaptcha mt-4" data-sitekey={{config('services.recaptcha.key')}}></div>
+
         <!-- Remember Me -->
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
