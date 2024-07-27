@@ -10,9 +10,10 @@
 
         <script type="text/javascript">
             var RecaptchaOptions = {
-                lang : 'ru',
+                lang : 'fr',
             };
         </script>
+
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
