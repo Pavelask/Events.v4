@@ -59,13 +59,16 @@ class UserResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('email_verified_at')
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Создана')
                     ->dateTime()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('created_at')
+                Tables\Columns\TextColumn::make('email_verified_at')
+                    ->label('Подтверждена')
                     ->dateTime()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label('Обновлена')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
