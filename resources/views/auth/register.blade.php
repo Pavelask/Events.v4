@@ -41,12 +41,15 @@
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2"/>
         </div>
+        <div class="mt-4">
         {!! NoCaptcha::display() !!}
         @if ($errors->has('g-recaptcha-response'))
-            <span class="help-block">
-                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+            <span class="text-red-700">
+{{--                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>--}}
+                Поле не отмечено
             </span>
         @endif
+        </div>
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
                href="{{ route('login') }}">
