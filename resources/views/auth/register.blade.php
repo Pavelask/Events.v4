@@ -1,5 +1,4 @@
 <x-guest-layout>
-    {!! NoCaptcha::renderJs('ru') !!}
     <form method="POST" action="{{ route('register') }}">
         @csrf
 

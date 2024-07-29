@@ -38,7 +38,8 @@
             </div>
         </div>
 
-        <script async src="https://www.google.com/recaptcha/api.js">
+        {!! NoCaptcha::renderJs('ru') !!}
+{{--        <script async src="https://www.google.com/recaptcha/api.js">--}}
 
 
 
