@@ -1,4 +1,7 @@
 <x-guest-layout>
+    <div class="mt-4 mb-4 text-justify">
+        Для регситрации используйте почтовые ящики в зоне Ru, приоритетом будут почтовые сервисы <span class="font-bold ">Майл.Ру</span> и <span class="font-bold">Яндекс Почта</span>. На почтовые сервера некторых работодателей сообщение может быть не доставлено.
+    </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
