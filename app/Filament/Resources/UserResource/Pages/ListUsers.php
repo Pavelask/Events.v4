@@ -29,7 +29,7 @@ class ListUsers extends ListRecords
             'year' => Tab::make('За год')
                 ->modifyQueryUsing(fn(Builder $query) => $query->where('created_at', '>=', now()->subYear()))
                 ->badge(User::query()->where('created_at', '>=', now()->subYear())->count()),
-            'all' => Tab::make('Все участники'),
+            'all' => Tab::make('Все пользователи'),
         ];
     }
     protected function getHeaderActions(): array
