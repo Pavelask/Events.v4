@@ -110,6 +110,7 @@ class MembersResource extends Resource
                                 'L' => 'L',
                                 'XL' => 'XL',
                                 'XXL' => 'XXL',
+                                'XXXL' => 'XXXL',
                             ])->columns(4),
                         TextInput::make('education')
                             ->label('Образование')

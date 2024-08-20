@@ -116,6 +116,7 @@ class EditMember extends Component implements HasForms
                                 'L' => 'L',
                                 'XL' => 'XL',
                                 'XXL' => 'XXL',
+                                'XXXL' => 'XXXL',
                             ])->columns(4),
                         TextInput::make('education')
                             ->label('Образование (укажите наименование учебного заведения)')
