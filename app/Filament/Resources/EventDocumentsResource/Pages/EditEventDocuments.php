@@ -10,6 +10,11 @@ class EditEventDocuments extends EditRecord
 {
     protected static string $resource = EventDocumentsResource::class;
 
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
     protected function getHeaderActions(): array
     {
         return [
