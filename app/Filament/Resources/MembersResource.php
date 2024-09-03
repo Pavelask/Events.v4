@@ -9,6 +9,7 @@ use App\Models\Members;
 use App\Models\tOrg;
 use App\Models\Events;
 use Filament\Actions\Exports\Enums\ExportFormat;
+use Filament\Actions\Exports\Models\Export;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Fieldset;
@@ -212,6 +213,7 @@ class MembersResource extends Resource
             ->headerActions([
                 ExportAction::make()
                     ->exporter(MembersExporter::class)
+                    ->fileName(fn (Export $export): string => "products-{$export->getKey()}.csv")
                     ->formats([
                         ExportFormat::Xlsx,
                         ExportFormat::Csv,
@@ -223,6 +225,7 @@ class MembersResource extends Resource
                 ]),
                 ExportBulkAction::make()
                     ->exporter(MembersExporter::class)
+                    ->fileName(fn (Export $export): string => "products-{$export->getKey()}.csv")
                     ->formats([
                         ExportFormat::Xlsx,
                         ExportFormat::Csv,
