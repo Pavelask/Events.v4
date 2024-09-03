@@ -213,7 +213,7 @@ class MembersResource extends Resource
             ->headerActions([
                 ExportAction::make()
                     ->exporter(MembersExporter::class)
-                    ->fileName(fn (Export $export): string => "products-{$export->getKey()}.csv")
+//                    ->fileName(fn (Export $export): string => "Members-{$export->getKey()}.csv")
                     ->formats([
                         ExportFormat::Xlsx,
                         ExportFormat::Csv,
