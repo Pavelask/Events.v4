@@ -199,6 +199,12 @@ class MembersResource extends Resource
                 TextColumn::make('middleName')
                     ->width(30)
                     ->label('Отчество'),
+                TextColumn::make('email')
+                    ->width(30)
+                    ->sortable()
+                    ->searchable()
+                    ->separator(',')
+                    ->label('E-Mail'),
             ])
             ->filters([
                 SelectFilter::make('events_id')
