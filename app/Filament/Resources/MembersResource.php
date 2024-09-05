@@ -209,11 +209,11 @@ class MembersResource extends Resource
                     ->sortable()
                     ->searchable()
                     ->label('Created'),
-                TextColumn::make('updated_at')
-                    ->width(30)
-                    ->sortable()
-                    ->searchable()
-                    ->label('Updated'),
+//                TextColumn::make('updated_at')
+//                    ->width(30)
+//                    ->sortable()
+//                    ->searchable()
+//                    ->label('Updated'),
             ])
             ->filters([
                 SelectFilter::make('events_id')
