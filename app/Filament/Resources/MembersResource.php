@@ -203,8 +203,17 @@ class MembersResource extends Resource
                     ->width(30)
                     ->sortable()
                     ->searchable()
-                    ->separator(',')
                     ->label('E-Mail'),
+                TextColumn::make('created_at')
+                    ->width(30)
+                    ->sortable()
+                    ->searchable()
+                    ->label('Created'),
+                TextColumn::make('updated_at')
+                    ->width(30)
+                    ->sortable()
+                    ->searchable()
+                    ->label('Updated'),
             ])
             ->filters([
                 SelectFilter::make('events_id')
