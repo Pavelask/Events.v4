@@ -10,6 +10,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -70,6 +71,7 @@ class EventGreetingsResource extends Resource
 //                    ->searchable(),
                 Tables\Columns\TextColumn::make('greetings_title')
                     ->label('Приветствие')
+                    ->wrap()
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('greetings_image')
                     ->label('Фотография'),
@@ -99,8 +101,11 @@ class EventGreetingsResource extends Resource
                     ->columnSpanFull(),
             ], layout: FiltersLayout::AboveContent)
             ->actions([
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
+                ActionGroup::make([
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\ReplicateAction::make(),
+                ])->iconButton()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

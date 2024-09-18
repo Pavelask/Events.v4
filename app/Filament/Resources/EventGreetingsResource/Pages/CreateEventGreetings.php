@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateEventGreetings extends CreateRecord
 {
     protected static string $resource = EventGreetingsResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }

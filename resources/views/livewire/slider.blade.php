@@ -137,6 +137,8 @@
 
     <section class="">
         {{--  Речь начало --}}
+        @if($Greetings)
+            @foreach($Greetings as $Greeting)
         <div class="bg-white px-6 py-12 lg:px-8">
             <div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">
                 <div class="mt-4 max-w-3xl">
@@ -164,10 +166,13 @@
                 </figure>
             </div>
         </div>
+                @include('livewire.layout.line')
+            @endforeach
+        @endif
         {{--  Речь конец --}}
     </section>
 
-    @include('livewire.layout.line')
+
 
     <section class="">
 

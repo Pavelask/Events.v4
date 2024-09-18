@@ -12,7 +12,7 @@ class Slider extends Component
 
         $Event = Events::first();
 
-        $Greeting = $Event->greetings->first();
+        $Greetings = $Event->greetings->where('is_visible', 1)->all();
 
         $Adress = $Event->getAdress->first();
 
@@ -34,7 +34,7 @@ class Slider extends Component
 
         return view('livewire.slider', [
             'Event' => $Event,
-            'Greeting' => $Greeting,
+            'Greetings' => $Greetings,
             'Adress' => $Adress,
             'Schedules' => $Schedules,
             'Timeline' => $Timeline,
