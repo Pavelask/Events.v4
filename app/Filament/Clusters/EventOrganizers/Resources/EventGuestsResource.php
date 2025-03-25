@@ -119,7 +119,8 @@ class EventGuestsResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('id')
-                    ->label('ID'),
+                    ->label('ID')
+                ->sortable(),
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Автарка'),
                 Tables\Columns\TextColumn::make('first_name')
@@ -142,7 +143,7 @@ class EventGuestsResource extends Resource
                     ->onIcon('heroicon-s-eye')
                     ->offIcon('heroicon-s-eye-slash')
                     ->alignCenter(),
-            ])
+            ])->defaultSort('id', 'desc')
             ->filters([
                 SelectFilter::make('events_id')
                     ->label('Список активных мероприятий')

@@ -15,6 +15,7 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Actions\ActionGroup;
+use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Table;
 
 class GuestsRelationManager extends RelationManager
@@ -99,7 +100,7 @@ class GuestsRelationManager extends RelationManager
                     ->onIcon('heroicon-s-eye')
                     ->offIcon('heroicon-s-eye-slash')
                     ->alignCenter(),
-            ])
+            ])->defaultSort('id', 'asc')
             ->headerActions([
                 Tables\Actions\CreateAction::make(),
             ])
