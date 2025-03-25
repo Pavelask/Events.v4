@@ -265,7 +265,7 @@
 {{--        --}}{{--  Жюри конец --}}
 {{--    </section>--}}
 
-    @include('livewire.layout.line')
+{{--    @include('livewire.layout.line')--}}
 
 
     <section class="" id="timeline">
