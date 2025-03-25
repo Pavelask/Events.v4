@@ -20,11 +20,6 @@
             <p class="mt-0 mb-4 text-lg font-light text-gray-500 dark:text-gray-400">
                 Мы уже работаем над устранением проблемы.
             </p>
-            <p class="mt-0 mb-4 text-lg font-light text-gray-500 dark:text-gray-400">
-                <a class="read-btn" href="{{ route('register') }}">
-                    Регистрация <i class="uil uil-arrow-right"></i>
-                </a>
-            </p>
 
         </div>
     </div>
