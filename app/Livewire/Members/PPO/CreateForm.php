@@ -1,16 +1,14 @@
 <?php
 
-namespace App\Livewire\Members;
+namespace App\Livewire\Members\PPO;
 
 use App\Models\Events;
 use App\Models\Members;
 use App\Models\tOrg;
 use App\Notifications\NewMember;
-
+use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Hidden;
-use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
@@ -22,16 +20,14 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
-use Illuminate\Contracts\View\View;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\HtmlString;
 use Livewire\Component;
+use Illuminate\Contracts\View\View;
 
-class CreateMember extends Component implements HasForms
+class CreateForm extends Component implements HasForms
 {
     use InteractsWithForms;
-    use Notifiable;
 
     public ?array $data = [];
 
@@ -53,7 +49,15 @@ class CreateMember extends Component implements HasForms
         return $form
             ->schema([
                 Section::make('Регистрация на меорприятие')
-                    ->description('Запоните поля анкеты, поля отмеченные * (звездочкой) заполняются обязательно')->schema([
+                    ->collapsed()
+                    ->description(new HtmlString(
+                        ' <div class="text-justify">
+                                         <i>
+                                            Запоните поля анкеты, поля отмеченные <span style="color: #c7000c !important;" class="text-xl">*</span> (звездочкой) заполняются обязательно
+                                         </i>
+                                       </div>'
+                    ))
+                    ->schema([
                         TextInput::make('eventsName')
                             ->label('Мероприятие')
 //                            ->disabled()
@@ -84,34 +88,9 @@ class CreateMember extends Component implements HasForms
                         DatePicker::make('birthDate')
                             ->label('Дата рождения')
                             ->required(),
-                        TextInput::make('snils')
-                            ->required()
-                            ->mask('999-999-999 99')
-                            ->placeholder('999-999-999 99')
-                            ->label('СНИЛС')
-                            ->columnSpan(2),
-                        Select::make('sex')
-                            ->label("ПОЛ")
-                            ->required()
-                            ->options([
-                                'M' => 'Мужской',
-                                'W' => 'Женский',
-                            ]),
-                        Select::make('size')
-                            ->label("Размер футболки")
-                            ->required()
-                            ->options([
-                                'XS' => 'XS',
-                                'S' => 'S',
-                                'M' => 'M',
-                                'L' => 'L',
-                                'XL' => 'XL',
-                                'XXL' => 'XXL',
-                                'XXXL' => 'XXXL',
-                            ])->columns(4),
-                        TextInput::make('education')
-                            ->label('Образование (укажите наименование учебного заведения)')
-                            ->columnSpanFull(),
+//                        TextInput::make('education')
+//                            ->label('Образование')
+//                            ->columnSpanFull(),
                         TextInput::make('contactPhone')
                             ->mask('+7 (999) 999-99-99')
                             ->placeholder('+7 (999) 999-99-99')
@@ -126,13 +105,13 @@ class CreateMember extends Component implements HasForms
                             ->default(Auth::user()->email)
                             ->maxLength(255)
                             ->columnSpan(2),
-                        TextInput::make('workPhone')
-//                            ->required()
-//                            ->mask('+7 (999) 999-99-99')
-//                            ->placeholder('+7 (999) 999-99-99')
-                            ->label('Рабочий номер телефона (в свободной форме)')
-                            ->maxLength(255)
-                            ->columnSpan(2),
+//                        TextInput::make('workPhone')
+////                            ->required()
+////                            ->mask('+7 (999) 999-99-99')
+////                            ->placeholder('+7 (999) 999-99-99')
+//                            ->label('Рабочий номер телефона (в свободной форме)')
+//                            ->maxLength(255)
+//                            ->columnSpan(2),
                         TextInput::make('job_title')
                             ->label('Должность')
                             ->columnSpanFull(),
@@ -144,17 +123,53 @@ class CreateMember extends Component implements HasForms
                             ->required()
                             ->label('Наименование ТО')
                             ->options(tOrg::all()->pluck('name', 'id'))
-                            ->searchable()
+                            ->searchable(['name'])
 //                            ->optionsLimit(10)
                             ->columnSpanFull(),
+
                     ])->columns(6),
                 Section::make('Дополнительная информация')
                     ->schema([
-                        Textarea::make('note')
-                            ->rows(3)
-                            ->label('Примечание'),
+                        RichEditor::make('note')
+                            ->label('Примечание')
+                            ->toolbarButtons([
+//                                'attachFiles',
+                                'blockquote',
+                                'bold',
+                                'bulletList',
+//                                'codeBlock',
+//                                'h2',
+//                                'h3',
+//                                'italic',
+//                                'link',
+                                'orderedList',
+//                                'redo',
+//                                'strike',
+//                                'underline',
+//                                'undo',
+                            ]),
                     ]),
-
+                Section::make('Готовность участвовать спикером в панельной дискуссии -
+«Лучшие практики первичных структур: опыт успешных организаций»')
+                    ->schema([
+                        Placeholder::make('stand_in')
+                            ->content(new HtmlString(
+                                ' <div class="text-justify">
+                                         <i>
+                                            Выступление спикера предполагает рассказ с презентацией на 5-7 минут с краткой характеристикой ППО, о том с какими проблемами столкнулась первичная организация и члены Профсоюза за последние три года (снижение профсоюзного членства, проблемы при разработке заключении коллективного договора, реорганизация организации работодателя, смена собственника, нехватка персонала, вопросы организации охраны труда, соблюдение условий труда работников, оформление графиков дежурств и т.д.)
+                                         </i>
+                                       </div>'
+                            ))
+                            ->label('')
+                            ->columnSpanFull(),
+                        Toggle::make('stand_in')
+                            ->label(new HtmlString('<strong> Да, буду участвовать. </strong> <i>Если участвовать не планируете, то оставьте переключатель красным</i>'))
+                            ->inline(true)
+                            ->onColor('success')
+                            ->offColor('danger')
+//                            ->accepted()
+                            ->columnSpanFull(),
+                    ])->columns(3),
                 Section::make('Обработка персональных данных')
                     ->schema([
                         Placeholder::make('documentation')
@@ -171,15 +186,18 @@ class CreateMember extends Component implements HasForms
                             ->required()
                             ->accepted(),
                     ])->columns(3),
-
             ])
-            ->statePath('data');
+            ->statePath('data')
+            ->model(Members::class);
     }
 
     public function create(): void
     {
+        $data = $this->form->getState();
 
-        Members::create($this->form->getState());
+        $record = Members::create($data);
+
+        $this->form->model($record)->saveRelationships();
 
         Notification::make()
             ->title('Анкета участника успешно добавлена')
@@ -205,6 +223,6 @@ class CreateMember extends Component implements HasForms
 
     public function render(): View
     {
-        return view('livewire.members.create-member');
+        return view('livewire.members.p-p-o.create-form');
     }
 }

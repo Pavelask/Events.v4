@@ -46,7 +46,9 @@ class Events extends Model
         'event_type',
         'event_status',
         'event_agreement',
-        'youtube_link',
+        'template_name',
+        'members_template_name',
+        'video_code',
         'is_visible',
         'is_passport',
         'is_registration',
@@ -58,6 +60,16 @@ class Events extends Model
         return $this->hasOne(event_types::class, 'id', 'id');
     }
 
+    public function selectMainTemplate(): hasOne
+    {
+        return $this->hasOne(Maintemplate::class, 'id', 'id');
+    }
+
+    public function selectMembersTemplate(): hasOne
+    {
+        return $this->hasOne(Maintemplate::class, 'id', 'id');
+    }
+
     public function moderators(): hasMany
     {
         return $this->hasMany(Moderators::class, 'events_id', 'id');
@@ -65,7 +77,8 @@ class Events extends Model
 
     public function guests(): hasMany
     {
-        return $this->hasMany(Guests::class, 'events_id', 'id')->orderBy('guests_sort', 'ASC');
+//        return $this->hasMany(Guests::class, 'events_id', 'id')->orderBy('guests_sort', 'ASC');
+        return $this->hasMany(Guests::class, 'events_id', 'id') ;
     }
 
     public function organizers(): hasMany

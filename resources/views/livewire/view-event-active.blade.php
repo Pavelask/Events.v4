@@ -1,22 +1,24 @@
 <div>
     {{-- In work, do what you enjoy. --}}
     <div class="p-6 text-gray-900 dark:text-gray-100">
-        <span class="text-s text-gray-100">
+        <span class="text-xs text-gray-900">
             {{ $Event->id }}
         </span>
 
 
         <div class="bg-gray-50 px-6 py-24 sm:px-6 sm:py-32 lg:px-8 rounded-md shadow-md border border-gray-100">
             <div class="mx-auto max-w-4xl text-center">
-                <h2 class="text-2xl uppercase font-bold tracking-tight text-gray-700 sm:text-3xl">
+                <h2 class="text-sm uppercase font-bold tracking-tight text-gray-900 sm:text-lg">
                     {{ $Event->name }}
                 </h2>
-                <h2 class="mx-auto mt-6 text-xl uppercase font-bold leading-8 text-gray-400">
+                <h2 class="mx-auto mt-6 text-lg uppercase font-bold leading-8 text-gray-400">
                     {{ $Event->fulldate }}
                 </h2>
-                <h2 class="mx-auto text-xl up font-bold leading-8 text-gray-300">
+                @if($Adress)
+                <h2 class="mx-auto text-lg up font-bold leading-8 text-gray-300">
                     {{ $Adress->city }}, {{ $Adress->adress }}
                 </h2>
+                @endif
                 <div class="mt-10 flex items-center justify-center gap-x-6">
                     @if(!$Member)
                         <a href="{{ route('MemberCreate') }}"

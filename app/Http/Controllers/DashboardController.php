@@ -20,7 +20,6 @@ class DashboardController extends Controller
     public function index()
     {
         $user = User::find(Auth::user()->id);
-//        dd($user->hasRole('super_admin'));
 
         if ($user->hasRole('super_admin')) {
             return redirect()->route('filament.admin.home');
@@ -28,15 +27,15 @@ class DashboardController extends Controller
 
         $Event = Events::where('event_status', 'active')->first();
 
+//        if(!$Event) {
+//            abort(500);
+//        }
+
 
         if ($Event) {
             $Member = Members::where('user_id', Auth::user()->id)->where('events_id', $Event->id)->first();
         }
 
-
-//        $faq = faq_tables::all();
-//
-//        dd($Member);
 
         return view('dashboard');
     }

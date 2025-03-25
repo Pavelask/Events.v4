@@ -2,15 +2,24 @@
 
 namespace App\Livewire;
 
+use App\Models\event_status;
 use App\Models\Events;
 use Livewire\Component;
+use Illuminate\Database\Eloquent\Collection;
 
 class Slider extends Component
 {
     public function render()
     {
 
-        $Event = Events::first();
+        $Events = Events::where('event_status', 'active')->orderBy('created_at', 'desc')->get();
+
+//        dd($Events->count());
+        if(!$Events) {
+            abort(500);
+        }
+
+        $Event = $Events->first();
 
         $Greetings = $Event->greetings->where('is_visible', 1)->all();
 
@@ -24,13 +33,11 @@ class Slider extends Component
 
         $Guests = $Event->guests->where('is_visible', 1)->all();
 
-        $Documents = $Event->eventsDocumen->all();
+        $Documents = $Event->eventsDocumen->where('is_visible', 1)->all();
 
-        $Schedules = $Event->getSchedules;
+        $Schedules = $Event->getSchedules->where('is_visible', 1)->all();
 
         $Timeline = $Event->timetablesEvent->where('event_id', $Event->id)->all();
-
-//        dd($Documents);
 
         return view('livewire.slider', [
             'Event' => $Event,

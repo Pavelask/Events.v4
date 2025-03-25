@@ -2,10 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\FaqsResource\Pages;
-use App\Filament\Resources\FaqsResource\RelationManagers;
-use App\Models\faq_tables;
-use App\Models\Faqs;
+use App\Filament\Resources\MainTemplatesResource\Pages;
+//use App\Filament\Resources\MainTemplatesResource\RelationManagers;
+use App\Models\Maintemplate;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -15,31 +14,34 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class FaqsResource extends Resource
+class MainTemplatesResource extends Resource
 {
-    protected static ?string $model = faq_tables::class;
+    protected static ?string $model = Maintemplate::class;
 
-    protected static ?int $navigationSort = 300;
+
+    protected static ?int $navigationSort = 100;
     protected static bool $hasTitleCaseModelLabel = false;
 
-    protected static ?string $modelLabel = 'Вопрос и Ответ';
+    protected static ?string $modelLabel = 'Основной шаблон';
 
-    protected static ?string $pluralModelLabel = 'Вопросы и Ответы';
+    protected static ?string $pluralModelLabel = 'Основной шаблон';
 
     protected static ?string $navigationGroup = 'Справочники';
-    protected static ?string $navigationIcon = 'heroicon-o-question-mark-circle';
+    protected static ?string $navigationIcon = 'heroicon-c-clipboard-document-list';
+
+//    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('question')
+                Forms\Components\TextInput::make('template_name')
                     ->required()
-                    ->label('Введите вопрос')
+                    ->label('Введите имя шаблона')
                     ->columnSpanFull()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('answer')
-                    ->label('Введите ответ')
+                Forms\Components\Textarea::make('description')
+                    ->label('Описание шаблона')
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('sort')
                     ->required()
@@ -57,11 +59,11 @@ class FaqsResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('question')
-                    ->label('Вопросы')
+                Tables\Columns\TextColumn::make('template_name')
+                    ->label('Название шаблона')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('answer')
-                    ->label('Ответы')
+                Tables\Columns\TextColumn::make('description')
+                    ->label('Описание шаблона')
                     ->wrap()
                     ->searchable(),
                 Tables\Columns\TextInputColumn::make('sort')
@@ -72,7 +74,6 @@ class FaqsResource extends Resource
                     ->width(100)
                     ->label('Вкл/Выкл'),
             ])
-//            ->defaultGroup('is_visible')
             ->filters([
                 //
             ])
@@ -100,10 +101,10 @@ class FaqsResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListFaqs::route('/'),
-            'create' => Pages\CreateFaqs::route('/create'),
-            'view' => Pages\ViewFaqs::route('/{record}'),
-            'edit' => Pages\EditFaqs::route('/{record}/edit'),
+            'index' => Pages\ListMainTemplates::route('/'),
+            'create' => Pages\CreateMainTemplates::route('/create'),
+            'view' => Pages\ViewMainTemplates::route('/{record}'),
+            'edit' => Pages\EditMainTemplates::route('/{record}/edit'),
         ];
     }
 }

@@ -19,121 +19,121 @@
         </div>
     </header>
 
-    <section class="home">
-        <div class="media-icons">
-            <a target="_blank" href="https://vk.com/electrictradeunion"><i class="uil uil-vk-alt"></i></a>
-            <a target="_blank" href="https://t.me/elprofonline"><i class="uil uil-telegram-alt"></i></a>
-            <a target="_blank" href="https://www.youtube.com/channel/UCNZ4S-umLGk-t-NanNBUnaw/videos"><i class="uil uil-youtube"></i></a>
-        </div>
+{{--    <section class="home">--}}
+{{--        <div class="media-icons">--}}
+{{--            <a target="_blank" href="https://vk.com/electrictradeunion"><i class="uil uil-vk-alt"></i></a>--}}
+{{--            <a target="_blank" href="https://t.me/elprofonline"><i class="uil uil-telegram-alt"></i></a>--}}
+{{--            <a target="_blank" href="https://www.youtube.com/channel/UCNZ4S-umLGk-t-NanNBUnaw/videos"><i class="uil uil-youtube"></i></a>--}}
+{{--        </div>--}}
 
-        <div class="swiper bg-slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide dark-layer">
-                    <img src="{{asset("front/image/films_puzzl.jpg")}}"/>
-                    {{--                    <div class="card">--}}
-                    {{--                        <img src="{{asset("front/image/1-1.png")}}"/>--}}
-                    {{--                    </div>--}}
-                    <div class="text-content">
+{{--        <div class="swiper bg-slider">--}}
+{{--            <div class="swiper-wrapper">--}}
+{{--                <div class="swiper-slide dark-layer">--}}
+{{--                    <img src="{{asset("front/image/films_puzzl.jpg")}}"/>--}}
+{{--                    --}}{{--                    <div class="card">--}}
+{{--                    --}}{{--                        <img src="{{asset("front/image/1-1.png")}}"/>--}}
+{{--                    --}}{{--                    </div>--}}
+{{--                    <div class="text-content">--}}
 
-                        <h2 class="title">"Новое п<span>ОКО</span>ление"</h2>
-                        <h2 class="data">30 сентября – 05 октября 2024 года</h2>
-                        <h2 class="subtitle">VIII Всероссийский слёт молодёжи Общественной организации «Всероссийский Электропрофсоюз»</h2>
+{{--                        <h2 class="title">"Новое п<span>ОКО</span>ление"</h2>--}}
+{{--                        <h2 class="data">30 сентября – 05 октября 2024 года</h2>--}}
+{{--                        <h2 class="subtitle">VIII Всероссийский слёт молодёжи Общественной организации «Всероссийский Электропрофсоюз»</h2>--}}
 
-                        <a class="read-btn" href="{{ route('register') }}">
-                            Регистрация <i class="uil uil-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="swiper-slide dark-layer">
-                    <img src="{{asset("front/image/001.JPG")}}"/>
-                    <div class="card">
-                        <img src="{{asset("front/image/1-1.png")}}"/>
-                    </div>
-                    <div class="text-content">
-                        <h2 class="title">Аида Гамидова</h2>
-                        <h2 class="subtitle">Учредитель и директор АНО «Махачкалинский центр НЛП».</h2>
-                        <p>
-                            «Ограничивающие убеждения или что мешает нашему успеху».
-                        </p>
-                        <a class="read-btn" href="{{ route('register') }}">
-                            Регистрация <i class="uil uil-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="swiper-slide dark-layer">
-                    <img src="{{asset("front/image/002.JPG")}}"/>
-                    <div class="card">
-                        <img src="{{asset("front/image/1-2.png")}}"/>
-                    </div>
-                    <div class="text-content">
-                        <h2 class="title">Елена Свищева</h2>
-                        <h2 class="subtitle">Юрист по гражданским и трудовым спорам, медиатор Липецкого областного
-                            суда </h2>
-                        <p>
-                            «Медиация в профсоюзах – как инструмент управления конфликтами».
-                        </p>
-                        <a class="read-btn" href="{{ route('register') }}">
-                            Регистрация <i class="uil uil-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="swiper-slide dark-layer">
-                    <img src="{{asset("front/image/003.JPG")}}"/>
-                    <div class="card">
-                        <img src="{{asset("front/image/1-3.png")}}"/>
-                    </div>
-                    <div class="text-content">
-                        <h2 class="title">Дмитрий Васильев</h2>
-                        <h2 class="subtitle">
-                            Основатель Центра Техносферной Безопасности «ПРОФИ»
-                        </h2>
-                        <p>
-                            «Как устроен мозг, мышление и память. Привычки, желания и зависимости. Эмоциональный
-                            интеллект. Что такое прокрастинация и как с ней бороться. Мастер класс по
-                            нейролингвистическому программированию «ПЕРЕПРОШИВКА МОЗГА».
-                        </p>
-                        <a class="read-btn" href="{{ route('register') }}">
-                            Регистрация <i class="uil uil-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="swiper-slide dark-layer">
-                    <img src="{{asset("front/image/004.JPG")}}"/>
-                    <div class="card">
-                        <img src="{{asset("front/image/1-4.png")}}"/>
-                    </div>
-                    <div class="text-content">
-                        <h2 class="title">Сергей Драндров</h2>
-                        <h2 class="subtitle">Главный редактор «Профсоюз ТВ»</h2>
-                        <p>
-                            «Ораторское искусство: дар или приобретенный навык?»
-                        </p>
-                        <a class="read-btn" href="{{ route('register') }}">
-                            Регистрация <i class="uil uil-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="autoplay-progress">
-                <svg viewBox="0 0 48 48">
-                    <circle cx="24" cy="24" r="20"></circle>
-                </svg>
-                <span></span>
-            </div>
-        </div>
+{{--                        <a class="read-btn" href="{{ route('register') }}">--}}
+{{--                            Регистрация <i class="uil uil-arrow-right"></i>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide dark-layer">--}}
+{{--                    <img src="{{asset("front/image/001.JPG")}}"/>--}}
+{{--                    <div class="card">--}}
+{{--                        <img src="{{asset("front/image/1-1.png")}}"/>--}}
+{{--                    </div>--}}
+{{--                    <div class="text-content">--}}
+{{--                        <h2 class="title">Аида Гамидова</h2>--}}
+{{--                        <h2 class="subtitle">Учредитель и директор АНО «Махачкалинский центр НЛП».</h2>--}}
+{{--                        <p>--}}
+{{--                            «Ограничивающие убеждения или что мешает нашему успеху».--}}
+{{--                        </p>--}}
+{{--                        <a class="read-btn" href="{{ route('register') }}">--}}
+{{--                            Регистрация <i class="uil uil-arrow-right"></i>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide dark-layer">--}}
+{{--                    <img src="{{asset("front/image/002.JPG")}}"/>--}}
+{{--                    <div class="card">--}}
+{{--                        <img src="{{asset("front/image/1-2.png")}}"/>--}}
+{{--                    </div>--}}
+{{--                    <div class="text-content">--}}
+{{--                        <h2 class="title">Елена Свищева</h2>--}}
+{{--                        <h2 class="subtitle">Юрист по гражданским и трудовым спорам, медиатор Липецкого областного--}}
+{{--                            суда </h2>--}}
+{{--                        <p>--}}
+{{--                            «Медиация в профсоюзах – как инструмент управления конфликтами».--}}
+{{--                        </p>--}}
+{{--                        <a class="read-btn" href="{{ route('register') }}">--}}
+{{--                            Регистрация <i class="uil uil-arrow-right"></i>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide dark-layer">--}}
+{{--                    <img src="{{asset("front/image/003.JPG")}}"/>--}}
+{{--                    <div class="card">--}}
+{{--                        <img src="{{asset("front/image/1-3.png")}}"/>--}}
+{{--                    </div>--}}
+{{--                    <div class="text-content">--}}
+{{--                        <h2 class="title">Дмитрий Васильев</h2>--}}
+{{--                        <h2 class="subtitle">--}}
+{{--                            Основатель Центра Техносферной Безопасности «ПРОФИ»--}}
+{{--                        </h2>--}}
+{{--                        <p>--}}
+{{--                            «Как устроен мозг, мышление и память. Привычки, желания и зависимости. Эмоциональный--}}
+{{--                            интеллект. Что такое прокрастинация и как с ней бороться. Мастер класс по--}}
+{{--                            нейролингвистическому программированию «ПЕРЕПРОШИВКА МОЗГА».--}}
+{{--                        </p>--}}
+{{--                        <a class="read-btn" href="{{ route('register') }}">--}}
+{{--                            Регистрация <i class="uil uil-arrow-right"></i>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="swiper-slide dark-layer">--}}
+{{--                    <img src="{{asset("front/image/004.JPG")}}"/>--}}
+{{--                    <div class="card">--}}
+{{--                        <img src="{{asset("front/image/1-4.png")}}"/>--}}
+{{--                    </div>--}}
+{{--                    <div class="text-content">--}}
+{{--                        <h2 class="title">Сергей Драндров</h2>--}}
+{{--                        <h2 class="subtitle">Главный редактор «Профсоюз ТВ»</h2>--}}
+{{--                        <p>--}}
+{{--                            «Ораторское искусство: дар или приобретенный навык?»--}}
+{{--                        </p>--}}
+{{--                        <a class="read-btn" href="{{ route('register') }}">--}}
+{{--                            Регистрация <i class="uil uil-arrow-right"></i>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="swiper-button-next"></div>--}}
+{{--            <div class="swiper-button-prev"></div>--}}
+{{--            <div class="autoplay-progress">--}}
+{{--                <svg viewBox="0 0 48 48">--}}
+{{--                    <circle cx="24" cy="24" r="20"></circle>--}}
+{{--                </svg>--}}
+{{--                <span></span>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
-        <div class="bg-slider-thumbs">
-            <div class="swiper-wrapper thumbs-container">
-                <img src="{{asset("front/image/films_puzzl.jpg")}}" alt="" class="swiper-slide">
-                <img src="{{asset("front/image/001.JPG")}}" alt="" class="swiper-slide">
-                <img src="{{asset("front/image/002.JPG")}}" alt="" class="swiper-slide">
-                <img src="{{asset("front/image/003.JPG")}}" alt="" class="swiper-slide">
-                <img src="{{asset("front/image/004.JPG")}}" alt="" class="swiper-slide">
-            </div>
-        </div>
-    </section>
+{{--        <div class="bg-slider-thumbs">--}}
+{{--            <div class="swiper-wrapper thumbs-container">--}}
+{{--                <img src="{{asset("front/image/films_puzzl.jpg")}}" alt="" class="swiper-slide">--}}
+{{--                <img src="{{asset("front/image/001.JPG")}}" alt="" class="swiper-slide">--}}
+{{--                <img src="{{asset("front/image/002.JPG")}}" alt="" class="swiper-slide">--}}
+{{--                <img src="{{asset("front/image/003.JPG")}}" alt="" class="swiper-slide">--}}
+{{--                <img src="{{asset("front/image/004.JPG")}}" alt="" class="swiper-slide">--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
     <section class="">
         {{--  Речь начало --}}
@@ -279,11 +279,12 @@
                 </div>
 
 
-                @if($Schedules->isNotEmpty())
+                @if($Schedules)
                     <div x-data="{ tab: 'tab1' }"
                          class="p-5 mb-4 border border-gray-100 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
 
-                        <x-filament::tabs
+
+                         <x-filament::tabs
                             label="Content tabs" class="isolate flex divide-x divide-gray-200 rounded-lg shadow"
                             aria-label="Tabs">
 
@@ -400,7 +401,7 @@
                 Контакты
             </h2>
         </div>
-
+        @if($Adress)
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-6 md:gap-8 lg:gap-12">
             <div
                 class="aspect-w-16 aspect-h-6 lg:aspect-h-14 overflow-hidden bg-gray-100 rounded-2xl border border-b-gray-400 dark:bg-neutral-800">
@@ -469,6 +470,7 @@
             </div>
             <!-- End Col -->
         </div>
+        @endif
     </div>
     <!-- End Contact -->
 

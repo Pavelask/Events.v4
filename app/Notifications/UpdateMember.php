@@ -35,10 +35,10 @@ class UpdateMember extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->subject('Анкетные данные обнавлены')
-            ->line('Вы обнавили данные своей анкеты')
+            ->subject('Анкетные данные обновлены')
+            ->line('Вы обновили данные своей анкеты')
 //                    ->action('Notification Action', url('/'))
-            ->line('Спасибо, что выбрали наши Авиалинии :)');
+            ->line('Вопросы и предложения можно направить на электронную почту - elprof@elprof.ru');
     }
 
     /**

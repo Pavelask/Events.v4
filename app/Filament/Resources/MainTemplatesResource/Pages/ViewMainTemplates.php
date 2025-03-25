@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\EventsResource\Pages;
+namespace App\Filament\Resources\MainTemplatesResource\Pages;
 
-use App\Filament\Resources\EventsResource;
+use App\Filament\Resources\MainTemplatesResource;
 use Filament\Actions;
 use Filament\Actions\Action;
 use Filament\Resources\Pages\ViewRecord;
 
-class ViewEvents extends ViewRecord
+class ViewMainTemplates extends ViewRecord
 {
-    protected static string $resource = EventsResource::class;
+    protected static string $resource = MainTemplatesResource::class;
 
     protected function getHeaderActions(): array
     {

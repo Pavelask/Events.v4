@@ -104,7 +104,8 @@ header .nav-bar{
 }
 
 .nav-bar .logo{
-    color: var(--white-color);
+    /*color: var(--white-color);*/
+    color: #1f2937;
     font-size: 1.8em;
     font-weight: 600;
     letter-spacing: 2px;
@@ -114,7 +115,8 @@ header .nav-bar{
 }
 
 .navigation .nav-items a{
-    color: var(--white-color);
+    /*color: var(--white-color);*/
+    color: #000000;
     font-size: 1em;
     letter-spacing: 2px;
     text-decoration: none;

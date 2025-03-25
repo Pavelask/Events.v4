@@ -40,7 +40,7 @@ class NewMemberForAdmin extends Notification
             ->line('Email участника - ')
             ->line('Контактный номер участника - ')
 //            ->action('Notification Action', url('/'))
-            ->line('Остальные даные в базе');
+            ->line('Остальные данные в базе');
     }
 
     /**

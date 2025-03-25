@@ -4,6 +4,7 @@ namespace App\Filament\Resources\EventsResource\Pages;
 
 use App\Filament\Resources\EventsResource;
 use Filament\Actions;
+use Filament\Actions\Action;
 use Filament\Resources\Pages\EditRecord;
 
 class EditEvents extends EditRecord

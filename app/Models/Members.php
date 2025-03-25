@@ -35,7 +35,13 @@ class Members extends Model
         'qr_code',
         'qr_code_pic',
         'confirmation',
+        'stand_in',
         'agreement',
+        'option_one',
+        'option_two',
+        'option_three',
+        'option_four',
+        'option_five'
     ];
 
     public function userMember(): belongsTo

@@ -20,16 +20,20 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/', \App\Livewire\Home::class)->name('Home');
 
-Route::get('/', \App\Livewire\Slider::class)->name('IndexSite');
-Route::get('/score', \App\Livewire\Score::class)->name('Score');
+Route::get('/', \App\Livewire\Slider::class)
+    ->name('IndexSite');
+Route::get('/score', \App\Livewire\Score::class)
+    ->name('Score');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
-    ->middleware(['auth', 'verified'])->name('dashboard');
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
 Route::get('/dashboard/member/create', [MemberController::class, 'index'])
-    ->middleware(['auth', 'verified'])->name('MemberCreate');
+    ->middleware(['auth', 'verified'])
+    ->name('MemberCreate');
 
-Route::get('/dashboard/member/{record}/edit', \App\Livewire\Members\EditMember::class)
+Route::get('/dashboard/member/{record}/edit', \App\Livewire\Members\PPO\EditForm::class)
     ->middleware(['auth', 'verified'])
     ->name('MemberEdit');
 
@@ -38,9 +42,12 @@ Route::get('/dashboard/member/{record}/edit', \App\Livewire\Members\EditMember::
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile', [ProfileController::class, 'edit'])
+        ->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])
+        ->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])
+        ->name('profile.destroy');
 });
 
 require __DIR__.'/auth.php';

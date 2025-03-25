@@ -21,7 +21,7 @@ class ViewEventActive extends Component
         $Event = Events::where('event_status', 'active')->first();
         $Adress = $Event->getAdress->first();
 
-//        dd($Adress);
+//        dd($Event);
 
 
         if ($Event) {

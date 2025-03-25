@@ -14,6 +14,8 @@ use App\Filament\Resources\EventImagesResource\RelationManagers\EventsImageRelat
 use App\Filament\Resources\EventsResource\Pages;
 use App\Models\event_status;
 use App\Models\event_types;
+use App\Models\Maintemplate;
+use App\Models\Registrationtemplate;
 use App\Models\Events;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -57,7 +59,13 @@ class EventsResource extends Resource
                         Forms\Components\Textarea::make('description')
                             ->label('Описание')
                             ->columnSpanFull(),
-                    ]),
+                        Forms\Components\Select::make('template_name')
+                            ->label('Основной шаблон')
+                            ->options(Maintemplate::all()->pluck('template_name', 'id')),
+                        Forms\Components\Select::make('members_template_name')
+                            ->label('Шаблон регистрации участника')
+                            ->options(Registrationtemplate::all()->pluck('template_name', 'id')),
+                    ])->columns(2),
 
                 Forms\Components\Section::make('Дата проведения, тип и статус мероприятия')
                     ->description('Выбирите дату провдения, статус и тип мероприятия')
@@ -78,7 +86,7 @@ class EventsResource extends Resource
                             ->searchable(),
                     ])->columns(2),
                 Forms\Components\Section::make('Логотип и пользовательскоей соглашение')
-                    ->description('Загрузите логотим, при необходимости отредактируйте его и доавте пользовательское соглашение')
+                    ->description('Загрузите логотип, при необходимости отредактируйте его и добавте пользовательское соглашение')
                     ->schema([
                         Forms\Components\FileUpload::make('event_banner_logo')
                             ->label('Логотип мероприятия')
@@ -104,11 +112,12 @@ class EventsResource extends Resource
                             ])->columnSpanFull(),
                     ])->columns(2),
 
-                Forms\Components\Section::make('YouTube')
-                    ->description('Введите название сыылки, если ссылка не нужна, оставтье поле путстым')
+                Forms\Components\Section::make('Код с видео')
+                    ->description('Вставте код с видеоресурса, если ссылка не нужна, оставтье поле путстым')
                     ->schema([
-                        Forms\Components\TextInput::make('youtube_link')
-                            ->label('')
+                        Forms\Components\Textarea::make('video_code')
+                            ->label('HTML code')
+                            ->rows(5)
                             ->maxLength(255)
                             ->columnSpanFull(),
                     ]),
