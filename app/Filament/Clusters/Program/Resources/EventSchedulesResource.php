@@ -45,13 +45,14 @@ class EventSchedulesResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Section::make('Список мероприятий')
+                Forms\Components\Section::make('Список активных мероприятий')
                     ->icon('heroicon-s-rectangle-group')
                     ->description('Выбирите мероприятие из выпадающего списка на котором пристуствует гость')->schema([
                         Forms\Components\Select::make('events_id')
-                            ->label('Список активных мероприятий')
+                            ->label('Список мероприятий')
                             ->relationship(name: 'event', titleAttribute: 'name')
                             ->columnSpanFull()
+                            ->native()
                             ->required(),
                     ]),
                 Forms\Components\Section::make('День расписания')
@@ -123,8 +124,10 @@ class EventSchedulesResource extends Resource
                 SelectFilter::make('events_id')
                     ->label('Список активных мероприятий')
                     ->relationship('event', 'name', fn (Builder $query) => $query->where('event_status', 'active'))
+//                    ->selectablePlaceholder(false)
                     ->columnSpanFull(),
             ], layout: FiltersLayout::AboveContent)
+            ->persistFiltersInSession()
             ->actions([
                 ActionGroup::make([
                     ViewAction::make(),

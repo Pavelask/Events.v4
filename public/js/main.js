@@ -39,6 +39,7 @@ window.addEventListener("scroll", function () {
 //Responsive navigation menu toggle
 const menuBtn = document.querySelector(".nav-menu-btn");
 const closeBtn = document.querySelector(".nav-close-btn");
+const close = document.querySelector(".close-btn");
 const navigation = document.querySelector(".navigation");
 
 menuBtn.addEventListener("click",() => {
@@ -46,5 +47,9 @@ menuBtn.addEventListener("click",() => {
 })
 
 closeBtn.addEventListener("click", () => {
+    navigation.classList.remove("active");
+})
+
+close.addEventListener("click", () => {
     navigation.classList.remove("active");
 })

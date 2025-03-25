@@ -1,23 +1,23 @@
 <div>
-{{--    <header>--}}
-{{--        <div class="nav-bar">--}}
-{{--            <a href="" class="logo">--}}
-{{--                <img src="{{ asset('front/img/logo_01.png') }}" alt="" class="h-12">--}}
-{{--            </a>--}}
-{{--            <div class="navigation">--}}
-{{--                <div class="nav-items">--}}
-{{--                    <i class="uil uil-times nav-close-btn"></i>--}}
-{{--                    <a href="/"><i class="uil uil-home"></i>Главная</a>--}}
-{{--                    <a href="#guest"><i class="uil uil-chat-bubble-user"></i>Гости</a>--}}
+    <header>
+        <div class="nav-bar">
+            <a href="" class="logo">
+                <img src="{{ asset('front/img/logo_01.png') }}" alt="" class="h-12">
+            </a>
+            <div class="navigation">
+                <div class="nav-items">
+                    <i class="uil uil-times nav-close-btn"></i>
+                    <a href="/"><i class="uil uil-home close-btn"></i>Главная</a>
+                    <a href="#guest"><i class="uil uil-chat-bubble-user close-btn"></i>Гости</a>
 {{--                    <a href="#moderators"><i class="uil uil-shield-check"></i>Модераторы</a>--}}
-{{--                    <a href="#timeline"><i class="uil uil-clock-three"></i>Расписание</a>--}}
-{{--                    <a href="#documents"><i class="uil uil-document-info"></i>Документы</a>--}}
-{{--                    <a href="#contact"><i class="uil uil-at"></i>Контакты</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <i class="uil uil-apps nav-menu-btn"></i>--}}
-{{--        </div>--}}
-{{--    </header>--}}
+                    <a href="#timeline"><i class="uil uil-clock-three close-btn"></i>Расписание</a>
+                    <a href="#documents"><i class="uil uil-document-info close-btn"></i>Документы</a>
+                    <a href="#contact"><i class="uil uil-at close-btn"></i>Контакты</a>
+                </div>
+            </div>
+            <i class="uil uil-apps nav-menu-btn"></i>
+        </div>
+    </header>
 
 {{--    <section class="home">--}}
 {{--        <div class="media-icons">--}}

@@ -23,7 +23,8 @@ class Slider extends Component
 
         $Greetings = $Event->greetings->where('is_visible', 1)->all();
 
-        $Adress = $Event->getAdress->first();
+        $Adress = $Event->getAdress->where('is_visible', 1)->first();
+//        dd($Adress);
 
         $Moderators = $Event->moderators->where('is_visible', 1)->all();
 

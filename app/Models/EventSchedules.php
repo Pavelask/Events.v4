@@ -25,7 +25,7 @@ class EventSchedules extends Model
 
     public function event(): belongsTo
     {
-        return $this->belongsTo(Events::class,'events_id', 'id');
+        return $this->belongsTo(Events::class,'events_id', 'id')->where('event_status', 'active');
     }
 
     public function timetable(): HasMany
