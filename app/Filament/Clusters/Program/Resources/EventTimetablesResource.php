@@ -173,8 +173,8 @@ class EventTimetablesResource extends Resource
                 ])->from('md'),
             ])
             ->defaultSort('scheduleTable.date', 'desc')
-            ->paginated([50, 75, 100, 150, 200, 'all'])
-            ->defaultPaginationPageOption(75)
+            ->paginated([25, 50, 75, 100, 150, 200, 'all'])
+            ->defaultPaginationPageOption(25)
             ->filters([
                 Filter::make('events')
                     ->form([
