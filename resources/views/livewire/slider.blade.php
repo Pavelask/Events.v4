@@ -1,23 +1,23 @@
 <div>
-    <header>
-        <div class="nav-bar">
-            <a href="" class="logo">
-                <img src="{{ asset('front/img/logo_01.png') }}" alt="" class="h-12">
-            </a>
-            <div class="navigation">
-                <div class="nav-items">
-                    <i class="uil uil-times nav-close-btn"></i>
-                    <a href="/"><i class="uil uil-home"></i>Главная</a>
-                    <a href="#guest"><i class="uil uil-chat-bubble-user"></i>Гости</a>
-                    <a href="#moderators"><i class="uil uil-shield-check"></i>Модераторы</a>
-                    <a href="#timeline"><i class="uil uil-clock-three"></i>Расписание</a>
-                    <a href="#documents"><i class="uil uil-document-info"></i>Документы</a>
-                    <a href="#contact"><i class="uil uil-at"></i>Контакты</a>
-                </div>
-            </div>
-            <i class="uil uil-apps nav-menu-btn"></i>
-        </div>
-    </header>
+{{--    <header>--}}
+{{--        <div class="nav-bar">--}}
+{{--            <a href="" class="logo">--}}
+{{--                <img src="{{ asset('front/img/logo_01.png') }}" alt="" class="h-12">--}}
+{{--            </a>--}}
+{{--            <div class="navigation">--}}
+{{--                <div class="nav-items">--}}
+{{--                    <i class="uil uil-times nav-close-btn"></i>--}}
+{{--                    <a href="/"><i class="uil uil-home"></i>Главная</a>--}}
+{{--                    <a href="#guest"><i class="uil uil-chat-bubble-user"></i>Гости</a>--}}
+{{--                    <a href="#moderators"><i class="uil uil-shield-check"></i>Модераторы</a>--}}
+{{--                    <a href="#timeline"><i class="uil uil-clock-three"></i>Расписание</a>--}}
+{{--                    <a href="#documents"><i class="uil uil-document-info"></i>Документы</a>--}}
+{{--                    <a href="#contact"><i class="uil uil-at"></i>Контакты</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <i class="uil uil-apps nav-menu-btn"></i>--}}
+{{--        </div>--}}
+{{--    </header>--}}
 
 {{--    <section class="home">--}}
 {{--        <div class="media-icons">--}}
@@ -230,40 +230,40 @@
     {{--    </section>--}}
 
 
-    <section class="">
-        {{--  Жюри начало --}}
-        <div id="moderators" class="bg-white py-20 md:py-20">
-            <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
-                <div class="max-w-2xl xl:col-span-2 grid justify-items-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                        Модераторы слета
-                    </h2>
-                    <img src="{{asset("front/image/Slet_Logo.png")}}"
-                         class="h-80">
-                </div>
-                <ul role="list" class="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">
-                    @if($Moderators)
-                        @foreach($Moderators as $Moderator)
-                            <li class="flex flex-col gap-10 pt-12 sm:flex-row">
-                                <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"
-                                     src="{{ asset('storage/'.$Moderator->image) }}"
-                                     alt="">
-                                <div class="max-w-xl flex-auto">
-                                    <h3 class="text-2xl font-semibold leading-8 tracking-tight text-gray-900">{{$Moderator->last_name }} {{$Moderator->first_name  }} {{$Moderator->middle_name  }}</h3>
-                                    <p class="text-lg leading-7 text-gray-600">{{$Moderator->job_title  }}</p>
-                                    <p class="mt-6 text-base leading-7 text-gray-600">
-                                        {!! $Moderator->description !!}
-                                    </p>
-                                </div>
-                            </li>
-                        @endforeach
-                    @endif
-                    <!-- More people... -->
-                </ul>
-            </div>
-        </div>
-        {{--  Жюри конец --}}
-    </section>
+{{--    <section class="">--}}
+{{--        --}}{{--  Жюри начало --}}
+{{--        <div id="moderators" class="bg-white py-20 md:py-20">--}}
+{{--            <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">--}}
+{{--                <div class="max-w-2xl xl:col-span-2 grid justify-items-center">--}}
+{{--                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">--}}
+{{--                        Модераторы слета--}}
+{{--                    </h2>--}}
+{{--                    <img src="{{asset("front/image/Slet_Logo.png")}}"--}}
+{{--                         class="h-80">--}}
+{{--                </div>--}}
+{{--                <ul role="list" class="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">--}}
+{{--                    @if($Moderators)--}}
+{{--                        @foreach($Moderators as $Moderator)--}}
+{{--                            <li class="flex flex-col gap-10 pt-12 sm:flex-row">--}}
+{{--                                <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover"--}}
+{{--                                     src="{{ asset('storage/'.$Moderator->image) }}"--}}
+{{--                                     alt="">--}}
+{{--                                <div class="max-w-xl flex-auto">--}}
+{{--                                    <h3 class="text-2xl font-semibold leading-8 tracking-tight text-gray-900">{{$Moderator->last_name }} {{$Moderator->first_name  }} {{$Moderator->middle_name  }}</h3>--}}
+{{--                                    <p class="text-lg leading-7 text-gray-600">{{$Moderator->job_title  }}</p>--}}
+{{--                                    <p class="mt-6 text-base leading-7 text-gray-600">--}}
+{{--                                        {!! $Moderator->description !!}--}}
+{{--                                    </p>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                        @endforeach--}}
+{{--                    @endif--}}
+{{--                    <!-- More people... -->--}}
+{{--                </ul>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        --}}{{--  Жюри конец --}}
+{{--    </section>--}}
 
     @include('livewire.layout.line')
 
