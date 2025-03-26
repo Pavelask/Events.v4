@@ -9,7 +9,7 @@
 /*======= CSS variables =======*/
 :root{
     /*--white-color: #fff;*/
-    --white-color: #0005;
+    --white-color: #fff;
     --dark-color: #222;
     --text-color: #000;
     --body-bg-color: #fff;
@@ -116,8 +116,7 @@ header .nav-bar{
 }
 
 .navigation .nav-items a{
-    /*color: var(--white-color);*/
-    color: #000000;
+    color: var(--white-color);
     font-size: 1em;
     letter-spacing: 2px;
     text-decoration: none;
