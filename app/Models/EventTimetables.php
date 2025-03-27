@@ -38,6 +38,6 @@ class EventTimetables extends Model
             'id',
             'id',
             'event_schedules_id',
-            'events_id');
+            'events_id')->where('event_status', 'active');
     }
 }

@@ -120,6 +120,7 @@ class EventSchedulesResource extends Resource
 //                    ->sortable()
 //                    ->toggleable(isToggledHiddenByDefault: true),
             ])->searchable(false)
+            ->defaultSort('id', 'desc')
             ->filters([
                 SelectFilter::make('events_id')
                     ->label('Список активных мероприятий')

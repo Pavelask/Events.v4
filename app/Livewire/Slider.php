@@ -36,7 +36,7 @@ class Slider extends Component
 
         $Documents = $Event->eventsDocumen->where('is_visible', 1)->all();
 
-        $Schedules = $Event->getSchedules->where('is_visible', 1)->all();
+        $Schedules = $Event->getSchedules->where('is_visible', 1);
 
         $Timeline = $Event->timetablesEvent->where('event_id', $Event->id)->all();
 

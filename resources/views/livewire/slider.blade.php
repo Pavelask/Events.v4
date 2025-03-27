@@ -339,7 +339,7 @@
                                    class="cursor-pointer text-gray-700 rounded-l-lg group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-base font-medium hover:bg-gray-50 focus:z-10"
                                    aria-current="page">
                             <span>
-                                {{ $Schedule->alt_data }}
+                                <b>{{ $key}}</b> - {{ $Schedule->alt_data }}
                                 <br>
                                 {{ $Schedule->week }}
                             </span>

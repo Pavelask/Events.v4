@@ -36,7 +36,7 @@ class GetSchedulesRelationManager extends RelationManager
         return $form
             ->schema([
                 Forms\Components\Section::make('День расписания')
-                    ->description('Укажите дату, день недли и альтернативную дату для сайта ( 21 марта 2024)')->schema([
+                    ->description('Укажите дату, день недли и альтернативную дату для сайта ( 27 марта 2025 )')->schema([
                         Forms\Components\DatePicker::make('date')
                             ->label('Дата'),
                         Forms\Components\TextInput::make('week')
@@ -112,7 +112,7 @@ class GetSchedulesRelationManager extends RelationManager
     {
         return $infolist
             ->schema([
-                Section::make('Мероприятияе')
+                Section::make('Мероприятие')
                     ->schema([
                         Grid::make(1)
 //                        Fieldset::make('Мероприятияе')
@@ -125,7 +125,7 @@ class GetSchedulesRelationManager extends RelationManager
                                     ->weight(FontWeight::Bold),
                             ]),
                     ]),
-                Section::make('ФИО и должность')
+                Section::make('Дата и время')
                     ->schema([
                         TextEntry::make('date')
                             ->label('Дата'),

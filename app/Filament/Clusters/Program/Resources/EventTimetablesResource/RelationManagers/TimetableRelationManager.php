@@ -4,7 +4,13 @@ namespace App\Filament\Clusters\Program\Resources\EventTimetablesResource\Relati
 
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\Grid;
+use Filament\Infolists\Components\IconEntry;
+use Filament\Infolists\Components\Section;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Support\Enums\FontWeight;
 use Filament\Tables;
 use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Actions\DeleteAction;
@@ -26,10 +32,11 @@ class TimetableRelationManager extends RelationManager
     public function form(Form $form): Form
     {
         return $form
+
             ->schema([
                 Forms\Components\Section::make('Расписание на день')
                     ->icon('heroicon-o-calendar')
-                    ->description('')
+                    ->description('fdg df  gdfg dfg dsf')
                     ->schema([
 //                        Forms\Components\TextInput::make('schedule_id')
 //                            ->required()
@@ -102,6 +109,48 @@ class TimetableRelationManager extends RelationManager
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ]);
+    }
+
+    public function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                Section::make('Мероприятие')
+                    ->schema([
+                        Grid::make(1)
+//                        Fieldset::make('Мероприятияе')
+                            ->relationship('eventTimetable')
+                            ->schema([
+                                TextEntry::make('name')
+                                    ->label('')
+                                    ->columnSpanFull()
+                                    ->size(TextEntry\TextEntrySize::Medium)
+                                    ->weight(FontWeight::Bold),
+                            ]),
+                    ]),
+                Section::make('Дата и время')
+                    ->schema([
+                        TextEntry::make('date')
+                            ->label('Дата'),
+                        TextEntry::make('week')
+                            ->label('День недели'),
+                        TextEntry::make('alt_data')
+                            ->label('Дата для сайта'),
+                        TextEntry::make('description')
+                            ->label('Описание')
+                            ->html()
+                            ->columnSpan(3),
+                    ])->columns(3),
+                Section::make('Настройки')
+                    ->schema([
+                        TextEntry::make('sort')
+                            ->label('Сортировка'),
+                        IconEntry::make('is_visible')
+                            ->label('Отборажение на сайте')
+                            ->size(IconEntry\IconEntrySize::ExtraLarge)
+                            ->boolean(),
+                    ])->columns(2)
             ]);
     }
 }
