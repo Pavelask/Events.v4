@@ -7,7 +7,7 @@
 
 {{--        <title>{{ config('app.name', 'VIII Всероссийский слёт молодёжи Общественной организации «Всероссийский Электропрофсоюз') }}</title>--}}
 
-        <title>VIII Всероссийский слёт молодёжи Общественной организации «Всероссийский Электропрофсоюз</title>
+        <title>{{ $Event->name }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
