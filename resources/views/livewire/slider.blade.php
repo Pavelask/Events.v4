@@ -2,7 +2,7 @@
     <header>
         <div class="nav-bar">
             <a href="" class="logo">
-                <img src="{{ asset('front/img/logo_01.png') }}" alt="" class="h-12">
+                <img src="{{ asset('front/img/logo_01.png') }}" alt="" class="h-16">
             </a>
             <div class="navigation">
                 <div class="nav-items">
@@ -168,13 +168,23 @@
 
     <div class="bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div class="mx-auto max-w-2xl text-center">
-            <h2 class="text-4xl font-bold tracking-tight text-gray-900 text-center">
+            <h2 class="text-2xl font-bold tracking-tight text-gray-900 text-center">
                 Приветствие участникам семинара-совещания
             </h2>
 {{--            <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>--}}
-            <p class="mt-10 pt-10">
+            <p class="mt-4 pt-2">
                 {!! $Event->video_code !!}
             </p>
+            <figcaption class="mt-4 flex gap-x-2 text-lg leading-6 text-gray-500">
+                <svg class="mt-0.5 h-5 w-5 flex-none text-gray-300" viewBox="0 0 20 20"
+                     fill="currentColor"
+                     aria-hidden="true">
+                    <path fill-rule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z"
+                          clip-rule="evenodd"/>
+                </svg>
+                Председатель Профсоюза Офицерова Ю.Б
+            </figcaption>
         </div>
     </div>
 

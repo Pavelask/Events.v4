@@ -89,8 +89,7 @@ class EventTimetablesResource extends Resource
                             ->required(),
                         Forms\Components\TextInput::make('place')
                             ->label('Место')
-                            ->columnSpan(2)
-                            ->required(),
+                            ->columnSpan(2),
                         Forms\Components\TextInput::make('title')
                             ->label('Название')
                             ->columnSpanFull()
