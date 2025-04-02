@@ -385,8 +385,8 @@
                                                     {{ $Time->time }}
 
 
-                                                    <i class="uil uil-location-point h-16 w-16"></i>
-                                                    {{ $Time->place }}
+{{--                                                    <i class="uil uil-location-point h-16 w-16"></i>--}}
+{{--                                                    {{ $Time->place }}--}}
 
                                                 </h3>
                                                 <h3 class="text-lg tracking-wide">
