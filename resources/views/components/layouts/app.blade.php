@@ -21,18 +21,18 @@
             display: none !important;
         }
     </style>
-    @livewireStyles
+{{--    @livewireStyles--}}
     @filamentStyles
     @vite('resources/css/app.css')
 </head>
 
 <body class="antialiased">
 {{-- Main template Index Site   --}}
-{{--{{ $slot }}--}}
+{{ $slot }}
 
 <script src="{{asset("js/swiper-bundle.min.js")}}"></script>
 <script src="{{asset("js/main.js")}}"></script>
-@livewireScripts
+{{--@livewireScripts--}}
 @filamentScripts
 
 @vite('resources/js/app.js')
