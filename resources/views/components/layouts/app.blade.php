@@ -28,7 +28,7 @@
 
 <body class="antialiased">
 {{-- Main template Index Site   --}}
-{{ $slot }}
+{{--{{ $slot }}--}}
 
 <script src="{{asset("js/swiper-bundle.min.js")}}"></script>
 <script src="{{asset("js/main.js")}}"></script>
