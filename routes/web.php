@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Livewire::setScriptRoute(function ($handle) {
-    return Route::get('/livewire/livewire.js', $handle);
-});
+//Livewire::setScriptRoute(function ($handle) {
+//    return Route::get('/livewire/livewire.js', $handle);
+//});
 
 //Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('index');
 
