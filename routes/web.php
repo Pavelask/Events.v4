@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Livewire::setScriptRoute(function ($handle) {
+    return Route::get('/custom/livewire/livewire.js', $handle);
+});
+
 //Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('index');
 
 //Route::get('/', \App\Livewire\Home::class)->name('Home');
