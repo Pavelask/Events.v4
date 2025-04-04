@@ -10,7 +10,7 @@
     <title>
 
     </title>
-    <script src="https://cdn.tailwindcss.com"></script>
+{{--    <script src="https://cdn.tailwindcss.com"></script>--}}
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="{{asset("css/style.css")}}">
     <link rel="stylesheet" href="{{asset("css/swiper-bundle.min.css")}}">
