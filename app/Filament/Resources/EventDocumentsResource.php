@@ -6,6 +6,7 @@ use App\Filament\Resources\EventDocumentsResource\Pages;
 use App\Filament\Resources\EventDocumentsResource\RelationManagers;
 use App\Models\EventDocuments;
 use Filament\Forms;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -45,27 +46,40 @@ class EventDocumentsResource extends Resource
                     ]),
                 Forms\Components\Section::make('Документ')
                     ->description('')->schema([
+                        Forms\Components\TextInput::make('doc_name')
+                            ->label('Название документа')
+                            ->columnSpan(2),
                         Forms\Components\FileUpload::make('doc_file')
                             ->directory('eventsDocements')
                             ->getUploadedFileNameForStorageUsing(
-                                fn (TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
+                                fn(TemporaryUploadedFile $file): string => (string)str($file->getClientOriginalName())
                                     ->prepend('eventsDocuments-prefix-'))
                             ->label('Документ')
                             ->downloadable()
                             ->columns(1),
-                        Forms\Components\TextInput::make('doc_name')
-                            ->label('Название документа')
+                        MarkdownEditor::make('doc_description')
+                            ->label('Описание документа')
+                            ->columnSpanFull(),
+                        Forms\Components\Toggle::make('doc_agreement')
+                            ->label('Необходимо согласится с документом в анкете участника?')
+                            ->onColor('success')
+                            ->offColor('danger')
                             ->columnSpan(2),
                     ])->columns(3),
-                Forms\Components\TextInput::make('doc_sort')
-                    ->label('Сортировка')
-                    ->required()
-                    ->default(500)
-                    ->columns(1),
-                Forms\Components\Toggle::make('is_visible')
-                    ->label('Отображать на сайте')
-                    ->required()
-                    ->columnSpan(2),
+                Forms\Components\Section::make('Опции')
+                    ->description('')->schema([
+                        Forms\Components\TextInput::make('doc_sort')
+                            ->label('Сортировка')
+                            ->required()
+                            ->default(500)
+                            ->columns(1),
+                        Forms\Components\Toggle::make('is_visible')
+                            ->label('Отображать на сайте')
+                            ->required()
+                            ->onColor('success')
+                            ->offColor('danger')
+                            ->columnSpan(2),
+                    ])
             ]);
     }
 

@@ -15,7 +15,9 @@ class EventDocuments extends Model
     protected $fillable = [
         'events_id',
         'doc_name',
+        'doc_description',
         'doc_file',
+        'doc_agreement',
         'doc_sort',
         'is_visible'
     ];
