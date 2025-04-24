@@ -17,6 +17,7 @@ class EventDocuments extends Model
         'doc_name',
         'doc_description',
         'doc_file',
+        'docx_file',
         'doc_agreement',
         'doc_sort',
         'is_visible'

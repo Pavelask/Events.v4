@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\EventDocumentsResource\RelationManagers;
 
 use Filament\Forms;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
@@ -23,29 +24,58 @@ class EventsDocumenRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                Forms\Components\Section::make('')
+                Forms\Components\Fieldset::make('')
+                    ->schema([
+                        Forms\Components\Select::make('events_id')
+                            ->label('Список активных мероприятий')
+                            ->relationship(name: 'event', titleAttribute: 'name')
+                            ->columnSpanFull()
+                            ->required(),
+                    ]),
+                Forms\Components\Section::make('Документ')
                     ->description('')->schema([
-                        Forms\Components\FileUpload::make('doc_file')
-                            ->directory('eventsDocements')
-                            ->getUploadedFileNameForStorageUsing(
-                                fn (TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
-                                    ->prepend('eventsDocuments-prefix-'))
-                            ->label('Документ')
-                            ->downloadable()
-                            ->columns(1),
                         Forms\Components\TextInput::make('doc_name')
                             ->label('Название документа')
                             ->columnSpan(2),
-                    ])->columns(3),
-                Forms\Components\TextInput::make('doc_sort')
-                    ->label('Сортировка')
-                    ->required()
-                    ->default(500)
-                    ->columns(1),
-                Forms\Components\Toggle::make('is_visible')
-                    ->label('Отображать на сайте')
-                    ->required()
-                    ->columnSpan(2),
+                        Forms\Components\FileUpload::make('doc_file')
+                            ->directory('eventsDocements')
+                            ->getUploadedFileNameForStorageUsing(
+                                fn(TemporaryUploadedFile $file): string => (string)str($file->getClientOriginalName())
+                                    ->prepend('eventsDocuments-prefix-pdf'))
+                            ->label('Документ в формате - PDF')
+                            ->downloadable()
+                            ->columns(1),
+                        Forms\Components\FileUpload::make('docx_file')
+                            ->directory('eventsDocements')
+                            ->getUploadedFileNameForStorageUsing(
+                                fn(TemporaryUploadedFile $file): string => (string)str($file->getClientOriginalName())
+                                    ->prepend('eventsDocuments-prefix-docx'))
+                            ->label('Документ в формате - RTF, DOC, DOCX')
+                            ->downloadable()
+                            ->columns(1),
+                        MarkdownEditor::make('doc_description')
+                            ->label('Описание документа')
+                            ->columnSpanFull(),
+                        Forms\Components\Toggle::make('doc_agreement')
+                            ->label('Необходимо согласится с документом в анкете участника?')
+                            ->onColor('success')
+                            ->offColor('danger')
+                            ->columnSpan(2),
+                    ])->columns(2),
+                Forms\Components\Section::make('Опции')
+                    ->description('')->schema([
+                        Forms\Components\TextInput::make('doc_sort')
+                            ->label('Сортировка')
+                            ->required()
+                            ->default(500)
+                            ->columns(1),
+                        Forms\Components\Toggle::make('is_visible')
+                            ->label('Отображать на сайте')
+                            ->required()
+                            ->onColor('success')
+                            ->offColor('danger')
+                            ->columnSpan(2),
+                    ])
             ]);
     }
 

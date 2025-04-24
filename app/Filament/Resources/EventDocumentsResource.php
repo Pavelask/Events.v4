@@ -53,8 +53,16 @@ class EventDocumentsResource extends Resource
                             ->directory('eventsDocements')
                             ->getUploadedFileNameForStorageUsing(
                                 fn(TemporaryUploadedFile $file): string => (string)str($file->getClientOriginalName())
-                                    ->prepend('eventsDocuments-prefix-'))
-                            ->label('Документ')
+                                    ->prepend('eventsDocuments-prefix-pdf'))
+                            ->label('Документ в формате - PDF')
+                            ->downloadable()
+                            ->columns(1),
+                        Forms\Components\FileUpload::make('docx_file')
+                            ->directory('eventsDocements')
+                            ->getUploadedFileNameForStorageUsing(
+                                fn(TemporaryUploadedFile $file): string => (string)str($file->getClientOriginalName())
+                                    ->prepend('eventsDocuments-prefix-docx'))
+                            ->label('Документ в формате - RTF, DOC, DOCX')
                             ->downloadable()
                             ->columns(1),
                         MarkdownEditor::make('doc_description')
@@ -65,7 +73,7 @@ class EventDocumentsResource extends Resource
                             ->onColor('success')
                             ->offColor('danger')
                             ->columnSpan(2),
-                    ])->columns(3),
+                    ])->columns(2),
                 Forms\Components\Section::make('Опции')
                     ->description('')->schema([
                         Forms\Components\TextInput::make('doc_sort')

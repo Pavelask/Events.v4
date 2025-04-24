@@ -417,7 +417,7 @@
         <div class="mx-auto max-w-6xl text-base leading-7 text-gray-700">
             <div class="mt-4 max-w-6xl">
                 <h2 class="text-4xl font-bold tracking-tight text-gray-900 text-center py-12">
-                    Документы слета
+                    Документы семинара-совещания
                 </h2>
             </div>
 {{--            @dd($Moderators)--}}
