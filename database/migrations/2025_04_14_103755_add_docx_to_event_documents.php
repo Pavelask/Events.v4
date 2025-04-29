@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('event_documents', function (Blueprint $table) {
-            $table->string('docx_file')->nullable();
+            $table->string('docx_file')->nullable()->after('doc_file');
+//            $table->renameColumn('doc_file', 'pdf_file');
         });
     }
 
