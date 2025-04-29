@@ -122,6 +122,18 @@ class EventsResource extends Resource
                             ->columnSpanFull(),
                     ]),
 
+                Forms\Components\Section::make('QR Code')
+                    ->description('Загрузите изображение с QR кодом, или вставтье ссылку на группу в Телеграмме')
+                    ->schema([
+                        Forms\Components\FileUpload::make('qrpictures')
+                            ->label('Картинка QR кода')
+                            ->imageEditor()
+                            ->image(),
+                        Forms\Components\TextInput::make('tglink')
+                            ->label('Ссылка на группу в телеграмме')
+                            ->maxLength(255),
+                    ])->columns(2),
+
                 Forms\Components\Section::make('Дополнительные настройки')
                     ->description('Сортировка, отображение на сайте, паспортные данные для анкеты участника, регистрация на мероприятие')
                     ->schema([

@@ -6,7 +6,7 @@
         </span>
 
 
-        <div class="bg-gray-50 px-6 py-24 sm:px-6 sm:py-32 lg:px-8 rounded-md shadow-md border border-gray-100">
+        <div class="bg-gray-50 px-6 py-2 sm:px-6 sm:py-20 lg:px-8 rounded-md shadow-md border border-gray-100">
             <div class="mx-auto max-w-4xl text-center">
                 <h2 class="text-sm uppercase font-bold tracking-tight text-gray-900 sm:text-lg">
                     {{ $Event->name }}
@@ -34,6 +34,13 @@
 
                     <a href="{{ route('IndexSite') }}" class="text-sm font-semibold leading-6 text-gray-900">
                         Подробнее <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    @if($Event->qrpictures)
+                        <img class="inline-block rounded-md h-60"
+                             src="{{ asset('storage/'.$Event->qrpictures) }}"
+                             alt="">
+                    @endif
                 </div>
             </div>
         </div>

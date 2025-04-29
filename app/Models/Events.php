@@ -48,6 +48,8 @@ class Events extends Model
         'event_agreement',
         'template_name',
         'members_template_name',
+        'qrpictures',
+        'tglink',
         'video_code',
         'is_visible',
         'is_passport',
