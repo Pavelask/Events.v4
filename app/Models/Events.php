@@ -79,8 +79,8 @@ class Events extends Model
 
     public function guests(): hasMany
     {
-//        return $this->hasMany(Guests::class, 'events_id', 'id')->orderBy('guests_sort', 'ASC');
-        return $this->hasMany(Guests::class, 'events_id', 'id') ;
+        return $this->hasMany(Guests::class, 'events_id', 'id')->orderBy('guests_sort', 'ASC');
+//        return $this->hasMany(Guests::class, 'events_id', 'id') ;
     }
 
     public function organizers(): hasMany
