@@ -56,7 +56,7 @@
     "Server Error": "Ошибка сервера",
     "Service Unavailable": "Сервис недоступен",
     "Showing": "Показано с",
-    "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.": "Спасибо за регистрацию! Прежде чем начать, не могли бы Вы подтвердить адрес своей электронной почты перейдя по ссылке, которую мы Вам отправили? Если Вы не получили письмо, мы с радостью отправим новое.",
+    "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.": "Для продолжения регистрации и заполнения анкеты подтвердите адрес электронной почты перейдя по ссылке, которую мы Вам отправили! Если Вы не получили письмо, мы с радостью отправим новое.",
     "The given data was invalid.": "Указанные данные недействительны.",
     "The response is not a streamed response.": "Ответ не является потоковым.",
     "The response is not a view.": "Ответ не является представлением.",
